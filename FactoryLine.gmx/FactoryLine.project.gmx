@@ -4,10 +4,28 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sounds name="sound">
+    <sound>sound\trayOpen_sd</sound>
+    <sound>sound\trayClose_sd</sound>
+    <sound>sound\trayHitUpper_sd</sound>
+    <sound>sound\trayHitBottom_sd</sound>
+  </sounds>
+  <sprites name="sprites">
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\itemTray_spr</sprite>
+    <sprite>sprites\itemTrayHead_spr</sprite>
+    <sprite>sprites\itemTrayBaseTab_spr</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\verticalTray</object>
+    <object>objects\traySection</object>
+    <object>objects\HUDmain</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\Main_rm</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
