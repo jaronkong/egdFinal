@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -131,10 +131,74 @@ ds_grid_clear( grid, noone );
 var tGrid = grid;
 
 with ( block ) {
-    if ( gridValidPoint( x, y ) ) {
-        var cx = gridFromRoomX( x );
-        var cy = gridFromRoomY( y );
-        ds_grid_set( tGrid, cx, cy, id );
+    if ( !gridValidPoint( x, y ) ) continue;
+    var cx = gridFromRoomX( x );
+    var cy = gridFromRoomY( y );
+    ds_grid_set( tGrid, cx, cy, id );
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check for item collisions
+
+var tGrid = grid;
+var tWidth = width/2;
+var tHeight = height/2;
+
+with ( item ) {
+    if ( !gridValidPoint( x, y ) ) continue;
+    
+    //Push out of any nearby blocks
+    //Check this cell, and any adjacent cell
+    var cx = min( gridFromRoomX( x ) + 2, ds_grid_width( tGrid ) );
+    var cy = min( gridFromRoomY( y ) + 2, ds_grid_height( tGrid ) );
+    for ( var i = max( cx-3, 0 ); i &lt; cx; ++i ) {
+        for ( var j = max( cy-3, 0 ); j &lt; cy; ++j ) {
+            var tInst = ds_grid_get( tGrid, i, j );
+            if ( !instance_exists( tInst ) ) continue;
+            if ( !isObject( tInst, block ) ) continue;
+            var tCellX = gridToRoomX( i );
+            var tCellY = gridToRoomY( j );
+            if ( rectangle_in_rectangle(
+                tCellX-tWidth, tCellY-tHeight, tCellX+tWidth, tCellY+tHeight,
+                x-width/2, y-height/2, x+width/2, y+height/2 ) )
+            {
+                if ( abs( y - tCellY ) &lt; abs( x - tCellX ) ) {
+                    var tDir = sign( x - tCellX );
+                    hspeed = ( max( tDir * hspeed, 0 ) * tDir );
+                    x = ( tCellX + tDir * ( tWidth + width/2 ) );
+                } else {
+                    var tDir = sign( y - tCellY );
+                    vspeed = ( max( tDir * vspeed, 0 ) * tDir );
+                    y = ( tCellY + tDir * ( tHeight + height/2 ) );
+                }
+            }
+        }
+    }
+    
+    //Check for collisions with items
+    var tInst = ds_grid_get( tGrid, cx, cy );
+    if ( instance_exists( tInst ) ) {
+        if ( isObject( tInst, item ) ) {
+            //Eww...
+        }
     }
 }
 </string>
@@ -202,7 +266,7 @@ draw_set_alpha( 1 );
             <kind>1</kind>
             <string>///Fill in object grid cells
 
-draw_set_color( c_aqua );
+draw_set_color( c_white );
 draw_set_alpha( 1 );
 
 for ( var i = 0; i &lt; ds_grid_width( grid ); ++i ) {
@@ -212,9 +276,14 @@ for ( var i = 0; i &lt; ds_grid_width( grid ); ++i ) {
             var px = gridToRoomX( i );
             var py = gridToRoomY( j );
             if ( isObject( tInst, block ) ) {
-                draw_rectangle( px-width/2, py-height/2,
-                    px+width/2, py+height/2, false );
+                draw_set_color( c_aqua );
+            } else if ( isObject( tInst, item ) ) {
+                draw_set_color( c_lime );
+            } else {
+                draw_set_color( c_red );
             }
+            draw_rectangle( px-width/2, py-height/2,
+                px+width/2, py+height/2, false );
         }
     }
 }

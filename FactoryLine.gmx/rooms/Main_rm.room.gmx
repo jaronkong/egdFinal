@@ -58,6 +58,7 @@
     <instance objName="verticalTray" x="1104" y="656" name="inst_A12EC01A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridManager" x="0" y="0" name="inst_A4EBF76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="528" y="416" name="inst_12275C64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="item" x="528" y="224" name="inst_14F16CF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
