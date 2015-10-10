@@ -25,6 +25,9 @@
     <script>scripts\gridToRoomX.gml</script>
     <script>scripts\gridToRoomY.gml</script>
     <script>scripts\gridValidPoint.gml</script>
+    <script>scripts\gridInstanceAtPoint.gml</script>
+    <script>scripts\gridBlockAtPoint.gml</script>
+    <script>scripts\gridItemAtPoint.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\verticalTray</object>

@@ -159,59 +159,52 @@ with ( block ) {
             <string>///Check for item collisions
 
 var tGrid = grid;
-var tWidth = width/2;
-var tHeight = height/2;
 
 with ( item ) {
     if ( !gridValidPoint( x, y ) ) continue;
     var tInst, cx, cy;
     
     //Push out of any nearby blocks
-    //Check this cell, and any adjacent cell
-    if ( !gridValidPoint( x, y ) ) continue;
-    cx = min( gridFromRoomX( x ) + 2, ds_grid_width( tGrid ) );
-    cy = min( gridFromRoomY( y ) + 2, ds_grid_height( tGrid ) );
-    for ( var i = max( cx-3, 0 ); i &lt; cx; ++i ) {
-        for ( var j = max( cy-3, 0 ); j &lt; cy; ++j ) {
-            tInst = ds_grid_get( tGrid, i, j );
-            if ( !instance_exists( tInst ) ) continue;
-            if ( !isObject( tInst, block ) ) continue;
-            var tCellX = gridToRoomX( i );
-            var tCellY = gridToRoomY( j );
-            if ( rectangle_in_rectangle(
-                tCellX-tWidth, tCellY-tHeight, tCellX+tWidth, tCellY+tHeight,
-                x-width/2, y-height/2, x+width/2, y+height/2 ) )
-            {
-                if ( abs( y - tCellY ) &lt; abs( x - tCellX ) ) {
-                    var tDir = sign( x - tCellX );
-                    hspeed = ( max( tDir * hspeed, 0 ) * tDir );
-                    x = ( tCellX + tDir * ( tWidth + width/2 ) );
-                } else {
-                    var tDir = sign( y - tCellY );
-                    vspeed = ( max( tDir * vspeed, 0 ) * tDir );
-                    y = ( tCellY + tDir * ( tHeight + height/2 ) );
-                }
-            }
+    cx = gridFromRoomX( x );
+    cy = gridFromRoomY( y );
+    //Top
+    if ( ( y - height/2 ) &lt;= gridToRoomY( cy - 0.5 ) ) {
+        if ( instance_exists( gridBlockAtPoint( x, y - other.height ) ) ) {
+            y = ( gridToRoomY( cy - 0.5 ) + height/2 );
+            vspeed = max( 0, vspeed );
+        }
+    }
+    //Bottom
+    if ( ( y + height/2 ) &gt; gridToRoomY( cy + 0.5 ) ) {
+        if ( instance_exists( gridBlockAtPoint( x, y + other.height ) ) ) {
+            y = ( gridToRoomY( cy + 0.5 ) - height/2 );
+            vspeed = min( 0, vspeed );
+        }
+    }
+    //Left
+    if ( ( x - width/2 ) &lt;= gridToRoomX( cx - 0.5 ) ) {
+        if ( instance_exists( gridBlockAtPoint( x - other.width, y ) ) ) {
+            x = ( gridToRoomX( cx - 0.5 ) + width/2 );
+            hspeed = max( 0, hspeed );
+        }
+    }
+    //Right
+    if ( ( x + width/2 ) &gt; gridToRoomX( cx + 0.5 ) ) {
+        if ( instance_exists( gridBlockAtPoint( x + other.width, y ) ) ) {
+            x = ( gridToRoomX( cx + 0.5 ) - width/2 );
+            hspeed = min( 0, hspeed );
         }
     }
     
-    //Check for collisions
-    if ( !gridValidPoint( x, y ) ) continue;
-    cx = gridFromRoomX( x );
-    cy = gridFromRoomX( y );
-    tInst = ds_grid_get( tGrid, cx, cy );
+    //Check for item collisions
+    tInst = gridItemAtPoint( x, y );
     if ( instance_exists( tInst ) ) {
-        if ( isObject( tInst, block ) ) {
-            instance_destroy( );
-            continue;
-        } else if ( isObject( tInst, item ) ) {
-            var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
-            tNew.hspeed = mean( hspeed, tInst.hspeed );
-            tNew.vspeed = mean( vspeed, tInst.vspeed );
-            with ( tInst ) instance_destroy( );
-            instance_destroy( );
-            ds_grid_set( tGrid, cx, cy, tNew );
-        }
+        var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
+        tNew.hspeed = mean( hspeed, tInst.hspeed );
+        tNew.vspeed = mean( vspeed, tInst.vspeed );
+        with ( tInst ) instance_destroy( );
+        instance_destroy( );
+        ds_grid_set( tGrid, cx, cy, tNew );
     } else {
         ds_grid_set( tGrid, cx, cy, id );
     }
