@@ -62,8 +62,7 @@ gravity = 0.1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set size, relative to grid cells
-//This only affects collisions with blocks
+            <string>///Set size for block collisions
 //Two items collide if and only if they are in the same cell
 
 var s = 16;
