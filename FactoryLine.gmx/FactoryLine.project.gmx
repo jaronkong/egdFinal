@@ -18,10 +18,22 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\isObject.gml</script>
+    <script>scripts\gridFromRoomX.gml</script>
+    <script>scripts\gridFromRoomY.gml</script>
+    <script>scripts\gridToRoomX.gml</script>
+    <script>scripts\gridToRoomY.gml</script>
+    <script>scripts\gridValidPoint.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\verticalTray</object>
     <object>objects\traySection</object>
     <object>objects\HUDmain</object>
+    <object>objects\gridObject</object>
+    <object>objects\block</object>
+    <object>objects\item</object>
+    <object>objects\gridManager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
