@@ -164,6 +164,8 @@ with ( item ) {
     if ( !gridValidPoint( x, y ) ) continue;
     var tInst, cx, cy;
     
+    //If the item is in the same cell as a block, do something
+    
     //Push out of any nearby blocks
     cx = gridFromRoomX( x );
     cy = gridFromRoomY( y );
@@ -187,14 +189,23 @@ with ( item ) {
     }
     
     //Check for item collisions
-    tInst = gridItemAtPoint( x, y );
+    tInst = gridInstanceAtPoint( x, y );
     if ( instance_exists( tInst ) ) {
-        var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
-        tNew.hspeed = mean( hspeed, tInst.hspeed );
-        tNew.vspeed = mean( vspeed, tInst.vspeed );
-        with ( tInst ) instance_destroy( );
-        instance_destroy( );
-        ds_grid_set( tGrid, cx, cy, tNew );
+        if ( isObject( tInst, item ) ) {
+            var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
+            tNew.hspeed = mean( hspeed, tInst.hspeed );
+            tNew.vspeed = mean( vspeed, tInst.vspeed );
+            with ( tInst ) instance_destroy( );
+            instance_destroy( );
+            ds_grid_set( tGrid, cx, cy, tNew );
+        } else if ( isObject( tInst, block ) ) {
+            //Things are moving too fast
+            show_debug_message( "Item inside block!" );
+        } else {
+            //What is this?
+            var tObjName = object_get_name( tInst.object_index );
+            show_debug_message( "A " + tObjName + " in the grid?" );
+        }
     } else {
         ds_grid_set( tGrid, cx, cy, id );
     }

@@ -41,7 +41,7 @@
             <kind>1</kind>
             <string>///Set gravity
 
-gravity = 0.1;
+gravity = 0.02;
 </string>
           </argument>
         </arguments>
