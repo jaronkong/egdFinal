@@ -88,12 +88,18 @@ if ( held ) {
         }
         targetX = tGridSize * (targetX div tGridSize);
         targetY = tGridSize * (targetY div tGridSize );
+
+        //Check if different from prev coord, and play sound if changed
+        if ( targetX != prevX || targetY != prevY ) {
+            audio_play_sound( craneMove_sd, 1, false );
+        }
+        prevX = targetX;
+        prevY = targetY;
+                
+        //Add in offset for crane bounce
         targetY += grabOffset;
         
-        //Check if different from prev coord, and play sound if changed
-        
-        prevX = targetX;
-        prevY = targetY;  
+          
     }
 }
 else {
@@ -113,7 +119,7 @@ else {
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>placableItem</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -128,11 +134,16 @@ if ( mouse_check_button( mb_left ) ) {
         if ( !held ) {
             //Grabbing for first time
             grabOffset = grabOffsetMax;
+            audio_play_sound( craneSlam_sd, 1, false );
         }
         held = true;   
     }
 }
 else {
+    if ( held ) {
+        //Releasing item
+        audio_play_sound( placeItem_sd, 1, false );
+    }
     held = false;
 }
 

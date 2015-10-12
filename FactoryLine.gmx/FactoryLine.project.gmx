@@ -9,6 +9,9 @@
     <sound>sound\trayClose_sd</sound>
     <sound>sound\trayHitUpper_sd</sound>
     <sound>sound\trayHitBottom_sd</sound>
+    <sound>sound\craneSlam_sd</sound>
+    <sound>sound\craneMove_sd</sound>
+    <sound>sound\placeItem_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
