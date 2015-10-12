@@ -15,6 +15,7 @@
     <sprite>sprites\itemTray_spr</sprite>
     <sprite>sprites\itemTrayHead_spr</sprite>
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
+    <sprite>sprites\block_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -30,9 +31,12 @@
     <script>scripts\gridItemAtPoint.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\verticalTray</object>
-    <object>objects\traySection</object>
-    <object>objects\HUDmain</object>
+    <objects name="Interface">
+      <object>objects\verticalTray</object>
+      <object>objects\traySection</object>
+      <object>objects\HUDmain</object>
+      <object>objects\placableItem</object>
+    </objects>
     <object>objects\gridObject</object>
     <object>objects\block</object>
     <object>objects\item</object>

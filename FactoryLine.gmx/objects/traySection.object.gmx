@@ -31,6 +31,10 @@ sectionHeight = 64;
 sectionOffset = 0;
 ownerTray = noone;
 
+heldItemType = placableItem;
+heldItem = noone;
+heldItemQuantity = 2; //-1 for unlimited
+
 </string>
           </argument>
         </arguments>
@@ -62,6 +66,29 @@ if ( instance_exists( ownerTray ) ) {
             + sectionOffset 
             + sectionHeight/2;
     x = ownerTray.x;
+    
+    //Check to see if need to release hold on held item
+    if ( ownerTray.currentSlideOffset &gt;= 0 ) {
+        if ( !instance_exists( heldItem ) ) {
+                    
+            if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0 ) {
+                heldItemQuantity -= 1;
+                heldItem = instance_create( x, y, heldItemType );
+            }
+        }
+    }
+    
+}
+
+with ( heldItem ) {
+    if ( !held ) {
+        x = other.x;
+        y = other.y;
+    }
+    else {
+        //If drag, break link
+        other.heldItem = noone;
+    }
 }
 
 </string>
