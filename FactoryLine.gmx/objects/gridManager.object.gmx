@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define grid size
 
-var s = 32;
+var s = 48;
 width = s;
 height = s;
 </string>
