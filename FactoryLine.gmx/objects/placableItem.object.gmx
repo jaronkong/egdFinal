@@ -34,8 +34,16 @@ alpha = 0.5;
 heldAlpha = 0.5;
 
 held = false;
+targetX = x;
+targetY = y;
+moveTween = 0.3;
 prevX = x;
 prevY = y;
+
+//Grabbing
+grabOffset = 0;
+grabOffsetMax = 64;
+grabOffsetTween = 0.25;
 
 </string>
           </argument>
@@ -63,28 +71,29 @@ prevY = y;
 
 if ( held ) {
     alpha = heldAlpha;
-    x = mouse_x;
-    y = mouse_y;
+    targetX = mouse_x;
+    targetY = mouse_y;
     
     if ( instance_exists( gridManager ) ) {
         var tGridCon = gridManager;
         var tGridSize = tGridCon.width;
-        var tOffX = x mod tGridSize;
-        var tOffY = y mod tGridSize;
+        var tOffX = targetX mod tGridSize;
+        var tOffY = targetY mod tGridSize;
         
         if ( tOffX &gt; tGridSize / 2 ) {
-            x += tGridSize;
+            targetX += tGridSize;
         }
         if ( tOffY &gt; tGridSize / 2 ) {
-            y += tGridSize;
+            targetY += tGridSize;
         }
-        x = tGridSize * (x div tGridSize);
-        y = tGridSize * (y div tGridSize );
+        targetX = tGridSize * (targetX div tGridSize);
+        targetY = tGridSize * (targetY div tGridSize );
+        targetY += grabOffset;
         
         //Check if different from prev coord, and play sound if changed
         
-        prevX = x;
-        prevY = y;  
+        prevX = targetX;
+        prevY = targetY;  
     }
 }
 else {
@@ -116,12 +125,42 @@ if ( mouse_check_button( mb_left ) ) {
     if ( mouse_x &gt; x - heldItem.sprite_width/2 &amp;&amp; mouse_x &lt; x + heldItem.sprite_width/2
         &amp;&amp; mouse_y &gt; y - heldItem.sprite_height/2 &amp;&amp; mouse_y &lt; y + heldItem.sprite_height/2 ) {
         
+        if ( !held ) {
+            //Grabbing for first time
+            grabOffset = grabOffsetMax;
+        }
         held = true;   
     }
 }
 else {
     held = false;
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tweens
+
+grabOffset = lerp( grabOffset, 0, grabOffsetTween );
+x = lerp( x, targetX, moveTween );
+y = lerp( y, targetY, moveTween );
 
 </string>
           </argument>
@@ -148,6 +187,10 @@ else {
             <string>///Draw
 
 draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_white, alpha);
+
+if ( held ) {
+    draw_sprite( craneArm_spr, 0, x, y - heldItem.sprite_height/2 );
+}
 
 </string>
           </argument>

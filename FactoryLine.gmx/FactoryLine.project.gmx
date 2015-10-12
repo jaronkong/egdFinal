@@ -16,6 +16,7 @@
     <sprite>sprites\itemTrayHead_spr</sprite>
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
     <sprite>sprites\block_spr</sprite>
+    <sprite>sprites\craneArm_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

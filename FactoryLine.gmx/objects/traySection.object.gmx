@@ -84,6 +84,8 @@ with ( heldItem ) {
     if ( !held ) {
         x = other.x;
         y = other.y;
+        targetX = x;
+        targetY = y;
     }
     else {
         //If drag, break link
