@@ -37,10 +37,16 @@
       <object>objects\HUDmain</object>
       <object>objects\placableItem</object>
     </objects>
-    <object>objects\gridObject</object>
-    <object>objects\block</object>
-    <object>objects\item</object>
     <object>objects\gridManager</object>
+    <object>objects\gridObject</object>
+    <objects name="Blocks">
+      <object>objects\block</object>
+      <object>objects\interactiveBlock</object>
+      <object>objects\conveyorBelt</object>
+    </objects>
+    <objects name="Items">
+      <object>objects\item</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
