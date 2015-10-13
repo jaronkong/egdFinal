@@ -115,8 +115,8 @@ if ( abs( tGoalX - x ) &lt; abs( hspeed ) ) {
 }
 
 if ( x == tGoalX ) {
-    vspeed += ( 0.05 * 60 / room_speed );
-    vspeed = min( vspeed, ( 4 * 60 / room_speed ) );
+    vspeed += ( 0.2 * 60 / room_speed );
+    vspeed = min( vspeed, ( 6 * 60 / room_speed ) );
 }
 </string>
           </argument>
