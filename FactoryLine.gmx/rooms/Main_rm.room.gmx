@@ -61,8 +61,10 @@
     <instance objName="item" x="528" y="80" name="inst_D8751341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="item" x="512" y="128" name="inst_681F872F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="conveyorBelt" x="560" y="464" name="inst_FE3B42B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBelt" x="528" y="464" name="inst_1A8D7CD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="512" y="464" name="inst_1A8D7CD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dispenser" x="512" y="16" name="inst_880E3D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="608" y="560" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="656" y="512" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -39,9 +39,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set gravity
+            <string>///Set size for block collisions
+//Two items collide if and only if they are in the same cell
 
-gravity = 0.02;
+var s = 16;
+width = s;
+height = s;
 </string>
           </argument>
         </arguments>
@@ -62,12 +65,59 @@ gravity = 0.02;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set size for block collisions
-//Two items collide if and only if they are in the same cell
+            <string>///Set goal position
 
-var s = 16;
-width = s;
-height = s;
+goalX = gridFromRoomX( x );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Apply movement
+
+var tGoalX = gridToRoomX( goalX );
+hspeed = ( 2 * sign( tGoalX - x ) * 60 / room_speed );
+
+if ( abs( tGoalX - x ) &lt; abs( hspeed ) ) {
+    x = tGoalX;
+    hspeed = 0;
+}
+
+if ( x == tGoalX ) {
+    vspeed += ( 0.05 * 60 / room_speed );
+    vspeed = min( vspeed, ( 4 * 60 / room_speed ) );
+}
 </string>
           </argument>
         </arguments>
