@@ -20,10 +20,12 @@
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
     <sprite>sprites\block_spr</sprite>
     <sprite>sprites\craneArm_spr</sprite>
-    <sprite>sprites\attacher_placeholder</sprite>
-    <sprite>sprites\dispenser_placeholder</sprite>
-    <sprite>sprites\receiver_placeholder</sprite>
-    <sprite>sprites\combiner_placeholder</sprite>
+    <sprites name="Elements">
+      <sprite>sprites\attacher_placeholder</sprite>
+      <sprite>sprites\dispenser_placeholder</sprite>
+      <sprite>sprites\receiver_placeholder</sprite>
+      <sprite>sprites\combiner_placeholder</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -37,16 +39,18 @@
     <script>scripts\gridInstanceAtPoint.gml</script>
     <script>scripts\gridBlockAtPoint.gml</script>
     <script>scripts\gridItemAtPoint.gml</script>
+    <script>scripts\mouseClicked.gml</script>
+    <script>scripts\createPlaceableItem.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\gridManager</object>
+    <object>objects\gridObject</object>
     <objects name="Interface">
       <object>objects\verticalTray</object>
       <object>objects\traySection</object>
       <object>objects\HUDmain</object>
-      <object>objects\placableItem</object>
+      <object>objects\placeableItem</object>
     </objects>
-    <object>objects\gridManager</object>
-    <object>objects\gridObject</object>
     <objects name="Blocks">
       <object>objects\block</object>
       <object>objects\interactiveBlock</object>

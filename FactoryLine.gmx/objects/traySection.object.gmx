@@ -31,7 +31,7 @@ sectionHeight = 64;
 sectionOffset = 0;
 ownerTray = noone;
 
-heldItemType = placableItem;
+heldItemType = dispenser;
 heldItem = noone;
 heldItemQuantity = 2; //-1 for unlimited
 
@@ -73,7 +73,7 @@ if ( instance_exists( ownerTray ) ) {
                     
             if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0 ) {
                 heldItemQuantity -= 1;
-                heldItem = instance_create( x, y, heldItemType );
+                heldItem = createPlaceableItem( x, y, heldItemType );
             }
         }
     }

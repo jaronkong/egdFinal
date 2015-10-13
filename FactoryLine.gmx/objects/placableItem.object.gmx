@@ -27,8 +27,10 @@
             <kind>1</kind>
             <string>///Setup
 
-heldItem = block;
-image = block.sprite_index;
+heldItem = dispenser;
+image = heldItem.sprite_index;
+
+previewScaling = 0.25; //size of image in tray
 
 alpha = 0.5;
 heldAlpha = 0.5;
@@ -143,8 +145,11 @@ else {
     if ( held ) {
         //Releasing item
         audio_play_sound( placeItem_sd, 1, false );
+        instance_create( targetX, targetY, heldItem ); 
+        instance_destroy();
     }
     held = false;
+    
 }
 
 </string>
@@ -197,12 +202,14 @@ y = lerp( y, targetY, moveTween );
             <kind>1</kind>
             <string>///Draw
 
-draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_white, alpha);
-
 if ( held ) {
     draw_sprite( craneArm_spr, 0, x, y - heldItem.sprite_height/2 );
+    draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_white, alpha);
 }
+else {
+    draw_sprite_ext( image, 0, x, y, previewScaling, previewScaling, 0, c_white, alpha);
 
+}
 </string>
           </argument>
         </arguments>
