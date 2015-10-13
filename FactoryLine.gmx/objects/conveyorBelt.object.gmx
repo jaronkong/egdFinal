@@ -46,6 +46,29 @@ dir = 1;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set cooldown
+
+cooldown = 0.25;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="25">
       <action>
@@ -81,7 +104,10 @@ dir = 1;
             <string>///Move item directly above
 
 var tItem = gridItemAtPoint( x, y - gridManager.height );
-if ( instance_exists( tItem ) ) tItem.goalX += dir;
+if ( instance_exists( tItem ) ) {
+    var tGoal = ( gridFromRoomX( x ) + dir );
+    tItem.goalX = ( max( tItem.goalX*dir, tGoal*dir ) * dir );
+}
 </string>
           </argument>
         </arguments>
