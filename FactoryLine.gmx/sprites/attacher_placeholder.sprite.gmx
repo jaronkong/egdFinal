@@ -8,17 +8,17 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>377</bbox_right>
+  <bbox_right>249</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>635</bbox_bottom>
+  <bbox_bottom>420</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>378</width>
-  <height>636</height>
+  <width>250</width>
+  <height>421</height>
   <frames>
     <frame index="0">images\attacher_placeholder_0.png</frame>
     <frame index="1">images\attacher_placeholder_1.png</frame>
