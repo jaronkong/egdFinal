@@ -39,60 +39,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define grabbed item and timer
+            <string>///Define direction
 
 dir = 1;
-
-held = noone;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Check to stop moving held item
-
-if ( instance_exists( held ) ) {
-    held.vspeed = 0;
-    var tPosX = gridToRoomX( gridFromRoomX( x ) );
-    if ( abs( held.x - tPosX ) &gt; gridManager.width ) {
-        held.x = ( tPosX + ( dir * gridManager.width ) );
-        held.hspeed = 0;
-        held = noone;
-    } else if ( held.hspeed == 0 ) {
-        held = noone;
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -131,10 +80,8 @@ if ( instance_exists( held ) ) {
             <kind>1</kind>
             <string>///Move item directly above
 
-if ( !instance_exists( held ) ) {
-    held = gridItemAtPoint( x, y - gridManager.height );
-    if ( instance_exists( held ) ) held.hspeed = ( dir * 1 );
-}
+var tItem = gridItemAtPoint( x, y - gridManager.height );
+if ( instance_exists( tItem ) ) tItem.goalX += dir;
 </string>
           </argument>
         </arguments>

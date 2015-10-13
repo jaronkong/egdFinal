@@ -176,6 +176,7 @@ with ( item ) {
         if ( instance_exists( tInst ) ) {
             x = ( gridToRoomX( cx + tDir/2 ) - tDir*width/2 );
             hspeed = ( min( 0, hspeed * tDir ) * tDir );
+            goalX = cx;
         }
     }
     //Vertical
