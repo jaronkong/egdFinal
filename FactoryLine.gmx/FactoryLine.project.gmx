@@ -63,6 +63,7 @@
       <object>objects\interactiveBlock</object>
       <object>objects\conveyorBelt</object>
       <object>objects\dispenser</object>
+      <object>objects\modifier</object>
     </objects>
     <objects name="Items">
       <object>objects\item</object>
