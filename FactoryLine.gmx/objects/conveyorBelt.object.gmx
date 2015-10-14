@@ -62,9 +62,82 @@ dir = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set cooldown
+            <string>///Set movement binding
 
-cooldown = 0.25;
+moveButton = vk_space;
+moveCooldown = 0.25;
+moveTime = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set default binding
+
+button = ord( 'R' );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move item directly above
+
+if ( moveTime &gt; 0 ) {
+    moveTime -= ( 1 / room_speed );
+} else if ( keyboard_check_pressed( moveButton ) ) {
+    var tItem = gridItemAtPoint( x, y - gridManager.height );
+    if ( instance_exists( tItem ) ) {
+        var tGoal = ( gridFromRoomX( x ) + dir );
+        tItem.goalX = ( max( tItem.goalX*dir, tGoal*dir ) * dir );
+    }
+    moveTime += moveCooldown;
+}
 </string>
           </argument>
         </arguments>
@@ -101,13 +174,9 @@ cooldown = 0.25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move item directly above
+            <string>///Flip direction
 
-var tItem = gridItemAtPoint( x, y - gridManager.height );
-if ( instance_exists( tItem ) ) {
-    var tGoal = ( gridFromRoomX( x ) + dir );
-    tItem.goalX = ( max( tItem.goalX*dir, tGoal*dir ) * dir );
-}
+dir = -dir;
 </string>
           </argument>
         </arguments>
