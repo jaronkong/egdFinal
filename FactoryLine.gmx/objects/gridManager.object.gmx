@@ -50,12 +50,13 @@ height = s;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create the grid
+            <string>///Create the grids
 
-grid = ds_grid_create(
-    ceil( room_width / width ),
-    ceil( room_height / height )
-);
+gridWidth = ceil( room_width / width );
+gridHeight = ceil( room_height / height );
+
+gridBlock = ds_grid_create( gridWidth, gridHeight );
+gridItem = ds_grid_create( gridWidth, gridHeight );
 </string>
           </argument>
         </arguments>
@@ -78,9 +79,10 @@ grid = ds_grid_create(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Remove the grid
+            <string>///Remove the grids
 
-ds_grid_destroy( grid );
+ds_grid_destroy( gridBlock );
+ds_grid_destroy( gridItem );
 </string>
           </argument>
         </arguments>
@@ -103,9 +105,10 @@ ds_grid_destroy( grid );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Reset the grid
+            <string>///Reset the grids
 
-ds_grid_clear( grid, noone );
+ds_grid_clear( gridBlock, noone );
+ds_grid_clear( gridItem, noone );
 </string>
           </argument>
         </arguments>
@@ -128,7 +131,7 @@ ds_grid_clear( grid, noone );
             <kind>1</kind>
             <string>///Include all blocks
 
-var tGrid = grid;
+var tGrid = gridBlock;
 
 with ( block ) {
     if ( !gridValidPoint( x, y ) ) continue;
@@ -158,7 +161,7 @@ with ( block ) {
             <kind>1</kind>
             <string>///Check for item collisions
 
-var tGrid = grid;
+var tGrid = gridItem;
 
 with ( item ) {
     if ( !gridValidPoint( x, y ) ) continue;
@@ -190,23 +193,14 @@ with ( item ) {
     }
     
     //Check for item collisions
-    tInst = gridInstanceAtPoint( x, y );
+    tInst = gridItemAtPoint( x, y );
     if ( instance_exists( tInst ) ) {
-        if ( isObject( tInst, item ) ) {
-            var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
-            tNew.hspeed = mean( hspeed, tInst.hspeed );
-            tNew.vspeed = mean( vspeed, tInst.vspeed );
-            with ( tInst ) instance_destroy( );
-            instance_destroy( );
-            ds_grid_set( tGrid, cx, cy, tNew );
-        } else if ( isObject( tInst, block ) ) {
-            //Things are moving too fast
-            show_debug_message( "Item inside block!" );
-        } else {
-            //What is this?
-            var tObjName = object_get_name( tInst.object_index );
-            show_debug_message( "A " + tObjName + " in the grid?" );
-        }
+        var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
+        tNew.hspeed = mean( hspeed, tInst.hspeed );
+        tNew.vspeed = mean( vspeed, tInst.vspeed );
+        with ( tInst ) instance_destroy( );
+        instance_destroy( );
+        ds_grid_set( tGrid, cx, cy, tNew );
     } else {
         ds_grid_set( tGrid, cx, cy, id );
     }
@@ -240,12 +234,12 @@ draw_set_alpha( 1 );
 
 draw_primitive_begin( pr_linelist );
 
-for ( var i = 0; i &lt; ds_grid_width( grid ); ++i ) {
+for ( var i = 0; i &lt; gridWidth; ++i ) {
     draw_vertex( i * width, 0 );
     draw_vertex( i * width, room_height );
 }
 
-for ( var j = 0; j &lt; ds_grid_height( grid ); ++j ) {
+for ( var j = 0; j &lt; gridHeight; ++j ) {
     draw_vertex( 0, j * height );
     draw_vertex( room_width, j * height );
 }
@@ -279,19 +273,17 @@ draw_set_alpha( 1 );
 draw_set_color( c_white );
 draw_set_alpha( 1 );
 
-for ( var i = 0; i &lt; ds_grid_width( grid ); ++i ) {
-    for ( var j = 0; j &lt; ds_grid_height( grid ); ++j ) {
-        var tInst = ds_grid_get( grid, i, j );
-        if ( instance_exists( tInst ) ) {
-            var px = gridToRoomX( i );
-            var py = gridToRoomY( j );
-            if ( isObject( tInst, block ) ) {
-                draw_set_color( c_aqua );
-            } else if ( isObject( tInst, item ) ) {
-                draw_set_color( c_lime );
-            } else {
-                draw_set_color( c_red );
-            }
+for ( var i = 0; i &lt; gridWidth; ++i ) {
+    for ( var j = 0; j &lt; gridHeight; ++j ) {
+        var px = gridToRoomX( i );
+        var py = gridToRoomY( j );
+        draw_set_color( c_black );
+        if ( instance_exists( gridItemAtPoint( px, py ) ) ) {
+            draw_set_color( c_lime );
+        } else if ( instance_exists( gridBlockAtPoint( px, py ) ) ) {
+            draw_set_color( c_aqua );
+        }
+        if ( draw_get_color( ) != c_black ) {
             draw_rectangle( px-width/2, py-height/2,
                 px+width/2, py+height/2, false );
         }
