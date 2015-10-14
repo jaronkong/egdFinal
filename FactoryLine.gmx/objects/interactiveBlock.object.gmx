@@ -147,8 +147,8 @@ if ( mouseClicked( id ) ) {
 }
 if ( mouseDownOn( id ) ) {
     var tDist = point_distance( mouse_x, mouse_y, clickX, clickY );
-    if ( tDist &gt;= dragTolerance ) {
-        createPlaceableItem( x, y, object_index );
+    if ( tDist &gt;= dragTolerance) {
+        createPlaceableItem( mouse_x, mouse_y, object_index );
         instance_destroy();
     }
 }
