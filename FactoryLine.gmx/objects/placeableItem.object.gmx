@@ -88,8 +88,8 @@ if ( held ) {
         if ( tOffY &gt; tGridSize / 2 ) {
             targetY += tGridSize;
         }
-        targetX = tGridSize * (targetX div tGridSize);
-        targetY = tGridSize * (targetY div tGridSize );
+        targetX = gridToRoomX( gridFromRoomX( mouse_x ));//tGridSize * (targetX div tGridSize);
+        targetY = gridToRoomY( gridFromRoomY( mouse_y ));//tGridSize * (targetY div tGridSize );
 
         //Check if different from prev coord, and play sound if changed
         if ( targetX != prevX || targetY != prevY ) {

@@ -40,6 +40,7 @@
     <script>scripts\gridBlockAtPoint.gml</script>
     <script>scripts\gridItemAtPoint.gml</script>
     <script>scripts\mouseClicked.gml</script>
+    <script>scripts\mouseDownOn.gml</script>
     <script>scripts\createPlaceableItem.gml</script>
   </scripts>
   <objects name="objects">
