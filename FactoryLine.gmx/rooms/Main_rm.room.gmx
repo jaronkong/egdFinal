@@ -66,6 +66,7 @@
     <instance objName="conveyorBelt" x="608" y="560" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="conveyorBelt" x="656" y="512" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="testCon" x="32" y="64" name="inst_219E21C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="modifier" x="560" y="400" name="inst_CD67BCFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

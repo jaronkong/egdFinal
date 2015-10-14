@@ -170,15 +170,15 @@ if ( mouseDownOn( id ) ) {
             <kind>1</kind>
             <string>///Draw outline
 
-
-if ( mouseHoverOn( id ) ) {
-    d3d_set_fog( true, highlightColor, depth, depth );
-    draw_sprite_ext( sprite_index, image_index, x, y, 
-                highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
-    d3d_set_fog( false, highlightColor, depth, depth );
+if ( sprite_exists( sprite_index ) ) {
+    if ( mouseHoverOn( id ) ) {
+        d3d_set_fog( true, highlightColor, depth, depth );
+        draw_sprite_ext( sprite_index, image_index, x, y, 
+                    highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
+        d3d_set_fog( false, highlightColor, depth, depth );
+    }
+    draw_self( );
 }
-draw_self();
-
 </string>
           </argument>
         </arguments>
