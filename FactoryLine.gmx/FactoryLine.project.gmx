@@ -20,6 +20,7 @@
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
     <sprite>sprites\block_spr</sprite>
     <sprite>sprites\craneArm_spr</sprite>
+    <sprite>sprites\pokeCrane_spr</sprite>
     <sprites name="Elements">
       <sprite>sprites\attacher_placeholder</sprite>
       <sprite>sprites\dispenser_placeholder</sprite>
@@ -42,6 +43,9 @@
     <script>scripts\mouseClicked.gml</script>
     <script>scripts\mouseDownOn.gml</script>
     <script>scripts\createPlaceableItem.gml</script>
+    <scripts name="InterfaceActions">
+      <script>scripts\callRebindCrane.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\gridManager</object>
@@ -51,6 +55,8 @@
       <object>objects\traySection</object>
       <object>objects\HUDmain</object>
       <object>objects\placeableItem</object>
+      <object>objects\rebindPoker</object>
+      <object>objects\testCon</object>
     </objects>
     <objects name="Blocks">
       <object>objects\block</object>
