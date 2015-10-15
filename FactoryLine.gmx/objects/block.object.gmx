@@ -41,10 +41,15 @@
             <kind>1</kind>
             <string>///Solidity
 
-blockTop = true;
-blockBottom = true;
-blockLeft = true;
-blockRight = true;
+cellCount = 0;
+cellPosX = false;
+cellPosY = false;
+cellSolid = false;
+
+cellPosX[cellCount] = 0;
+cellPosY[cellCount] = 0;
+cellSolid[cellCount] = ( GridSolid.Top | GridSolid.Bottom | GridSolid.Left | GridSolid.Right );
+++cellCount;
 </string>
           </argument>
         </arguments>

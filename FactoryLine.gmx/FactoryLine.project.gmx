@@ -37,6 +37,7 @@
     <script>scripts\gridToRoomX.gml</script>
     <script>scripts\gridToRoomY.gml</script>
     <script>scripts\gridValidPoint.gml</script>
+    <script>scripts\gridValidCell.gml</script>
     <script>scripts\gridBlockAtPoint.gml</script>
     <script>scripts\gridItemAtPoint.gml</script>
     <script>scripts\mouseClicked.gml</script>

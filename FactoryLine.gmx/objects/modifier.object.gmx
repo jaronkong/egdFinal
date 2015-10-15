@@ -41,8 +41,7 @@
             <kind>1</kind>
             <string>///Nonsolid sides
 
-blockLeft = false;
-blockRight = false;
+cellSolid[0] &amp;= ~( GridSolid.Left | GridSolid.Right );
 </string>
           </argument>
         </arguments>

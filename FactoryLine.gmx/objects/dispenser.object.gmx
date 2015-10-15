@@ -39,9 +39,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set default binding
+            <string>///Nonsolid bottom
 
-button = ord( 'E' );
+cellSolid[0] &amp;= ~GridSolid.Bottom;
 </string>
           </argument>
         </arguments>
@@ -62,9 +62,9 @@ button = ord( 'E' );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Nonsolid bottom
+            <string>///Set default binding
 
-blockBottom = false;
+button = ord( 'E' );
 </string>
           </argument>
         </arguments>
