@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Setup
 
-heldItem = dispenser;
-image = object_get_sprite(heldItem);
+heldItem = noone;
+image = noone;
 
 previewScaling = 0.25; //size of image in tray
 
@@ -137,6 +137,11 @@ if ( mouse_check_button( mb_left ) ) {
             //Grabbing for first time
             grabOffset = grabOffsetMax;
             audio_play_sound( craneSlam_sd, 1, false );
+            /*
+            if ( !instance_exists( heldItem ) &amp;&amp; heldItem != noone) {
+                instance_create( x, y, heldItem );
+            }
+            */
         }
         held = true;   
     }
@@ -145,7 +150,11 @@ else {
     if ( held ) {
         //Releasing item
         audio_play_sound( placeItem_sd, 1, false );
-        instance_create( targetX, targetY, heldItem ); 
+        with ( heldItem ) {
+            x = other.targetX;
+            y = other.targetY;
+            active = true;
+        }
         instance_destroy();
     }
     held = false;

@@ -72,6 +72,8 @@ cellSolid[cellCount] = ( GridSolid.Top | GridSolid.Bottom | GridSolid.Left | Gri
             <kind>1</kind>
             <string>///Drag selection
 
+active = true;
+
 highlightOutlineSize = 1.1;
 highlightColor = c_yellow;
 highlightAlpha = 0.8;
@@ -115,14 +117,11 @@ highlightAlpha = 0.8;
             <kind>1</kind>
             <string>///Clicked for dragging
 
-if ( mouseDownOn( id ) ) {
-    var tDist = point_distance( mouse_x, mouse_y, clickX, clickY );
-    //if ( tDist &gt;= dragTolerance ) {
-        with ( createPlaceableItem( mouse_x, mouse_y, object_index ) ) {
-            held = true;
-        }
-        instance_destroy();
-    //}
+if ( active &amp;&amp; mouseDownOn( id ) ) {
+    with ( createPlaceableItem( x, y, id ) ) {
+        //held = true;
+    }
+    active = false;
 }
 
 
@@ -166,7 +165,7 @@ if ( mouseDownOn( id ) ) {
             <kind>1</kind>
             <string>///Draw outline
 
-if ( sprite_exists( sprite_index ) ) {
+if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
     if ( mouseHoverOn( id ) ) {
         d3d_set_fog( true, highlightColor, depth, depth );
         draw_sprite_ext( sprite_index, image_index, x, y, 
