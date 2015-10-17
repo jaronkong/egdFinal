@@ -42,6 +42,9 @@
             <string>///Define direction
 
 dir = 1;
+
+//No reason to limit direction changing
+cooldown = 0.1;
 </string>
           </argument>
         </arguments>
@@ -131,10 +134,17 @@ button = ord( 'R' );
 if ( moveTime &gt; 0 ) {
     moveTime -= ( 1 / room_speed );
 } else if ( keyboard_check_pressed( moveButton ) ) {
-    var tItem = gridItemAtPoint( x, y - gridManager.height );
-    if ( instance_exists( tItem ) ) {
-        var tGoal = ( gridFromRoomX( x ) + dir );
-        tItem.goalX = ( max( tItem.goalX*dir, tGoal*dir ) * dir );
+    var cx = gridFromRoomX( x );
+    var cy = gridFromRoomY( y );
+    for ( var i = 0; i &lt; cellCount; ++i ) {
+        var tItem = gridItemAtPoint(
+            gridToRoomX( cx + cellPosX[i] ),
+            gridToRoomY( cy + cellPosY[i] - 1 )
+        );
+        if ( instance_exists( tItem ) ) {
+            var tGoal = ( cx + cellPosX[i] + dir );
+            tItem.goalX = ( max( tItem.goalX*dir, tGoal*dir ) * dir );
+        }
     }
     moveTime += moveCooldown;
 }

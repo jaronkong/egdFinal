@@ -28,7 +28,11 @@
       <sprite>sprites\combiner_placeholder</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\Wall_bkgd</background>
+    <background>background\Bounds_bkgd</background>
+    <background>background\Console_bkgd</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\isObject.gml</script>
@@ -37,6 +41,7 @@
     <script>scripts\gridToRoomX.gml</script>
     <script>scripts\gridToRoomY.gml</script>
     <script>scripts\gridValidPoint.gml</script>
+    <script>scripts\gridValidCell.gml</script>
     <script>scripts\gridBlockAtPoint.gml</script>
     <script>scripts\gridItemAtPoint.gml</script>
     <script>scripts\mouseClicked.gml</script>
@@ -61,8 +66,12 @@
     <objects name="Blocks">
       <object>objects\block</object>
       <object>objects\interactiveBlock</object>
-      <object>objects\conveyorBelt</object>
       <object>objects\dispenser</object>
+      <object>objects\modifier</object>
+      <objects name="ConveyorBelts">
+        <object>objects\conveyorBelt</object>
+        <object>objects\conveyorBeltDouble</object>
+      </objects>
     </objects>
     <objects name="Items">
       <object>objects\item</object>
