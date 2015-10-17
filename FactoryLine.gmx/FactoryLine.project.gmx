@@ -28,7 +28,11 @@
       <sprite>sprites\combiner_placeholder</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\Wall_bkgd</background>
+    <background>background\Bounds_bkgd</background>
+    <background>background\Console_bkgd</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\isObject.gml</script>
