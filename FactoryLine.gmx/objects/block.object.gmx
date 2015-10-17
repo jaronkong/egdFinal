@@ -67,11 +67,6 @@ blockRight = true;
             <kind>1</kind>
             <string>///Drag selection
 
-//clicking and dragging are different, need tolerance.
-clickX = 0;
-clickY = 0;
-dragTolerance = 4;
-
 highlightOutlineSize = 1.1;
 highlightColor = c_yellow;
 highlightAlpha = 0.8;
@@ -115,18 +110,14 @@ highlightAlpha = 0.8;
             <kind>1</kind>
             <string>///Clicked for dragging
 
-if ( mouseClicked( id ) ) {
-    clickX = mouse_x;
-    clickY = mouse_y;
-}
 if ( mouseDownOn( id ) ) {
     var tDist = point_distance( mouse_x, mouse_y, clickX, clickY );
-    if ( tDist &gt;= dragTolerance ) {
+    //if ( tDist &gt;= dragTolerance ) {
         with ( createPlaceableItem( mouse_x, mouse_y, object_index ) ) {
             held = true;
         }
         instance_destroy();
-    }
+    //}
 }
 
 
