@@ -32,8 +32,10 @@ sectionOffset = 0;
 ownerTray = noone;
 
 heldItemType = dispenser;
-heldItem = noone;
+heldItemImage = object_get_sprite( heldItemType );
 heldItemQuantity = 2; //-1 for unlimited
+
+heldItemSize = 0.25;
 
 </string>
           </argument>
@@ -57,7 +59,7 @@ heldItemQuantity = 2; //-1 for unlimited
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Align to tray
+            <string>///Align to tray and dispense
 
 if ( instance_exists( ownerTray ) ) {
     y = ownerTray.y 
@@ -68,29 +70,44 @@ if ( instance_exists( ownerTray ) ) {
     x = ownerTray.x;
     
     //Check to see if need to release hold on held item
-    if ( ownerTray.currentSlideOffset &gt;= 0 ) {
-        if ( !instance_exists( heldItem ) ) {
-                    
-            if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0 ) {
-                heldItemQuantity -= 1;
-                heldItem = createPlaceableItem( x, y, heldItemType );
-            }
+    if ( mouseClicked( id ) ) {       
+        if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0 ) {
+            heldItemQuantity -= 1;
+            createPlaceableItem( x, y, instance_create( x, y, heldItemType ), id );
         }
+            
+        
     }
     
 }
 
-with ( heldItem ) {
-    if ( !held ) {
-        x = other.x;
-        y = other.y;
-        targetX = x;
-        targetY = y;
-    }
-    else {
-        //If drag, break link
-        other.heldItem = noone;
-    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw the held item
+
+draw_self();
+if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0) {
+    draw_sprite_ext( heldItemImage, image_index, x, y, heldItemSize, heldItemSize, 0, c_white, 1 );
 }
 
 </string>

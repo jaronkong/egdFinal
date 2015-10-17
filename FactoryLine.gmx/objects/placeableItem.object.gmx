@@ -29,6 +29,7 @@
 
 heldItem = noone;
 image = noone;
+originTraySection = noone;
 
 previewScaling = 0.25; //size of image in tray
 
@@ -146,18 +147,8 @@ if ( mouse_check_button( mb_left ) ) {
         held = true;   
     }
 }
-else {
-    if ( held ) {
-        //Releasing item
-        audio_play_sound( placeItem_sd, 1, false );
-        with ( heldItem ) {
-            x = other.targetX;
-            y = other.targetY;
-            active = true;
-        }
-        instance_destroy();
-    }
-    held = false;
+else if ( mouse_check_button_released( mb_left ) ){
+    placeItemAttempt( id );
     
 }
 

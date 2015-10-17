@@ -66,7 +66,11 @@
     <script>scripts\mouseClicked.gml</script>
     <script>scripts\mouseDownOn.gml</script>
     <script>scripts\mouseHoverOn.gml</script>
-    <script>scripts\createPlaceableItem.gml</script>
+    <scripts name="DraggingAndManipulatingElements">
+      <script>scripts\createPlaceableItem.gml</script>
+      <script>scripts\isPlaceableLocation.gml</script>
+      <script>scripts\placeItemAttempt.gml</script>
+    </scripts>
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
     </scripts>
