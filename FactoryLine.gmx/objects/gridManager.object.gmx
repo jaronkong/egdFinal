@@ -168,6 +168,7 @@ var tSolid = gridSolid;
 var tGrid = gridBlock;
 
 with ( block ) {
+    if ( !active ) continue;
     if ( !gridValidPoint( x, y ) ) continue;
     var tCenterX = gridFromRoomX( x );
     var tCenterY = gridFromRoomY( y );
