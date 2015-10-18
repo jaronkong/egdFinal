@@ -31,6 +31,7 @@
     <sound>sound\craneSlam_sd</sound>
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
+    <sound>sound\placementFail_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>

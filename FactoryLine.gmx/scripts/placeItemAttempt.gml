@@ -31,7 +31,7 @@ if ( instance_exists( aDragItem ) ) {
         with ( aDragItem ) {
             if ( held ) {
                 //Releasing item
-                //audio_play_sound( placeItem_sd, 1, false );
+                audio_play_sound( placementFail_sd, 1, false );
                 with ( heldItem ) {
                     x = tStartX;
                     y = tStartY;
@@ -54,7 +54,7 @@ if ( instance_exists( aDragItem ) ) {
                 //Refund the item quantity
                 heldItemQuantity += 1;
             }
-            
+            audio_play_sound( placementFail_sd, 1, false );
             instance_destroy();
 
         }
