@@ -55,14 +55,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\isObject.gml</script>
-    <script>scripts\gridFromRoomX.gml</script>
-    <script>scripts\gridFromRoomY.gml</script>
-    <script>scripts\gridToRoomX.gml</script>
-    <script>scripts\gridToRoomY.gml</script>
-    <script>scripts\gridValidPoint.gml</script>
-    <script>scripts\gridValidCell.gml</script>
-    <script>scripts\gridBlockAtPoint.gml</script>
-    <script>scripts\gridItemAtPoint.gml</script>
+    <scripts name="GridFunctions">
+      <script>scripts\gridFromRoomX.gml</script>
+      <script>scripts\gridFromRoomY.gml</script>
+      <script>scripts\gridToRoomX.gml</script>
+      <script>scripts\gridToRoomY.gml</script>
+      <script>scripts\gridValidPoint.gml</script>
+      <script>scripts\gridValidCell.gml</script>
+      <script>scripts\gridBlockAtPoint.gml</script>
+      <script>scripts\gridItemAtPoint.gml</script>
+    </scripts>
     <script>scripts\mouseClicked.gml</script>
     <script>scripts\mouseDownOn.gml</script>
     <script>scripts\mouseHoverOn.gml</script>
