@@ -67,17 +67,27 @@
       <script>scripts\gridItemAtPoint.gml</script>
     </scripts>
     <script>scripts\mouseClicked.gml</script>
+    <script>scripts\mouseRightClicked.gml</script>
     <script>scripts\mouseDownOn.gml</script>
     <script>scripts\mouseHoverOn.gml</script>
     <scripts name="DraggingAndManipulatingElements">
       <script>scripts\createPlaceableItem.gml</script>
       <script>scripts\isPlaceableLocation.gml</script>
       <script>scripts\placeItemAttempt.gml</script>
+      <scripts name="Selections">
+        <script>scripts\selectionAdd.gml</script>
+        <script>scripts\selectionsIsSelected.gml</script>
+        <script>scripts\selectionsClear.gml</script>
+        <script>scripts\selectionsRemove.gml</script>
+      </scripts>
     </scripts>
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\main_ft</font>
+  </fonts>
   <objects name="objects">
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
@@ -88,6 +98,7 @@
       <object>objects\placeableItem</object>
       <object>objects\rebindPoker</object>
       <object>objects\testCon</object>
+      <object>objects\selectionController</object>
     </objects>
     <objects name="Blocks">
       <object>objects\block</object>

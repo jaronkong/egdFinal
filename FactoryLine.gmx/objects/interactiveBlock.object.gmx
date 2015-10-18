@@ -42,12 +42,98 @@
             <string>///Define binding
 
 button = vk_nokey;
+buttonLabel = "";
 
 //How long before you can activate it again
 cooldown = 1;
 
 //Track the current cooldaown value
 time = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Highlights
+
+selected = false;
+
+highlightOutlineSize = 1.1;
+targetHighlightOutlineSize = 1.1;
+highlightOutlineBounceSize = 1.5;
+highlightOutlineTween = 0.2;
+
+highlightColor = c_yellow;
+highlightAlpha = 0.8;
+bindKeyColor = c_lime;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Key binding visuals
+
+bindingWindowWidth = 200;
+bindingWindowHeight = 32;
+bindingWindowColor = c_white;
+bindingWindowAlpha = 0.8;
+
+bindingWindowScale = 0;
+bindingWindowScale_target = 1;
+bindingWindowScale_tween = 0.5;
+bindingWindowScaleLocked = 0.8;
+
+confirmingKey = false; //Whether or not to be flashing the confirmation
+bindingWindowOverColor = c_green;            //Upon locking a key, the confirmation will flash
+bindingWindowOverColorTolerance = 0.2;
+bindingWindowOverColorAlpha = 0;
+bindingWindowOverColorAlpha_target = 0;
+bindingWindowOverColorAlpha_tween = 0.5;
+bindingWindowOverColorDuration = room_speed * 0.75;
+bindingWindowOverColorDurationMax = room_speed * 0.75;
+
+bindingWindowText = "Press a key to bind."
+bindingWindowTextConfirm = "Bind complete.";
+bindingWindowTextColor = c_black;
+bindingWindowTextColorConfirmed = c_white;
+bindingWindowTextAlphaTolerance = 0.1;
+bindingWindowTextAlpha = 0;
+bindingWindowTextAlpha_target = 0;
+bindingWindowTextAlpha_tween = 0.3;
+bindingWindowTextFont = main_ft;
+
 </string>
           </argument>
         </arguments>
@@ -90,6 +176,120 @@ if ( time &gt; 0 ) {
     time -= ( 1 / room_speed );
 } else if ( keyboard_check_pressed( button ) &amp;&amp; ( button != vk_nokey ) ) {
     event_user( 15 );
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Key rebinding
+
+selected = selectionsIsSelected( id );
+
+if ( mouseRightClicked( id ) ) {
+    selectionAdd( id );
+    highlightOutlineSize = highlightOutlineBounceSize;
+}
+else {
+    if ( mouse_check_button_pressed( mb_left ) ) {
+        selectionsClear();
+    }
+}
+
+if ( selected ) {
+    bindingWindowScale_target = 1;
+    if ( keyboard_check_pressed( vk_anykey ) ) {
+        if ( keyboard_lastchar != "" ) {
+            buttonLabel = keyboard_lastchar;
+            button = ord( string_upper(buttonLabel) );
+            selectionsRemove( id );
+            bindingWindowScale_target = bindingWindowScaleLocked;
+            confirmingKey = true;
+            bindingWindowOverColorDuration = bindingWindowOverColorDurationMax;
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tweening
+
+highlightOutlineSize = lerp( highlightOutlineSize, 
+                            targetHighlightOutlineSize, 
+                            highlightOutlineTween );
+                 
+bindingWindowScale = lerp( bindingWindowScale, 
+                            bindingWindowScale_target, 
+                            bindingWindowScale_tween );
+
+bindingWindowTextAlpha = lerp( bindingWindowTextAlpha,
+                                bindingWindowTextAlpha_target,
+                                bindingWindowTextAlpha_tween );
+                                
+bindingWindowOverColorAlpha = lerp( bindingWindowOverColorAlpha,
+                                bindingWindowOverColorAlpha_target,
+                                bindingWindowOverColorAlpha_tween );
+//Confirmation flashing
+if ( confirmingKey ) {
+    bindingWindowOverColorDuration --;
+    if ( bindingWindowOverColorDuration &lt;= 0 ) {
+        confirmingKey = false;
+    }
+}      
+//Flash the confirmation color   
+if ( abs( bindingWindowOverColorAlpha - bindingWindowOverColorAlpha_target ) &lt;= bindingWindowOverColorTolerance ) {
+    if ( bindingWindowOverColorAlpha_target &lt;= 0 ) {
+        bindingWindowOverColorAlpha_target = 1;
+    }
+    else {
+        bindingWindowOverColorAlpha_target = 0;
+    }
+}                       
+
+//Flash the window text
+if ( abs( bindingWindowTextAlpha - bindingWindowTextAlpha_target ) &lt;= bindingWindowTextAlphaTolerance ) {
+    if ( bindingWindowTextAlpha_target &lt;= 0 ) {
+        bindingWindowTextAlpha_target = 1;
+    }
+    else {
+        bindingWindowTextAlpha_target = 0;
+    }
+}
+
+if ( !selected &amp;&amp; !confirmingKey ) {
+    bindingWindowScale_target = 0;
 }
 </string>
           </argument>
@@ -150,6 +350,118 @@ if ( time &gt; 0 ) {
             <string>///Reset cooldown
 
 time += cooldown;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw outline
+
+if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
+    if ( mouseHoverOn( id ) ) {
+        d3d_set_fog( true, highlightColor, depth, depth );
+        draw_sprite_ext( sprite_index, image_index, x, y, 
+                    highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
+        d3d_set_fog( false, highlightColor, depth, depth );
+    }
+    draw_self( );
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw key binding info
+
+draw_set_color( c_yellow );
+draw_set_valign( fa_center );
+draw_set_halign( fa_center );
+
+draw_text( x + 8, y, buttonLabel );
+
+
+draw_set_alpha( bindingWindowAlpha );
+draw_set_color( bindingWindowColor );
+draw_rectangle( x - bindingWindowWidth/2*bindingWindowScale, 
+                y - bindingWindowHeight/2*bindingWindowScale,
+                x + bindingWindowWidth/2*bindingWindowScale, 
+                y + bindingWindowHeight/2*bindingWindowScale,
+                false );
+                
+if ( confirmingKey ) {
+    draw_set_alpha( bindingWindowOverColorAlpha );
+    draw_set_color( bindingWindowOverColor );
+    draw_rectangle( x - bindingWindowWidth/2*bindingWindowScale, 
+                    y - bindingWindowHeight/2*bindingWindowScale,
+                    x + bindingWindowWidth/2*bindingWindowScale, 
+                    y + bindingWindowHeight/2*bindingWindowScale,
+                    false );
+}         
+       
+
+draw_set_font( bindingWindowTextFont );
+if ( confirmingKey ) {
+    draw_set_color( bindingWindowTextColorConfirmed );
+    draw_set_alpha( 1 );
+    draw_text_transformed( x, y, bindingWindowTextConfirm, 
+                        bindingWindowScale, bindingWindowScale, 0);
+}
+else {
+    draw_set_color( bindingWindowTextColor );
+    draw_set_alpha( bindingWindowTextAlpha );
+    draw_text_transformed( x, y, bindingWindowText, 
+                        bindingWindowScale, bindingWindowScale, 0);
+}
+draw_set_alpha( 1 );
+
+
 </string>
           </argument>
         </arguments>
