@@ -29,6 +29,9 @@
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_placeholder</sprite>
     </sprites>
+    <sprites name="Items">
+      <sprite>sprites\garbage_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
@@ -67,6 +70,12 @@
       <script>scripts\callRebindCrane.gml</script>
     </scripts>
     <script>scripts\shakeElement.gml</script>
+    <scripts name="ItemFunctions">
+      <script>scripts\itemProperty.gml</script>
+      <script>scripts\itemCreate.gml</script>
+      <script>scripts\itemFromTag.gml</script>
+      <script>scripts\itemDefine.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\main_ft</font>
@@ -96,6 +105,7 @@
     <objects name="Items">
       <object>objects\item</object>
     </objects>
+    <object>objects\itemManager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
