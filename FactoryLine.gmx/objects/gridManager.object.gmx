@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define grid size
 
-var s = 48;
+var s = 64;
 width = s;
 height = s;
 
@@ -286,7 +286,7 @@ with ( item ) {
             <kind>1</kind>
             <string>///Draw gridlines
 
-draw_set_color( c_white );
+draw_set_color( make_color_rgb(90,90,90) );
 draw_set_alpha( 1 );
 
 draw_primitive_begin( pr_linelist );
