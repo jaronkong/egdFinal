@@ -58,7 +58,7 @@
     <instance objName="verticalTray" x="1104" y="656" name="inst_A12EC01A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridManager" x="0" y="0" name="inst_A4EBF76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="itemManager" x="16" y="0" name="inst_B1AB1933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="item" x="544" y="96" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;garbage&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="item" x="544" y="96" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dispenser" x="512" y="16" name="inst_880E3D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="conveyorBelt" x="608" y="560" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="conveyorBelt" x="656" y="512" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

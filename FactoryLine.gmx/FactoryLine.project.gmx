@@ -31,6 +31,7 @@
     </sprites>
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
+      <sprite>sprites\slime_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -103,9 +104,9 @@
       </objects>
     </objects>
     <objects name="Items">
+      <object>objects\itemManager</object>
       <object>objects\item</object>
     </objects>
-    <object>objects\itemManager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
