@@ -15,6 +15,7 @@ if ( instance_exists( aDragItem ) ) {
             if ( held ) {
                 //Releasing item
                 audio_play_sound( placeItem_sd, 1, false );
+                shakeElement( heldItem, 2 );
                 with ( heldItem ) {
                     x = tTargetX;
                     y = tTargetY;
@@ -32,6 +33,7 @@ if ( instance_exists( aDragItem ) ) {
             if ( held ) {
                 //Releasing item
                 audio_play_sound( placementFail_sd, 1, false );
+                shakeElement( heldItem, 2 );
                 with ( heldItem ) {
                     x = tStartX;
                     y = tStartY;

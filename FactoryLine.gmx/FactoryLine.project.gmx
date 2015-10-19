@@ -84,6 +84,7 @@
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
     </scripts>
+    <script>scripts\shakeElement.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\main_ft</font>

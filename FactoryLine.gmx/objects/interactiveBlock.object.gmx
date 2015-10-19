@@ -295,6 +295,34 @@ if ( !selected &amp;&amp; !confirmingKey ) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Component Shake
+
+shakeAmount = lerp( shakeAmount, 0, shakeDecayTween );
+
+shakeOffsetX = random( shakeAmount ) * choose( 1, -1 );
+shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="25">
       <action>
@@ -354,6 +382,30 @@ time += cooldown;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Effects
+
+shakeElement( id, 5 );
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -386,16 +438,19 @@ time += cooldown;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw outline
+            <string>///Draw self
 
 if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
     if ( mouseHoverOn( id ) ) {
         d3d_set_fog( true, highlightColor, depth, depth );
-        draw_sprite_ext( sprite_index, image_index, x, y, 
+        draw_sprite_ext( sprite_index, image_index, 
+                    x + shakeOffsetX, y + shakeOffsetY, 
                     highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
         d3d_set_fog( false, highlightColor, depth, depth );
     }
-    draw_self( );
+    draw_sprite_ext( sprite_index, image_index, 
+                    x + shakeOffsetX, y + shakeOffsetY,
+                    image_xscale, image_yscale, 0, c_white, image_alpha );
 }
 
 </string>
@@ -426,14 +481,15 @@ draw_set_halign( fa_center );
 
 draw_text( x + 8, y, buttonLabel );
 
-
-draw_set_alpha( bindingWindowAlpha );
-draw_set_color( bindingWindowColor );
-draw_rectangle( x - bindingWindowWidth/2*bindingWindowScale, 
-                y - bindingWindowHeight/2*bindingWindowScale,
-                x + bindingWindowWidth/2*bindingWindowScale, 
-                y + bindingWindowHeight/2*bindingWindowScale,
-                false );
+if ( bindingWindowScale &gt; 0.05 ) {
+    draw_set_alpha( bindingWindowAlpha );
+    draw_set_color( bindingWindowColor );
+    draw_rectangle( x - bindingWindowWidth/2*bindingWindowScale, 
+                    y - bindingWindowHeight/2*bindingWindowScale,
+                    x + bindingWindowWidth/2*bindingWindowScale, 
+                    y + bindingWindowHeight/2*bindingWindowScale,
+                    false );
+}
                 
 if ( confirmingKey ) {
     draw_set_alpha( bindingWindowOverColorAlpha );
