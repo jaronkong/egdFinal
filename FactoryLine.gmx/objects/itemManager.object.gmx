@@ -57,6 +57,7 @@ recipes = ds_map_create( );
 
 var tTrash = itemDefine( "garbage", "Garbage", garbage_spr );
 var tSlime = itemDefine( "slime", "Slime Ball", slime_spr );
+var tRecipe = recipeDefine( "slime", "modifier", "garbage" );
 </string>
           </argument>
         </arguments>
