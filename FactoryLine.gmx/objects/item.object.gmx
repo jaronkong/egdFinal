@@ -72,6 +72,29 @@ goalX = gridFromRoomX( x );
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Define item ID
+
+itemID = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="1">
       <action>
@@ -104,6 +127,29 @@ goalX = gridFromRoomX( x );
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Update properties
+
+event_user( 15 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Apply movement
 
 var tGoalX = gridToRoomX( goalX );
@@ -118,6 +164,88 @@ if ( x == tGoalX ) {
     vspeed += ( 0.2 * 60 / room_speed );
     vspeed = min( vspeed, ( 6 * 60 / room_speed ) );
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Load properties from index
+
+if ( itemID &gt;= 0 ) {
+    sprite_index = itemProperty( itemID, Item.sprite );
+    width = ( bbox_right - bbox_left );
+    height = ( bbox_bottom - bbox_top );
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="76">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Update values
+
+event_user( 15 );
 </string>
           </argument>
         </arguments>
@@ -156,13 +284,17 @@ if ( x == tGoalX ) {
             <kind>1</kind>
             <string>///Draw self
 
-draw_set_color( c_black );
-draw_set_alpha( 1 );
-
-draw_rectangle( x-width/2, y-height/2, x+width/2, y+height/2, false );
-
-draw_set_color( c_white );
-draw_set_alpha( 1 );
+if ( sprite_exists( sprite_index ) ) {
+    draw_self( );
+} else {
+    draw_set_color( c_black );
+    draw_set_alpha( 1 );
+    
+    draw_rectangle( x-width/2, y-height/2, x+width/2, y+height/2, false );
+    
+    draw_set_color( c_white );
+    draw_set_alpha( 1 );
+}
 </string>
           </argument>
         </arguments>

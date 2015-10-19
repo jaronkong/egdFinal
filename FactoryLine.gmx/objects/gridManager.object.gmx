@@ -252,7 +252,7 @@ with ( item ) {
     //Check for item collisions
     tInst = gridItemAtPoint( x, y );
     if ( instance_exists( tInst ) ) {
-        var tNew = instance_create( mean( x, tInst.x ), mean( y, tInst.y ), item );
+        var tNew = itemCreate( mean( x, tInst.x ), mean( y, tInst.y ), "garbage" );
         tNew.hspeed = mean( hspeed, tInst.hspeed );
         tNew.vspeed = mean( vspeed, tInst.vspeed );
         with ( tInst ) instance_destroy( );

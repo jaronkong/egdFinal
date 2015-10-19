@@ -101,11 +101,15 @@ button = ord( 'W' );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Grab the item and do something
+            <string>///Apply the modifier to the item
 
 var tInst = gridItemAtPoint( x, y );
 if ( instance_exists( tInst ) ) {
-    show_debug_message( "Meh" );
+    var tItem = tInst.itemID;
+    var tResult = recipeResult( object_get_name( object_index ), tItem );
+    var tNew = itemCreate( tInst.x, tInst.y, tResult );
+    tNew.goalX = tInst.goalX;
+    with ( tInst ) instance_destroy( );
 }
 </string>
           </argument>
