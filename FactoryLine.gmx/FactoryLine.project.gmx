@@ -33,6 +33,10 @@
       <sprite>sprites\garbage_spr</sprite>
       <sprite>sprites\slime_spr</sprite>
     </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\distortMap_spr</sprite>
+      <sprite>sprites\smokeNormal_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
@@ -70,6 +74,32 @@
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
     </scripts>
+    <scripts name="Effects">
+      <scripts name="PostEffects">
+        <script>scripts\bloom_addToQueue.gml</script>
+        <script>scripts\burstBlurParticle.gml</script>
+        <script>scripts\distortionGlow_addToQueue.gml</script>
+        <script>scripts\refraction_addToQueue.gml</script>
+      </scripts>
+      <scripts name="Fluids">
+        <script>scripts\fluid_applyFlowToNewState.gml</script>
+        <script>scripts\fluid_computeFlow.gml</script>
+        <script>scripts\fluid_drawCircleBlob.gml</script>
+        <script>scripts\fluidAdvect.gml</script>
+        <script>scripts\fluidApplyBuoyancy.gml</script>
+        <script>scripts\fluidApplyImpulse.gml</script>
+        <script>scripts\fluidClearSurface.gml</script>
+        <script>scripts\fluidComputeDivergence.gml</script>
+        <script>scripts\fluidCreateSlab.gml</script>
+        <script>scripts\fluidDrawFinal.gml</script>
+        <script>scripts\fluidJacobi.gml</script>
+        <script>scripts\fluidSubtractGradient.gml</script>
+        <script>scripts\fluidSwapSlab.gml</script>
+      </scripts>
+      <script>scripts\effects_surfaceInit.gml</script>
+      <script>scripts\effects_getShaderSurface.gml</script>
+      <script>scripts\effects_globalSurfaceExists.gml</script>
+    </scripts>
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
       <script>scripts\itemProperty.gml</script>
@@ -80,12 +110,59 @@
       <script>scripts\recipeResult.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shaders name="PostEffects">
+      <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
+      <shader type="GLSLES">shaders\blur_sdr.shader</shader>
+      <shader type="GLSLES">shaders\dispersion_sdr.shader</shader>
+      <shader type="GLSLES">shaders\distortionGlow_sdr.shader</shader>
+      <shader type="GLSLES">shaders\refraction_sdr.shader</shader>
+    </shaders>
+    <shaders name="Fluid">
+      <shader type="GLSLES">shaders\fluid_computeFlow_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluid_flow_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluid_flowToState_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluid_initState_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluid_testSimpleSpread.shader</shader>
+      <shader type="GLSLES">shaders\fluidAdvect_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidAdvectIdentical_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidBuoyancy_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidComputeDivergence_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidFill_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidJacobi_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidSplat_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidSubtractGradient_sdr.shader</shader>
+      <shader type="GLSLES">shaders\fluidVisualize_sdr.shader</shader>
+    </shaders>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\main_ft</font>
   </fonts>
   <objects name="objects">
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
+    <objects name="Effects">
+      <objects name="PostEffects">
+        <object>objects\postEffectsGlobalCon</object>
+        <object>objects\bloomablePar</object>
+        <object>objects\bloomController</object>
+        <object>objects\blurController</object>
+        <object>objects\blurParticleController</object>
+        <object>objects\dispersionController</object>
+        <object>objects\distortionGlowController</object>
+        <object>objects\distortionGlowPar</object>
+        <object>objects\distortionTest</object>
+        <object>objects\refractionController</object>
+        <object>objects\refractionEffectPar</object>
+        <object>objects\refractionNormalPar</object>
+      </objects>
+      <objects name="Fluids">
+        <object>objects\fluidController</object>
+        <object>objects\fluidFlowController</object>
+        <object>objects\fluidSlab</object>
+        <object>objects\fluidTestCon</object>
+      </objects>
+    </objects>
     <objects name="Interface">
       <object>objects\verticalTray</object>
       <object>objects\traySection</object>
