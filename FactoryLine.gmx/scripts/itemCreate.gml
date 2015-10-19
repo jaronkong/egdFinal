@@ -14,5 +14,8 @@ if ( aItem < 0 ) {
 
 //Spawn it at the position
 var tInst = instance_create( argument0, argument1, item );
-tInst.itemID = aItem;
+with ( tInst ) {
+    itemID = aItem;
+    event_user( 15 );
+}
 return tInst;
