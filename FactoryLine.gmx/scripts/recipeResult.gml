@@ -1,4 +1,4 @@
-///recipeResult( mathod, item0, ..., itemN )
+///recipeResult( method, item0, ..., itemN )
 //Get the result of a recipe
 
 var aRecipe = argument[0];
