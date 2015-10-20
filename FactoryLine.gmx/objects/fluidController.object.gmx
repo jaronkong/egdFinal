@@ -31,7 +31,7 @@ global.fluidWidth = room_width / 3;
 global.fluidHeight = room_height / 3;
 global.fluidRatio = global.fluidWidth / room_width;
 
-global.fluidTimestep = 0.1; //0.125
+global.fluidTimestep = 0.125; //0.125
 global.numJacobiIterations = 40;
 global.ambientTemperature = 0;
 
@@ -39,7 +39,7 @@ global.velocityDissipation = 1.0//0.99;
 global.temperatureDissipation = 1.0//0.99;
 global.densityDissipation = 1.0//0.99;
 
-global.smokeWeight = 0.05;
+global.smokeWeight = 0.03;
 global.smokeBuoyancy = 0.7;
 
 global.splatRadius = 48;
@@ -47,7 +47,7 @@ global.splatX = 200;
 global.splatY = 400;
 global.impulseTemperature = 10;
 global.impulseDensity = 1;
-global.cellSize = 1.25; //1.25
+global.cellSize = 1.5; //1.25
 
 global.gradientScale = 0.8;//1.125 / global.cellSize;
 
@@ -73,6 +73,56 @@ mousePrevY = mouse_y;
 
 drawPosX = 0;
 drawPosY = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Drawing things
+
+drawQueue = ds_queue_create();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clean up
+
+ds_queue_destroy( drawQueue );
 
 </string>
           </argument>
@@ -212,18 +262,35 @@ fluidSwapSlab( density );
 fluidApplyBuoyancy( velocity.ping, temperature.ping, density.ping, velocity.pong );
 fluidSwapSlab( velocity );
 
-surface_set_target( temperature.ping );
-    draw_set_color( make_color_rgb( 255, 255, 255 ) );
-    draw_circle( drawPosX + mouse_x * global.fluidRatio, 
-                    drawPosY + mouse_y * global.fluidRatio, 
-                    8 * global.fluidRatio, false );
-surface_reset_target();
-surface_set_target( density.ping );
-    draw_set_color( make_color_rgb( 255, 255, 255 ) );
-    draw_circle( drawPosX + mouse_x * global.fluidRatio, 
-                    drawPosY + mouse_y * global.fluidRatio, 
-                    8 * global.fluidRatio, false );
-surface_reset_target();
+while ( !ds_queue_empty( drawQueue ) ) {
+    var tCurrentObj = ds_queue_dequeue( drawQueue );
+    surface_set_target( temperature.ping );
+    d3d_set_projection_ortho( view_xview[0], view_yview[0], view_wview[0], view_hview[0], view_angle[0] );
+        with ( tCurrentObj ) {
+            event_user( 0 );
+        }
+        /*
+        draw_set_color( make_color_rgb( 255, 255, 255 ) );
+        draw_circle( drawPosX + mouse_x, 
+                        drawPosY + mouse_y, 
+                        8, false );
+        */              
+    surface_reset_target();
+    surface_set_target( density.ping );
+    d3d_set_projection_ortho( view_xview[0], view_yview[0], view_wview[0], view_hview[0], view_angle[0] );
+
+        with ( tCurrentObj ) {
+            event_user( 0 );
+        }
+        /*
+        draw_set_color( make_color_rgb( 255, 255, 255 ) );
+        draw_circle( drawPosX + mouse_x, 
+                        drawPosY + mouse_y, 
+                        8, false );
+        */                
+    surface_reset_target();
+}
+
 
 //fluidApplyImpulse( temperature.ping, global.splatX, global.splatY, global.impulseTemperature );
 //fluidApplyImpulse( density.ping, global.splatX, global.splatY, global.impulseDensity );

@@ -36,6 +36,16 @@
     <sprites name="Effects">
       <sprite>sprites\distortMap_spr</sprite>
       <sprite>sprites\smokeNormal_spr</sprite>
+      <sprite>sprites\particle_explosion_spr</sprite>
+      <sprite>sprites\particle_fire_spr</sprite>
+      <sprite>sprites\particle_flare_spr</sprite>
+      <sprite>sprites\particle_lightning_spr</sprite>
+      <sprite>sprites\particle_line_spr</sprite>
+      <sprite>sprites\particle_ring_spr</sprite>
+      <sprite>sprites\particle_smoke_spr</sprite>
+      <sprite>sprites\particle_snow_spr</sprite>
+      <sprite>sprites\particle_spark_spr</sprite>
+      <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -45,6 +55,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\globalInit.gml</script>
     <script>scripts\isObject.gml</script>
     <scripts name="GridFunctions">
       <script>scripts\gridFromRoomX.gml</script>
@@ -80,6 +91,10 @@
         <script>scripts\burstBlurParticle.gml</script>
         <script>scripts\distortionGlow_addToQueue.gml</script>
         <script>scripts\refraction_addToQueue.gml</script>
+        <script>scripts\fluid_addToQueue.gml</script>
+        <script>scripts\bloom_attachParticleSystem.gml</script>
+        <script>scripts\refracton_attachParticleSystem.gml</script>
+        <script>scripts\fluid_attachParticleSystem.gml</script>
       </scripts>
       <scripts name="Fluids">
         <script>scripts\fluid_applyFlowToNewState.gml</script>
@@ -95,6 +110,11 @@
         <script>scripts\fluidJacobi.gml</script>
         <script>scripts\fluidSubtractGradient.gml</script>
         <script>scripts\fluidSwapSlab.gml</script>
+      </scripts>
+      <scripts name="Particles">
+        <script>scripts\initGlobalPartMap.gml</script>
+        <script>scripts\getParticle.gml</script>
+        <script>scripts\particleInit_general.gml</script>
       </scripts>
       <script>scripts\effects_surfaceInit.gml</script>
       <script>scripts\effects_getShaderSurface.gml</script>
@@ -139,6 +159,7 @@
     <font>fonts\main_ft</font>
   </fonts>
   <objects name="objects">
+    <object>objects\mainController</object>
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
     <objects name="Effects">
@@ -146,6 +167,7 @@
         <object>objects\postEffectsGlobalCon</object>
         <object>objects\bloomablePar</object>
         <object>objects\bloomController</object>
+        <object>objects\bloomParticleDrawer</object>
         <object>objects\blurController</object>
         <object>objects\blurParticleController</object>
         <object>objects\dispersionController</object>
@@ -155,12 +177,18 @@
         <object>objects\refractionController</object>
         <object>objects\refractionEffectPar</object>
         <object>objects\refractionNormalPar</object>
+        <object>objects\refractionParticleDrawer</object>
       </objects>
       <objects name="Fluids">
         <object>objects\fluidController</object>
         <object>objects\fluidFlowController</object>
         <object>objects\fluidSlab</object>
         <object>objects\fluidTestCon</object>
+        <object>objects\fluidParticleDrawer</object>
+        <object>objects\fluidEffectPar</object>
+      </objects>
+      <objects name="SingleEffects">
+        <object>objects\smokePoof</object>
       </objects>
     </objects>
     <objects name="Interface">
@@ -190,6 +218,9 @@
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
   </rooms>
+  <constants number="1">
+    <constant name="BLOOM_DEPTH">-50</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
