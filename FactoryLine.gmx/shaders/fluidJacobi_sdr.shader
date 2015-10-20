@@ -38,10 +38,14 @@ void main()
 {
     //ivec2 T = ivec2( v_vTexcoord.x * 1024.0, v_vTexcoord.y * 768.0 );
     // Find neighboring pressure:
-    vec4 pN = texture2D( gm_BaseTexture, vec2(v_vTexcoord.x, v_vTexcoord.y - InvScreenSize.y )) - vec4( 0.5 );
-    vec4 pS = texture2D( gm_BaseTexture, vec2(v_vTexcoord.x, v_vTexcoord.y + InvScreenSize.y )) - vec4( 0.5 );
-    vec4 pE = texture2D( gm_BaseTexture, vec2(v_vTexcoord.x + InvScreenSize.x, v_vTexcoord.y )) - vec4( 0.5 );
-    vec4 pW = texture2D( gm_BaseTexture, vec2(v_vTexcoord.x - InvScreenSize.x, v_vTexcoord.y )) - vec4( 0.5 );
+    vec4 pN = texture2D( gm_BaseTexture, 
+                vec2(v_vTexcoord.x, v_vTexcoord.y - InvScreenSize.y )) - vec4( 0.5 );
+    vec4 pS = texture2D( gm_BaseTexture, 
+                vec2(v_vTexcoord.x, v_vTexcoord.y + InvScreenSize.y )) - vec4( 0.5 );
+    vec4 pE = texture2D( gm_BaseTexture, 
+                vec2(v_vTexcoord.x + InvScreenSize.x, v_vTexcoord.y )) - vec4( 0.5 );
+    vec4 pW = texture2D( gm_BaseTexture, 
+                vec2(v_vTexcoord.x - InvScreenSize.x, v_vTexcoord.y )) - vec4( 0.5 );
     vec4 pC = texture2D( gm_BaseTexture, v_vTexcoord) - vec4( 0.5 );
 
     // Find neighboring obstacles:
@@ -76,7 +80,6 @@ void main()
     vec4 outColor = (pW + pE + pS + pN + vec4(Alpha) * bC.r) * InverseBeta;
     
     outColor += vec4( 0.5 );
-    
     gl_FragColor = vec4( outColor.r, outColor.r, outColor.r, 1.0 );
     
     /*

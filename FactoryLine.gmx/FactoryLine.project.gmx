@@ -189,6 +189,7 @@
       </objects>
       <objects name="SingleEffects">
         <object>objects\smokePoof</object>
+        <object>objects\smokeTrayEmerge</object>
       </objects>
     </objects>
     <objects name="Interface">

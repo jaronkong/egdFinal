@@ -34,7 +34,7 @@ part_emitter_region( system1, emitter1, x, x, y, y, ps_shape_ellipse, ps_distr_g
 
 //bloom_attachParticleSystem( system1, BLOOM_DEPTH );
 fluid_attachParticleSystem( system1 );
-part_emitter_burst( system1, emitter1, getParticle("smokeBurst"), 20 );
+part_emitter_burst( system1, emitter1, getParticle("smokeBurst"), 25 );
 
 alarm[ 0 ] = 90;
 

@@ -34,7 +34,11 @@ part_emitter_region( system1, emitter1, x, x, y, y, ps_shape_ellipse, ps_distr_g
 
 //bloom_attachParticleSystem( system1, BLOOM_DEPTH );
 fluid_attachParticleSystem( system1 );
-part_emitter_burst( system1, emitter1, getParticle("smokeBurst"), 20 );
+var variance = 5;
+part_type_direction( getParticle( "smokeUpshot" ), 90 - 60 - variance, 90 - 60 + variance, 0, 1 );
+part_emitter_burst( system1, emitter1, getParticle("smokeUpshot"), 5 );
+part_type_direction( getParticle( "smokeUpshot" ), 90 + 60 - variance, 90 + 60 + variance, 0, 1 );
+part_emitter_burst( system1, emitter1, getParticle("smokeUpshot"), 5 );
 
 alarm[ 0 ] = 90;
 

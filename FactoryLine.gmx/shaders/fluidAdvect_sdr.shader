@@ -50,7 +50,7 @@ void main()
     vec2 timeScaledStep = u * TimeStep * 1.0;
    
     vec2 coord = vec2( v_vTexcoord.x - timeScaledStep.x, v_vTexcoord.y + timeScaledStep.y );
-    
+
     gl_FragColor = vec4( 
                         vec3( Dissipation * (texture2D(SourceTexture, coord).rgb - vec3(0.5)) + vec3( 0.5 ))
                     , 1.0  );

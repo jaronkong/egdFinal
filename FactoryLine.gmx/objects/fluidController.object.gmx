@@ -27,19 +27,19 @@
             <kind>1</kind>
             <string>///Setup
 
-global.fluidWidth = room_width / 3;
-global.fluidHeight = room_height / 3;
+global.fluidWidth = room_width / 4;
+global.fluidHeight = room_height / 4;
 global.fluidRatio = global.fluidWidth / room_width;
 
 global.fluidTimestep = 0.125; //0.125
-global.numJacobiIterations = 40;
+global.numJacobiIterations = 30;
 global.ambientTemperature = 0;
 
-global.velocityDissipation = 1.0//0.99;
-global.temperatureDissipation = 1.0//0.99;
-global.densityDissipation = 1.0//0.99;
+global.velocityDissipation = 0.99//0.99;
+global.temperatureDissipation = 0.99//0.99;
+global.densityDissipation = 0.99//0.99;
 
-global.smokeWeight = 0.03;
+global.smokeWeight = 0.02;
 global.smokeBuoyancy = 0.7;
 
 global.splatRadius = 48;
@@ -47,7 +47,7 @@ global.splatX = 200;
 global.splatY = 400;
 global.impulseTemperature = 10;
 global.impulseDensity = 1;
-global.cellSize = 1.5; //1.25
+global.cellSize = 1.25; //1.25
 
 global.gradientScale = 0.8;//1.125 / global.cellSize;
 
@@ -340,7 +340,7 @@ surface_reset_target();
 
 //Draw fluid
 draw_surface_stretched( stageSurface, drawPosX, drawPosY, room_width, room_height );
-
+//draw_surface_stretched( stageSurface, drawPosX, drawPosY, room_width, room_height );
 </string>
           </argument>
         </arguments>
@@ -366,8 +366,8 @@ draw_surface_stretched( stageSurface, drawPosX, drawPosY, room_width, room_heigh
             <string>///Add to effect queues
 
 bloom_addToQueue( id, -50 );
-refraction_addToQueue( id );
-distortionGlow_addToQueue( id );
+//refraction_addToQueue( id );
+//distortionGlow_addToQueue( id );
 
 </string>
           </argument>

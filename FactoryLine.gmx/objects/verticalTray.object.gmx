@@ -79,6 +79,7 @@ if ( mouse_x &gt; x - trayWidth/2 &amp;&amp; mouse_x &lt; x + trayWidth / 2
 
     if ( !mouseHover ) {
         audio_play_sound( trayOpen_sd, 1, false );
+        instance_create( x, y, smokeTrayEmerge );
     }
     mouseHover = true;
 }
