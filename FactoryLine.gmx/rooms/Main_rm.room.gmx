@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -58,16 +58,16 @@
     <instance objName="verticalTray" x="1104" y="656" name="inst_A12EC01A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridManager" x="0" y="0" name="inst_A4EBF76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="itemManager" x="16" y="0" name="inst_B1AB1933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="item" x="544" y="96" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="dispenser" x="512" y="16" name="inst_880E3D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBelt" x="608" y="560" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBelt" x="656" y="512" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="modifier" x="560" y="400" name="inst_CD67BCFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBeltDouble" x="512" y="464" name="inst_0C3380BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="item" x="576" y="64" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="544" y="0" name="inst_880E3D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="736" y="352" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="672" y="544" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="modifier" x="576" y="320" name="inst_CD67BCFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBeltDouble" x="512" y="384" name="inst_0C3380BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="selectionController" x="16" y="0" name="inst_B4CF20AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fluidController" x="16" y="32" name="inst_CD1C7FB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="postEffectsGlobalCon" x="32" y="32" name="inst_CC6B45A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mainController" x="64" y="0" name="inst_58C25F33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="combiner" x="512" y="512" name="inst_681D8947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

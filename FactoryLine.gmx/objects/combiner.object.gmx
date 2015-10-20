@@ -2,15 +2,29 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>interactiveBlock</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -25,14 +39,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define data structures
+            <string>///Define collisions
 
-enum Item {
-    tag, name, sprite, count
-}
+cellPosX[0] = 0;
+cellPosY[0] = 0;
+cellSolid[0] = GridSolid.Top;
 
-items = ds_grid_create( 0, Item.count );
-recipes = ds_map_create( );
+cellPosX[1] = -1;
+cellPosY[1] = 0;
+cellSolid[1] = ( GridSolid.Left | GridSolid.Top | GridSolid.Bottom );
+
+cellPosX[2] = 1;
+cellPosY[2] = 0;
+cellSolid[2] = ( GridSolid.Right | GridSolid.Top | GridSolid.Bottom );
+
+cellCount = 3;
 </string>
           </argument>
         </arguments>
@@ -53,18 +74,29 @@ recipes = ds_map_create( );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Load data
+            <string>///Set default binding
 
-var tTrash = itemDefine( "garbage", "Garbage", garbage_spr );
-var tSlime = itemDefine( "slime", "Slime Ball", slime_spr );
-var tModify = recipeDefine( "slime", "modifier", "garbage" );
-var tCombine = recipeDefine( "slime", "combiner", "garbage", "garbage" );
+button = ord( 'Q' );
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
+    <event eventtype="7" enumb="25">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,10 +113,29 @@ var tCombine = recipeDefine( "slime", "combiner", "garbage", "garbage" );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Free data structures
+            <string>///Try to apply a recipe
 
-ds_grid_destroy( items );
-ds_map_destroy( recipes );
+var cx = gridFromRoomX( x );
+var cy = gridFromRoomY( y );
+
+var tInstA = gridItemAtPoint( gridToRoomX( cx - 1 ), gridToRoomY( cy - 1 ) );
+var tInstB = gridItemAtPoint( gridToRoomX( cx + 1 ), gridToRoomY( cy - 1 ) );
+
+if ( instance_exists( tInstA ) || instance_exists( tInstB ) ) {
+    var tItemA = -1;
+    if ( instance_exists( tInstA ) ) {
+        tItemA = tInstA.itemID;
+        with ( tInstA ) instance_destroy( );
+    }
+    var tItemB = -1;
+    if ( instance_exists( tInstB ) ) {
+        tItemB = tInstB.itemID;
+        with ( tInstB ) instance_destroy( );
+    }
+    
+    var tResult = recipeResult( object_get_name( object_index ), tItemA, tItemB );
+    var tNew = itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), tResult );
+}
 </string>
           </argument>
         </arguments>
