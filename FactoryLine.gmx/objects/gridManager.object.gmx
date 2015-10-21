@@ -55,8 +55,6 @@ gridHeight = ceil( room_height / height );
             <kind>1</kind>
             <string>///Create collision grid
 
-gridSolid = ds_grid_create( gridWidth, gridHeight );
-
 enum GridSolid {
     Left = $1 &lt;&lt; 0,
     Top = $1 &lt;&lt; 1,
@@ -64,6 +62,9 @@ enum GridSolid {
     Bottom = $1 &lt;&lt; 3,
     Open = $0
 }
+
+gridSolid = ds_grid_create( gridWidth, gridHeight );
+ds_grid_clear( gridSolid, GridSolid.Open );
 </string>
           </argument>
         </arguments>
@@ -88,6 +89,9 @@ enum GridSolid {
 
 gridBlock = ds_grid_create( gridWidth, gridHeight );
 gridItem = ds_grid_create( gridWidth, gridHeight );
+
+ds_grid_clear( gridBlock, noone );
+ds_grid_clear( gridItem, noone );
 </string>
           </argument>
         </arguments>

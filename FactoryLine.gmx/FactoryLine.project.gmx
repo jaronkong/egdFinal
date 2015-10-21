@@ -51,18 +51,23 @@
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
     <sound>sound\placementFail_sd</sound>
+    <sounds name="GeneralGameplay">
+      <sound>sound\makeJunk_sd</sound>
+    </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>
       <sound>sound\conveyorLoops_sd</sound>
       <sound>sound\eleCombiner_sd</sound>
       <sound>sound\eleDispenser_sd</sound>
       <sound>sound\eleOven_sd</sound>
+      <sound>sound\eleZapper_sd</sound>
       <sound>sound\eleReceiver_sd</sound>
       <sound>sound\eleAttacher_sd</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\Console_spr</sprite>
     <sprite>sprites\itemTray_spr</sprite>
     <sprite>sprites\itemTrayHead_spr</sprite>
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
@@ -101,7 +106,13 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
-    <sprite>sprites\Console_spr</sprite>
+    <sprites name="UI Buttons">
+      <sprite>sprites\B_Dispenser_spr</sprite>
+      <sprite>sprites\B_Receiver_spr</sprite>
+      <sprite>sprites\B_Attacher_spr</sprite>
+      <sprite>sprites\B_Modifier_spr</sprite>
+      <sprite>sprites\B_Conveyor_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
@@ -187,6 +198,7 @@
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
       </scripts>
+      <script>scripts\itemDraw.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -270,6 +282,7 @@
         <object>objects\conveyorBelt</object>
         <object>objects\conveyorBeltDouble</object>
       </objects>
+      <object>objects\receiver</object>
     </objects>
     <objects name="Items">
       <object>objects\itemManager</object>

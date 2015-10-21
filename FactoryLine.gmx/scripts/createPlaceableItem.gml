@@ -9,6 +9,8 @@ with ( tNewItem ) {
     heldItem = aHeldItem;
     image = heldItem.sprite_index;
     originTraySection = aOriginTraySection;
+    image_xscale = heldItem.image_xscale;
+    image_yscale = heldItem.image_yscale;
 }
 
 with ( aHeldItem ) {
