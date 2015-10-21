@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>37</xorig>
-  <yorigin>34</yorigin>
+  <yorigin>33</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -21,5 +21,6 @@
   <height>68</height>
   <frames>
     <frame index="0">images\B_Conveyor_spr_0.png</frame>
+    <frame index="1">images\B_Conveyor_spr_1.png</frame>
   </frames>
 </sprite>

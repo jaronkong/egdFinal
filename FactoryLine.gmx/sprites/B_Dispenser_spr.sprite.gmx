@@ -21,5 +21,6 @@
   <height>67</height>
   <frames>
     <frame index="0">images\B_Dispenser_spr_0.png</frame>
+    <frame index="1">images\B_Dispenser_spr_1.png</frame>
   </frames>
 </sprite>
