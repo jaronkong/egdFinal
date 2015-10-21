@@ -18,4 +18,3 @@ if ( instance_exists( aBlock ) ) {
 } 
 
 return true;
-

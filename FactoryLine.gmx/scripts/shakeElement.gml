@@ -3,4 +3,3 @@
 with ( argument0 ) {
     shakeAmount = argument1;
 }
-

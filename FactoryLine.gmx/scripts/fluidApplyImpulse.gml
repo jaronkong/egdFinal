@@ -32,4 +32,3 @@ surface_set_target( aDest );
     draw_set_color( make_color_rgb( 255, 255, 255 ) );
     draw_circle( 300, 400, 64, false );
 surface_reset_target();
-

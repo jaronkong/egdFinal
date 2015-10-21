@@ -31,4 +31,3 @@ shader_set( targetShader );
         draw_surface( aVelocity, 0, 0 );
     surface_reset_target();
 shader_reset();
-

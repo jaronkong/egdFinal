@@ -51,6 +51,15 @@
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
     <sound>sound\placementFail_sd</sound>
+    <sounds name="elements">
+      <sound>sound\conveyorStart_sd</sound>
+      <sound>sound\conveyorLoops_sd</sound>
+      <sound>sound\eleCombiner_sd</sound>
+      <sound>sound\eleDispenser_sd</sound>
+      <sound>sound\eleOven_sd</sound>
+      <sound>sound\eleReceiver_sd</sound>
+      <sound>sound\eleAttacher_sd</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -61,7 +70,10 @@
     <sprite>sprites\craneArm_spr</sprite>
     <sprite>sprites\pokeCrane_spr</sprite>
     <sprites name="Elements">
-      <sprite>sprites\attacher_placeholder</sprite>
+      <sprites name="attacher">
+        <sprite>sprites\attacher_body</sprite>
+        <sprite>sprites\attacher_plunger</sprite>
+      </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_placeholder</sprite>
