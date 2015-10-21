@@ -203,8 +203,9 @@ y = lerp( y, targetY, moveTween );
             <string>///Draw
 
 if ( held ) {
-    draw_sprite( craneArm_spr, 0, 
-                x, y - sprite_get_height( image )/2 * image_yscale );
+    draw_sprite_ext( craneArm_spr, 0, 
+                x, y - sprite_get_height( image )/2 * image_yscale,
+                1, 1, 0, c_white, 1 );
     if ( isPlaceableLocation( targetX, targetY, heldItem ) ) {
         draw_sprite_ext( image, 0, x, y, image_xscale, image_yscale, 0, c_white, alpha);
     }
