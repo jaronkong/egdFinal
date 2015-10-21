@@ -35,7 +35,7 @@ heldItemType = dispenser;
 heldItemImage = object_get_sprite( heldItemType );
 heldItemQuantity = 2; //-1 for unlimited
 
-heldItemSize = 0.25;
+heldItemSize = 0.1;
 
 </string>
           </argument>

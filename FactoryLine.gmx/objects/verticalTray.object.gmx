@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>///Setup
 
-numSections = 3;
+
 headHeight = 32; //Size of the tab on top of the trays
 trayWidth = 64;
 trayHeight = 64;
 
 recoilFactor = 0.4; //Recoil upon hitting bounds.
 currentSlideOffset = 0; //Is negative so things slide up
-maxSlideOffset = headHeight + numSections*trayHeight;
+
 currentSpeed = 0;
 maxSpeed = 25;
 accel = 1.5;
@@ -48,8 +48,46 @@ recoilVolFactor = 0.05;
 ///States
 mouseHover = false;
 
-event_user( 0 );
+alarm[ 0 ] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tray Contents
 
+numSections = 0;
+trayContents = 0;
+
+trayContents[ numSections, 0 ] = dispenser; //Item
+trayContents[ numSections, 1 ] = 2;         //Quantity
+numSections++;
+trayContents[ numSections, 0 ] = modifier;
+trayContents[ numSections, 1 ] = -1;
+numSections++;
+trayContents[ numSections, 0 ] = combiner;
+trayContents[ numSections, 1 ] = -1;
+numSections++;
+trayContents[ numSections, 0 ] = receiver;
+trayContents[ numSections, 1 ] = 1;
+numSections++;
+
+maxSlideOffset = headHeight + numSections*trayHeight;
 </string>
           </argument>
         </arguments>
@@ -179,8 +217,38 @@ for ( var i = 0; i &lt; numSections; ++i ) {
     with ( instance_create( x, y, traySection ) ) {
         sectionOffset = i * sectionHeight;
         ownerTray = other.id;
+        heldItemType = other.trayContents[ i, 0 ];
+        heldItemQuantity = other.trayContents[ i, 1 ];
+        heldItemImage = object_get_sprite( heldItemType );
     }
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialize
+
+
+event_user( 0 );
 
 </string>
           </argument>
