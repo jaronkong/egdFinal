@@ -1,0 +1,4 @@
+///globalInit();
+
+initGlobalPartMap();
+

@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>///Setup
 
-heldItem = dispenser;
-image = object_get_sprite(heldItem);
+heldItem = noone;
+image = noone;
+originTraySection = noone;
 
 previewScaling = 0.25; //size of image in tray
 
@@ -88,8 +89,8 @@ if ( held ) {
         if ( tOffY &gt; tGridSize / 2 ) {
             targetY += tGridSize;
         }
-        targetX = tGridSize * (targetX div tGridSize);
-        targetY = tGridSize * (targetY div tGridSize );
+        targetX = gridToRoomX( gridFromRoomX( mouse_x ));//tGridSize * (targetX div tGridSize);
+        targetY = gridToRoomY( gridFromRoomY( mouse_y ));//tGridSize * (targetY div tGridSize );
 
         //Check if different from prev coord, and play sound if changed
         if ( targetX != prevX || targetY != prevY ) {
@@ -137,18 +138,17 @@ if ( mouse_check_button( mb_left ) ) {
             //Grabbing for first time
             grabOffset = grabOffsetMax;
             audio_play_sound( craneSlam_sd, 1, false );
+            /*
+            if ( !instance_exists( heldItem ) &amp;&amp; heldItem != noone) {
+                instance_create( x, y, heldItem );
+            }
+            */
         }
         held = true;   
     }
 }
-else {
-    if ( held ) {
-        //Releasing item
-        audio_play_sound( placeItem_sd, 1, false );
-        instance_create( targetX, targetY, heldItem ); 
-        instance_destroy();
-    }
-    held = false;
+else if ( mouse_check_button_released( mb_left ) ){
+    placeItemAttempt( id );
     
 }
 
@@ -204,7 +204,12 @@ y = lerp( y, targetY, moveTween );
 
 if ( held ) {
     draw_sprite( craneArm_spr, 0, x, y - sprite_get_height( image )/2 );
-    draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_white, alpha);
+    if ( isPlaceableLocation( targetX, targetY, heldItem ) ) {
+        draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_white, alpha);
+    }
+    else {
+        draw_sprite_ext( image, 0, x, y, 1, 1, 0, c_red, alpha);
+    }
 }
 else {
     draw_sprite_ext( image, 0, x, y, previewScaling, previewScaling, 0, c_white, alpha);
