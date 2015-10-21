@@ -268,7 +268,7 @@ shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>604</id>
@@ -302,6 +302,7 @@ shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
             <string>///Draw self
 
 if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
+
     if ( mouseHoverOn( id ) ) {
         d3d_set_fog( true, highlightColor, depth, depth );
         draw_sprite_ext( sprite_index, image_index, 
@@ -311,11 +312,63 @@ if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
                     highlightColor, highlightAlpha*image_alpha );
         d3d_set_fog( false, highlightColor, depth, depth );
     }
+    
     draw_sprite_ext( sprite_index, image_index, 
                     x + shakeOffsetX, y + shakeOffsetY,
                     image_xscale, image_yscale, image_angle,
                     image_blend, image_alpha );
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="76">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Fluid Obstacle
+fluidObstacle_addToQueue( id );
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Self
+
+event_user( 0 );
 
 </string>
           </argument>

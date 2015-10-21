@@ -158,6 +158,7 @@
         <script>scripts\distortionGlow_addToQueue.gml</script>
         <script>scripts\refraction_addToQueue.gml</script>
         <script>scripts\fluid_addToQueue.gml</script>
+        <script>scripts\fluidObstacle_addToQueue.gml</script>
         <script>scripts\bloom_attachParticleSystem.gml</script>
         <script>scripts\refracton_attachParticleSystem.gml</script>
         <script>scripts\fluid_attachParticleSystem.gml</script>

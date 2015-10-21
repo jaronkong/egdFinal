@@ -96,6 +96,7 @@ drawPosY = 0;
             <kind>1</kind>
             <string>///Drawing things
 
+obstacleQueue = ds_queue_create();
 drawQueue = ds_queue_create();
 
 </string>
@@ -122,6 +123,7 @@ drawQueue = ds_queue_create();
             <kind>1</kind>
             <string>///Clean up
 
+ds_queue_destroy( obstacleQueue );
 ds_queue_destroy( drawQueue );
 
 </string>
@@ -189,7 +191,21 @@ if ( !surface_exists( stageSurface ) ) {
 
 
 //Obstacle
-
+surface_set_target( obstacles );
+draw_clear_alpha( c_black, 1.0 );
+while ( !ds_queue_empty( obstacleQueue ) ) {
+    var tCurrentObj = ds_queue_dequeue( obstacleQueue );
+    
+    d3d_set_projection_ortho( view_xview[0], view_yview[0], view_wview[0], view_hview[0], view_angle[0] );
+        with ( tCurrentObj ) {
+            d3d_set_fog( true, make_color_rgb( 255, 127.5, 127.5 ), depth, depth );      
+            event_user( 0 );
+            d3d_set_fog( false, make_color_rgb( 255, 127.5, 127.5 ), depth, depth );
+        }        
+   
+}
+surface_reset_target();
+/*
 surface_set_target( obstacles );
     draw_clear_alpha( c_black, 1.0 );
     
@@ -207,20 +223,20 @@ surface_set_target( obstacles );
     
     //draw_set_color( make_color_rgb( 255, 127.5, 127.5 ) );
     draw_set_color( make_color_rgb( 255, tXVal, tYVal ) );
-    /*
+    
     draw_circle( drawPosX + mouse_x * global.fluidRatio, 
                 drawPosY + mouse_y * global.fluidRatio, 
                 32, false );
-                */
-    //draw_rectangle( mouse_x - drawPosX, mouse_y - drawPosY, 
-    //               mouse_x + 100 - drawPosX, mouse_y + 32 - drawPosY, false );
+                
+
+    
     mousePrevX = mouse_x;
     mousePrevY = mouse_y;
     
     
 surface_reset_target();
-
-draw_circle( mouse_x , mouse_y , 32, true );
+*/
+//draw_circle( mouse_x , mouse_y , 32, true );
 //draw_rectangle( mouse_x, mouse_y, 
 //                    mouse_x + 100, mouse_y + 32, true );
 
