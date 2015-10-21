@@ -1,0 +1,7 @@
+[garbage]
+name = "Garbage"
+sprite = garbage_spr
+
+[slime]
+name = "Slime Ball"
+sprite = slime_spr
