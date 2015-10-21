@@ -1,0 +1,26 @@
+Raw materials:
+Slime, Bone, Eye, Teeth (mouth), Fuzz
+
+Modifiers:
+Zapper, Weaver, Oven
+
+
+
+
+Fuzz -> Weaver = Wing
+Fuzz -> Oven = Hard Plating
+Slime -> Weaver = Strands
+Slime -> Zapper = Metal
+Teeth -> Oven = DragonTeeth
+Bone -> Zapper = Ectoplasm
+
+Bone >< Slime = Meat Body
+Meat + Fuzz = Furry Body
+
+Slime + Eye + Eye = Small slime monster
+Furry Body + Eye + Eye = Fuzz ball monster
+Ectoplasm + Eye + Eye + DragonTeeth = Ghost Monster
+Strands + HardPlating + Eye = Crabby Ball thing ( think pokemon Tengela )
+Metal + Metal + Eye + Eye = Metal Snake
+
+MeatBody + Wing + Wing + Eye + Eye + DragonTeeth = Mini dragon
