@@ -42,7 +42,7 @@
             <string>///Set size for block collisions
 //Two items collide if and only if they are in the same cell
 
-var s = 16;
+var s = 32;
 width = s;
 height = s;
 </string>

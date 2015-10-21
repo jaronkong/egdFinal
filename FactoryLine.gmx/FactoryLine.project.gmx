@@ -75,8 +75,13 @@
         <sprite>sprites\attacher_plunger</sprite>
       </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
+      <sprite>sprites\modifier_placeholder</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_placeholder</sprite>
+      <sprites name="conveyor">
+        <sprite>sprites\conveyor_placeholder</sprite>
+        <sprite>sprites\conveyorDouble_placeholder</sprite>
+      </sprites>
     </sprites>
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
