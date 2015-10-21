@@ -24,4 +24,3 @@ shader_reset();
 
 
 
-

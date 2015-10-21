@@ -33,7 +33,10 @@
     <sprite>sprites\craneArm_spr</sprite>
     <sprite>sprites\pokeCrane_spr</sprite>
     <sprites name="Elements">
-      <sprite>sprites\attacher_placeholder</sprite>
+      <sprites name="attacher">
+        <sprite>sprites\attacher_body</sprite>
+        <sprite>sprites\attacher_plunger</sprite>
+      </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_placeholder</sprite>

@@ -7,4 +7,3 @@ if ( instance_position( mouse_x, mouse_y, argument0 ) ) {
 
 
 return false;
-
