@@ -109,9 +109,15 @@ if ( instance_exists( tItem ) ) {
         audio_play_sound( eleReceiver_sd, 0, false );
         if ( tItem.itemID == itemID ) {
             shakeElement( id, 4 );
+            var tItemTag = itemProperty( itemID, Item.tag );
+            with ( mainController ) {
+                if ( !ds_map_exists( produced, tItemTag ) ) {
+                    produced[? tItemTag] = 0;
+                }
+                produced[? tItemTag] += 1;
+            }
         } else {
             shakeElement( id, 8 );
-            show_debug_message( "You messed up!" );
         }
         with ( tItem ) instance_destroy( );
     }

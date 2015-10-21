@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,8 +33,6 @@ globalInit();
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,7 +49,107 @@ globalInit();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///Initialize quota structures
+
+quota = ds_grid_create( 0, 2 );
+produced = ds_map_create( );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Generic quotas
+
+ds_grid_resize( quota, 1, 2 );
+quota[# 0, 0] = "slime";
+quota[# 0, 1] = 3;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Free quota structures
+
+ds_grid_destroy( quota );
+ds_map_destroy( produced );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw quotas
+
+draw_set_color( c_white );
+draw_set_alpha( 1 );
+draw_set_halign( fa_right );
+draw_set_valign( fa_middle );
+
+for ( var i = 0; i &lt; ds_grid_width( quota ); ++i ) {
+    var tItem = quota[# 0, 0];
+    tProduced = 0;
+    var tRequired = quota[# i, 1];
+    if ( ds_map_exists( produced, tItem ) ) {
+        tProduced = produced[? tItem];
+    }
+    var tString = ( string( tProduced ) + " / " + string( tRequired ) );
+    draw_text( room_width - 64, 256 + 100 * i, tString );
+    itemDraw( tItem, room_width - 48, 256 + 100 * i, 1, 1 );
+}
+
+draw_set_color( c_white );
+draw_set_alpha( 1 );
+draw_set_halign( fa_left );
+draw_set_valign( fa_top );
+</string>
           </argument>
         </arguments>
       </action>
