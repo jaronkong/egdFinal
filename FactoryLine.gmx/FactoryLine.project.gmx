@@ -67,6 +67,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\Console_spr</sprite>
     <sprite>sprites\itemTray_spr</sprite>
     <sprite>sprites\itemTrayHead_spr</sprite>
     <sprite>sprites\itemTrayBaseTab_spr</sprite>
@@ -105,7 +106,13 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
-    <sprite>sprites\Console_spr</sprite>
+    <sprites name="UI Buttons">
+      <sprite>sprites\B_Dispenser_spr</sprite>
+      <sprite>sprites\B_Receiver_spr</sprite>
+      <sprite>sprites\B_Attacher_spr</sprite>
+      <sprite>sprites\B_Modifier_spr</sprite>
+      <sprite>sprites\B_Conveyor_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
