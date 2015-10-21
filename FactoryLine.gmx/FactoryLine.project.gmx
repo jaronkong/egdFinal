@@ -191,6 +191,7 @@
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
       </scripts>
+      <script>scripts\itemDraw.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
