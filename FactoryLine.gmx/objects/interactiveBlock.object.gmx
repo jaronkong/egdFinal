@@ -45,7 +45,7 @@ button = vk_nokey;
 buttonLabel = "";
 
 //How long before you can activate it again
-cooldown = 1;
+cooldown = 0.5;
 
 //Track the current cooldaown value
 time = 0;

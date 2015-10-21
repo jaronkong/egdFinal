@@ -65,6 +65,8 @@ cellSolid[0] &amp;= ~GridSolid.Bottom;
             <string>///Set default binding
 
 button = ord( 'E' );
+
+cooldown = 0.4;
 </string>
           </argument>
         </arguments>
@@ -125,6 +127,8 @@ itemID = itemFromTag( "garbage" );
           <argument>
             <kind>1</kind>
             <string>///Spawn an item
+
+audio_play_sound( eleDispenser_sd, 0, false );
 
 var cx = gridFromRoomX( x );
 var cy = gridFromRoomY( y );

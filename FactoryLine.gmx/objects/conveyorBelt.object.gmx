@@ -95,6 +95,69 @@ button = ord( 'R' );
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Audio loop
+
+audioLoop = audio_play_sound( conveyorLoops_sd, 1, true );
+audio_sound_gain( audioLoop, 0, 0 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stop audio
+
+audio_stop_sound( audioLoop );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -129,6 +192,7 @@ button = ord( 'R' );
             <kind>1</kind>
             <string>///Move item directly above
 
+var tStart = keyboard_check_pressed( moveButton );
 var tMove = keyboard_check( moveButton );
 var tStop = keyboard_check_released( moveButton );
 
@@ -151,6 +215,12 @@ if ( tMove || tStop ) {
             }
         }
     }
+}
+
+if ( tStart ) {
+    audio_sound_gain( audioLoop, 0.25, 100 );
+} else if ( tStop ) {
+    audio_sound_gain( audioLoop, 0, 250 );
 }
 </string>
           </argument>
@@ -191,6 +261,8 @@ if ( tMove || tStop ) {
             <string>///Flip direction
 
 dir = -dir;
+
+audio_play_sound( conveyorStart_sd, 0, false );
 </string>
           </argument>
         </arguments>

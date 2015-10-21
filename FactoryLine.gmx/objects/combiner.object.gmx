@@ -115,6 +115,8 @@ button = ord( 'Q' );
             <kind>1</kind>
             <string>///Try to apply a recipe
 
+audio_play_sound( eleCombiner_sd, 0, false );
+
 var cx = gridFromRoomX( x );
 var cy = gridFromRoomY( y );
 

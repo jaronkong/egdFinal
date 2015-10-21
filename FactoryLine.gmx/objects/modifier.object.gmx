@@ -103,6 +103,8 @@ button = ord( 'W' );
             <kind>1</kind>
             <string>///Apply the modifier to the item
 
+audio_play_sound( eleOven_sd, 0, false );
+
 var tInst = gridItemAtPoint( x, y );
 if ( instance_exists( tInst ) ) {
     var tItem = tInst.itemID;
