@@ -51,12 +51,16 @@
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
     <sound>sound\placementFail_sd</sound>
+    <sounds name="GeneralGameplay">
+      <sound>sound\makeJunk_sd</sound>
+    </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>
       <sound>sound\conveyorLoops_sd</sound>
       <sound>sound\eleCombiner_sd</sound>
       <sound>sound\eleDispenser_sd</sound>
       <sound>sound\eleOven_sd</sound>
+      <sound>sound\eleZapper_sd</sound>
       <sound>sound\eleReceiver_sd</sound>
       <sound>sound\eleAttacher_sd</sound>
     </sounds>
@@ -77,7 +81,7 @@
       <sprite>sprites\dispenser_placeholder</sprite>
       <sprite>sprites\modifier_placeholder</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
-      <sprite>sprites\combiner_placeholder</sprite>
+      <sprite>sprites\combiner_spr</sprite>
       <sprites name="conveyor">
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
@@ -101,6 +105,7 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
+    <sprite>sprites\Console_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
