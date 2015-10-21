@@ -159,12 +159,16 @@
     </scripts>
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
-      <script>scripts\itemProperty.gml</script>
-      <script>scripts\itemCreate.gml</script>
       <script>scripts\itemFromTag.gml</script>
-      <script>scripts\itemDefine.gml</script>
-      <script>scripts\recipeDefine.gml</script>
+      <script>scripts\itemCreate.gml</script>
+      <script>scripts\itemProperty.gml</script>
       <script>scripts\recipeResult.gml</script>
+      <scripts name="Loading">
+        <script>scripts\itemDefine.gml</script>
+        <script>scripts\itemLoad.gml</script>
+        <script>scripts\recipeDefine.gml</script>
+        <script>scripts\recipeParse.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
