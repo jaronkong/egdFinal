@@ -8,4 +8,3 @@ with ( tNewPoker ) {
     targetX = aX;
     targetY = aY;
 }
-

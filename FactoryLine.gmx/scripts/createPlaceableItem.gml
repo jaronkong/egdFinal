@@ -18,4 +18,3 @@ with ( aHeldItem ) {
 
 
 return tNewItem;
-

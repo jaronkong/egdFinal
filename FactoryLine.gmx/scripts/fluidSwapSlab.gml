@@ -8,4 +8,3 @@ with ( aInputSlab ) {
     pong = tempSurface;
 }
 
-
