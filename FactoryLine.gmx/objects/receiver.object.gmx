@@ -106,7 +106,7 @@ cellSolid[0] &amp;= ~GridSolid.Top;
 var tItem = gridItemAtPoint( x, y );
 if ( instance_exists( tItem ) ) {
     if ( tItem.y &gt;= y ) {
-        audio_play_sound( eleReceiver_sd, 0, false );
+        audio_play_sound( eleReceiver_sd, 1, false );
         if ( tItem.itemID == itemID ) {
             shakeElement( id, 4 );
             var tItemTag = itemProperty( itemID, Item.tag );
