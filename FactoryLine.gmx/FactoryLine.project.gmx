@@ -14,6 +14,15 @@
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
     <sound>sound\placementFail_sd</sound>
+    <sounds name="elements">
+      <sound>sound\conveyorStart_sd</sound>
+      <sound>sound\conveyorLoops_sd</sound>
+      <sound>sound\eleCombiner_sd</sound>
+      <sound>sound\eleDispenser_sd</sound>
+      <sound>sound\eleOven_sd</sound>
+      <sound>sound\eleReceiver_sd</sound>
+      <sound>sound\eleAttacher_sd</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
