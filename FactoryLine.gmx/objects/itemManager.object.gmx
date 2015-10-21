@@ -55,10 +55,17 @@ recipes = ds_map_create( );
             <kind>1</kind>
             <string>///Load data
 
-var tTrash = itemDefine( "garbage", "Garbage", garbage_spr );
-var tSlime = itemDefine( "slime", "Slime Ball", slime_spr );
-var tModify = recipeDefine( "slime", "modifier", "garbage" );
-var tCombine = recipeDefine( "slime", "combiner", "garbage", "garbage" );
+ini_open( working_directory + "/recipes/items.dat" );
+var tFile = file_text_open_read( working_directory + "/recipes/recipes.dat" );
+while ( !file_text_eof( tFile ) ) {
+    var tRecipe = file_text_read_string( tFile );
+    if ( tRecipe != "" ) {
+        recipeParse( tRecipe );
+    }
+    file_text_readln( tFile );
+}
+file_text_close( tFile );
+ini_close( );
 </string>
           </argument>
         </arguments>

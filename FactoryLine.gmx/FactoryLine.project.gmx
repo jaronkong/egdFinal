@@ -3,7 +3,44 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles"/>
+  <datafiles number="3" name="datafiles">
+    <datafiles number="3" name="recipes">
+      <datafile>
+        <name>items.dat</name>
+        <exists>-1</exists>
+        <size>1592</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>17593242063086</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>items.dat</filename>
+      </datafile>
+      <datafile>
+        <name>recipes.dat</name>
+        <exists>-1</exists>
+        <size>1592</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>recipes.dat</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\trayOpen_sd</sound>
@@ -38,8 +75,13 @@
         <sprite>sprites\attacher_plunger</sprite>
       </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
+      <sprite>sprites\modifier_placeholder</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_placeholder</sprite>
+      <sprites name="conveyor">
+        <sprite>sprites\conveyor_placeholder</sprite>
+        <sprite>sprites\conveyorDouble_placeholder</sprite>
+      </sprites>
     </sprites>
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
@@ -59,6 +101,7 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
+    <sprite>sprites\Console_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
@@ -134,12 +177,16 @@
     </scripts>
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
-      <script>scripts\itemProperty.gml</script>
-      <script>scripts\itemCreate.gml</script>
       <script>scripts\itemFromTag.gml</script>
-      <script>scripts\itemDefine.gml</script>
-      <script>scripts\recipeDefine.gml</script>
+      <script>scripts\itemCreate.gml</script>
+      <script>scripts\itemProperty.gml</script>
       <script>scripts\recipeResult.gml</script>
+      <scripts name="Loading">
+        <script>scripts\itemDefine.gml</script>
+        <script>scripts\itemLoad.gml</script>
+        <script>scripts\recipeDefine.gml</script>
+        <script>scripts\recipeParse.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">

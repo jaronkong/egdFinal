@@ -5,7 +5,14 @@
 var aResult = argument[0];
 var aRecipe = argument[1];
 for ( var i = 2; i < argument_count; ++i ) {
-    aRecipe += "+" + itemProperty( argument[i], Item.tag );
+    if ( is_string( argument[i] ) ) {
+        aRecipe += "+" + itemProperty( argument[i], Item.tag );
+    } else if ( is_array( argument[i] ) ) {
+        var tArray = argument[i];
+        for ( var j = 0; j < array_length_1d( tArray ); ++j ) {
+            aRecipe += "+" + itemProperty( tArray[j], Item.tag );
+        }
+    }
 }
 
 with ( itemManager ) {

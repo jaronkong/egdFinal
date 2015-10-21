@@ -45,7 +45,7 @@ button = vk_nokey;
 buttonLabel = "";
 
 //How long before you can activate it again
-cooldown = 1;
+cooldown = 0.5;
 
 //Track the current cooldaown value
 time = 0;
@@ -421,41 +421,6 @@ shakeElement( id, 5 );
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw self
-
-if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
-    if ( mouseHoverOn( id ) ) {
-        d3d_set_fog( true, highlightColor, depth, depth );
-        draw_sprite_ext( sprite_index, image_index, 
-                    x + shakeOffsetX, y + shakeOffsetY, 
-                    highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
-        d3d_set_fog( false, highlightColor, depth, depth );
-    }
-    draw_sprite_ext( sprite_index, image_index, 
-                    x + shakeOffsetX, y + shakeOffsetY,
-                    image_xscale, image_yscale, 0, c_white, image_alpha );
-}
-
-</string>
-          </argument>
-        </arguments>
       </action>
       <action>
         <libid>1</libid>
