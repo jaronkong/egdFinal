@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Setup
 
-
+originalY = y;
 headHeight = 32; //Size of the tab on top of the trays
 trayWidth = 64;
 trayHeight = 64;
@@ -255,6 +255,33 @@ event_user( 0 );
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Draw the button
+var frame = 0;
+if (mouseHover) {frame = 1;}
+
+draw_sprite( B_Dispenser_spr, frame, x, originalY + 50);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -276,8 +303,6 @@ event_user( 0 );
 
 //Draw the head tab
 draw_sprite( itemTrayHead_spr, 0, x, y + currentSlideOffset );
-
-
 </string>
           </argument>
         </arguments>
