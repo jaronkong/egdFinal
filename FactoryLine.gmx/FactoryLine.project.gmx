@@ -274,6 +274,7 @@
         <object>objects\conveyorBelt</object>
         <object>objects\conveyorBeltDouble</object>
       </objects>
+      <object>objects\receiver</object>
     </objects>
     <objects name="Items">
       <object>objects\itemManager</object>
