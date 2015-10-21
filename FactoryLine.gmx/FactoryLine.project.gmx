@@ -101,6 +101,7 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
+    <sprite>sprites\Console_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
