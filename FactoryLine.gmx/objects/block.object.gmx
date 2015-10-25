@@ -303,16 +303,6 @@ shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
 
 if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
 
-    if ( mouseHoverOn( id ) ) {
-        d3d_set_fog( true, highlightColor, depth, depth );
-        draw_sprite_ext( sprite_index, image_index, 
-                    x + shakeOffsetX, y + shakeOffsetY, 
-                    highlightOutlineSize*image_xscale,
-                    highlightOutlineSize*image_yscale, image_angle,
-                    highlightColor, highlightAlpha*image_alpha );
-        d3d_set_fog( false, highlightColor, depth, depth );
-    }
-    
     draw_sprite_ext( sprite_index, image_index, 
                     x + shakeOffsetX, y + shakeOffsetY,
                     image_xscale, image_yscale, image_angle,
@@ -366,7 +356,22 @@ fluidObstacle_addToQueue( id );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Self
+            <string>///Draw Self and highlights
+
+//Highlight
+if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
+
+    if ( mouseHoverOn( id ) ) {
+        d3d_set_fog( true, highlightColor, depth, depth );
+        draw_sprite_ext( sprite_index, image_index, 
+                    x + shakeOffsetX, y + shakeOffsetY, 
+                    highlightOutlineSize*image_xscale,
+                    highlightOutlineSize*image_yscale, image_angle,
+                    highlightColor, highlightAlpha*image_alpha );
+        d3d_set_fog( false, highlightColor, depth, depth );
+    }
+
+}
 
 event_user( 0 );
 
