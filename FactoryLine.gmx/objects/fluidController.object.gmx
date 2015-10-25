@@ -35,12 +35,12 @@ global.fluidTimestep = 0.125; //0.125
 global.numJacobiIterations = 30;
 global.ambientTemperature = 0;
 
-global.velocityDissipation = 0.8//0.99;
-global.temperatureDissipation = 0.8//0.99;
-global.densityDissipation = 0.8//0.99;
+global.velocityDissipation = 0.9//0.99;
+global.temperatureDissipation = 0.9//0.99;
+global.densityDissipation = 0.9//0.99;
 
 global.smokeWeight = 0.02;
-global.smokeBuoyancy = 0.4;
+global.smokeBuoyancy = 0.5;
 
 global.splatRadius = 48;
 global.splatX = 200;
@@ -56,7 +56,7 @@ global.showDebug = false;
 //texture_set_blending(false);
 //draw_set_alpha_test(true);
 //draw_set_alpha_test_ref_value(1);
-texture_set_repeat(true);
+//texture_set_repeat(true);
 
 velocity = fluidCreateSlab( "velocity", global.fluidWidth, global.fluidHeight );
 density = fluidCreateSlab( "density", global.fluidWidth, global.fluidHeight );

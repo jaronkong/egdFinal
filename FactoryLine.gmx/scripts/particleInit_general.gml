@@ -30,3 +30,18 @@ part_type_orientation(pSmokeUpshot,0,360,0,0,0);
 part_type_blend(pSmokeUpshot,1);
 part_type_life(pSmokeUpshot,10,20);
 ds_map_add( global.particleMap, "smokeUpshot", pSmokeUpshot );
+
+pSparkBurst = part_type_create();
+part_type_sprite(pSparkBurst, particle_line_spr, 1, 1, 0 );
+part_type_size(pSparkBurst,0.1,0.3,0.005,0.05);
+part_type_scale(pSparkBurst,1,0.5);
+part_type_color3(pSparkBurst,c_blue, c_orange, c_red);
+part_type_alpha2(pSparkBurst,1,0);
+part_type_speed(pSparkBurst,1,15,-0.03,0);
+part_type_direction(pSparkBurst,0,360,0,1);
+part_type_orientation(pSparkBurst,0,0,0,0,1);
+part_type_blend(pSparkBurst,1);
+part_type_life(pSparkBurst,10,45);
+part_type_gravity(pSparkBurst, 0.25, 270);
+ds_map_add( global.particleMap, "sparkBurst", pSparkBurst );
+

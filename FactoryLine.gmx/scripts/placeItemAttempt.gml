@@ -20,6 +20,7 @@ if ( instance_exists( aDragItem ) ) {
                     x = tTargetX;
                     y = tTargetY;
                     instance_create( x, y, smokePoof );
+                    instance_create( x, y, sparkBurst );
                     originTraySection = other.originTraySection;
                     active = true;
                 }
