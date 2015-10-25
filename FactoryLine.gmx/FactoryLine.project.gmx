@@ -150,6 +150,7 @@
     </scripts>
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
+      <script>scripts\setTrayPositions.gml</script>
     </scripts>
     <scripts name="Effects">
       <scripts name="PostEffects">
@@ -266,6 +267,7 @@
     </objects>
     <objects name="Interface">
       <object>objects\verticalTray</object>
+      <object>objects\verticalTrayButton</object>
       <object>objects\traySection</object>
       <object>objects\HUDmain</object>
       <object>objects\placeableItem</object>
