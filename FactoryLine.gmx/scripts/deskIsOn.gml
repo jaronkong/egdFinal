@@ -1,5 +1,5 @@
 ///deskIsOn( document id );
-//If a document is on the desk
+//If a document is on the desk, document must be small
 
 var aDoc = argument0;
 
@@ -13,11 +13,17 @@ with ( deskController ) {
 }
 
 with ( aDoc ) {
-    if ( !fullscale ) {
-        //Only small docs need to be on the desk
-        var tSmallHalfWidth = width * perspectiveTiltScale / 2;
-        var tSmallHalfHeight = height * perspectiveTiltScale / 2;
+
+    var tSmallHalfWidth = width * perspectiveTiltScale / 2;
+    var tSmallHalfHeight = height * perspectiveTiltScale / 2;
+    
+    if ( x - tSmallHalfWidth > tDeskX && x + tSmallHalfWidth < tDeskX + tDeskWidth
+        && y - tSmallHalfHeight > tDeskY && y + tSmallHalfHeight < tDeskY + tDeskHeight ) {
         
+        return true;   
     }
+    
 }
+
+return false;
 

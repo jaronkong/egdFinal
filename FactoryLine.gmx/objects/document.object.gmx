@@ -171,8 +171,19 @@ else {
             <kind>1</kind>
             <string>///Perspective transforming
 
-if ( mouseReleased( id ) 
-    &amp;&amp; point_distance( mouse_x, mouse_y, dragClickPointX, dragClickPointY ) &lt; dragTolerance ) { 
+if (
+    //Clicking to make big 
+    (mouseReleased( id ) 
+    &amp;&amp; point_distance( mouse_x, mouse_y, dragClickPointX, dragClickPointY ) &lt; dragTolerance)
+    
+    ||
+    //Drag from desk to make big
+    (dragging &amp;&amp; !fullscale &amp;&amp; !deskIsOn( id ))
+    
+    ||
+    //Drag back to desk to make big
+    (dragging &amp;&amp; fullscale &amp;&amp; deskIsOn( id ))
+      ) { 
     
     fullscale = !fullscale;
     
