@@ -112,6 +112,8 @@
       <sprite>sprites\B_Attacher_spr</sprite>
       <sprite>sprites\B_Modifier_spr</sprite>
       <sprite>sprites\B_Conveyor_spr</sprite>
+      <sprite>sprites\B_Recipe_spr</sprite>
+      <sprite>sprites\B_Recipe_Name_spr</sprite>
     </sprites>
     <sprites name="Documents">
       <sprite>sprites\document_spr</sprite>
@@ -279,6 +281,7 @@
     <objects name="Interface">
       <object>objects\verticalTray</object>
       <object>objects\verticalTrayButton</object>
+      <object>objects\hudButton</object>
       <object>objects\traySection</object>
       <object>objects\HUDmain</object>
       <object>objects\placeableItem</object>
