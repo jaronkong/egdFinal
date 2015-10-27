@@ -30,11 +30,17 @@
 sprite_index = document_spr;
 smallSprite = documentSmall_spr;
 
+text = "hello#this is a test";
+
 width = sprite_width;
 height = sprite_height;
 
-targetXScale = 0.2;
-targetYScale = 0.2;
+targetX = x;
+targetY = y;
+moveTween = 0.2;
+
+targetXScale = 0.1;
+targetYScale = 0.1;
 scaleXTween = 0.2;
 scaleYTween = 0.2;
 
@@ -57,7 +63,7 @@ dragOffsetY = 0;
 
 //Perspective Tweening
 fullscale = false;
-perspectiveSmallScale = 0.2;
+perspectiveSmallScale = 0.15; //How much smaller the small doc is
 
 perspectiveTiltScale = 0.3; //Lower numbers = shallower depth
 perspectiveTiltScale_current = 0;
@@ -93,12 +99,14 @@ smallSpriteAlpha_tween = 0.1;
             <string>///Tween
 
 floatOffset_current = lerp( floatOffset_current, floatOffset_target, floatOffset_tween );
+x = lerp( x, targetX, moveTween );
+y = lerp( y, targetY, moveTween );
 image_xscale = lerp( image_xscale, targetXScale, scaleXTween );
 image_yscale = lerp( image_yscale, targetYScale, scaleYTween );
 perspectiveTiltScale_current = lerp( perspectiveTiltScale_current, perspectiveTiltScale_target, perspectiveTiltScale_tween );
 smallSpriteAlpha_current = lerp( smallSpriteAlpha_current, smallSpriteAlpha_target, smallSpriteAlpha_tween );
 
-
+deskSnapDocumentTo( id );
 </string>
           </argument>
         </arguments>
@@ -124,9 +132,15 @@ smallSpriteAlpha_current = lerp( smallSpriteAlpha_current, smallSpriteAlpha_targ
 if ( dragging ) {
     x = mouse_x + dragOffsetX;
     y = mouse_y + dragOffsetY;
+    targetX = x;
+    targetY = y;
 }
+if ( dragging ) {
+    if ( mouse_check_button_released( mb_left ) ) {
+        dragging = false;
+    }
 
-dragging = false;
+}
 
 if ( mouseHoverOn( id ) ) {
     floatOffset_target = floatOffset;
@@ -188,16 +202,10 @@ if (
     fullscale = !fullscale;
     
     if ( fullscale ) {
-        targetXScale = 1;
-        targetYScale = 1;
-        perspectiveTiltScale_target = 0;
-        smallSpriteAlpha_target = 0;
+        deskDocSetScale( id, true );
     }
     else {
-        targetXScale = perspectiveSmallScale;
-        targetYScale = perspectiveSmallScale;
-        perspectiveTiltScale_target = perspectiveTiltScale;
-        smallSpriteAlpha_target = 1;
+        deskDocSetScale( id, false );
     }
 }
 
@@ -245,6 +253,14 @@ draw_sprite_pos( smallSprite, image_index,
                     x - tHalfWidth - tWidthTiltOffset, y - floatOffset_current + tHalfHeight - tHeightTiltOffset,
                     
                     smallSpriteAlpha_current );
+
+draw_set_alpha( 1 - smallSpriteAlpha_current );
+draw_set_color( c_black );
+draw_set_halign( fa_right );
+draw_set_valign( fa_top );
+
+draw_text_transformed( x + tHalfWidth - 8, y - floatOffset_current - tHalfHeight + 8, text,
+                        image_xscale, image_yscale, 0 );
 </string>
           </argument>
         </arguments>

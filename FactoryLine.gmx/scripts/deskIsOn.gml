@@ -14,12 +14,19 @@ with ( deskController ) {
 
 with ( aDoc ) {
 
-    var tSmallHalfWidth = width * perspectiveTiltScale / 2;
-    var tSmallHalfHeight = height * perspectiveTiltScale / 2;
+    var tSmallHalfWidth = width * perspectiveSmallScale / 2;
+    var tSmallHalfHeight = height * perspectiveSmallScale / 2;
     
     if ( x - tSmallHalfWidth > tDeskX && x + tSmallHalfWidth < tDeskX + tDeskWidth
         && y - tSmallHalfHeight > tDeskY && y + tSmallHalfHeight < tDeskY + tDeskHeight ) {
         
+        return true;   
+    }
+    
+    if ( dragging
+        && mouse_x > tDeskX && mouse_x < tDeskX + tDeskWidth
+        && mouse_y > tDeskY && mouse_y < tDeskY + tDeskHeight ) {
+     
         return true;   
     }
     

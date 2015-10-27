@@ -158,6 +158,8 @@
       <script>scripts\setTrayPositions.gml</script>
       <scripts name="Desk">
         <script>scripts\deskIsOn.gml</script>
+        <script>scripts\deskSnapDocumentTo.gml</script>
+        <script>scripts\deskDocSetScale.gml</script>
       </scripts>
     </scripts>
     <scripts name="Effects">
