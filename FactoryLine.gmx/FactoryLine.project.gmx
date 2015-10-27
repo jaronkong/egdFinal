@@ -291,13 +291,14 @@
     <objects name="Blocks">
       <object>objects\block</object>
       <object>objects\interactiveBlock</object>
-      <object>objects\dispenser</object>
-      <object>objects\modifier</object>
-      <object>objects\combiner</object>
       <objects name="ConveyorBelts">
         <object>objects\conveyorBelt</object>
         <object>objects\conveyorBeltDouble</object>
       </objects>
+      <object>objects\dispenser</object>
+      <object>objects\modifier</object>
+      <object>objects\combiner</object>
+      <object>objects\attacher</object>
       <object>objects\receiver</object>
     </objects>
     <objects name="Items">
