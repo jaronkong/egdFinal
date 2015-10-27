@@ -186,6 +186,8 @@ if ( plungerHeight &lt; plungerGoal ) {
                 tItemBase, itemAdd );
             itemCreate( gridToRoomX( cx ), gridToRoomY( cy + 1 ), tResult );
         }
+        //Clear collisions
+        cellSolid[1] = GridSolid.Open;
     }
 } else if ( plungerHeight &gt; plungerGoal ) {
     plungerHeight = lerp( plungerHeight, plungerGoal, 0.2 );
@@ -232,6 +234,8 @@ if ( plungerHeight &lt; plungerGoal ) {
             <string>///Lower the plunger
 
 plungerGoal = 1;
+
+cellSolid[1] = ( GridSolid.Left | GridSolid.Right | GridSolid.Bottom );
 </string>
           </argument>
         </arguments>
