@@ -91,6 +91,7 @@
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
       <sprite>sprites\slime_spr</sprite>
+      <sprite>sprites\item_spr</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\distortMap_spr</sprite>

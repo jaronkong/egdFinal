@@ -1,7 +1,7 @@
 ///recipeParse( str )
 //Parse and load a recipe
 
-var aInput = argument0;
+var aInput = string_replace_all( argument0, " ", "" );
 
 var tPos, tStr = aInput;
 var tResult, tMethod;

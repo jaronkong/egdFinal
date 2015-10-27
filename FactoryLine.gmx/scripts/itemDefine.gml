@@ -4,6 +4,10 @@ var aTag = argument0;
 var aName = argument1;
 var aSprite = argument2;
 
+if ( !sprite_exists( aSprite ) ) {
+    aSprite = item_spr;
+}
+
 var tIndex = itemFromTag( aTag );
 
 if ( tIndex < 0 ) {

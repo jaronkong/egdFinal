@@ -56,10 +56,14 @@ recipes = ds_map_create( );
             <string>///Load data
 
 ini_open( working_directory + "/recipes/items.dat" );
+itemLoad( "garbage" );
 var tFile = file_text_open_read( working_directory + "/recipes/recipes.dat" );
 while ( !file_text_eof( tFile ) ) {
-    var tRecipe = file_text_read_string( tFile );
-    if ( tRecipe != "" ) {
+    var tRecipe = "";
+    while( !file_text_eoln( tFile ) ) {
+        tRecipe += file_text_read_string( tFile );
+    }
+    if ( string_pos( "=", tRecipe ) &gt; 0 ) {
         recipeParse( tRecipe );
     }
     file_text_readln( tFile );
