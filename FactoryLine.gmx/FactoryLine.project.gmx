@@ -114,6 +114,8 @@
       <sprite>sprites\B_Conveyor_spr</sprite>
       <sprite>sprites\B_Recipe_spr</sprite>
       <sprite>sprites\B_Recipe_Name_spr</sprite>
+      <sprite>sprites\B_Letter_spr</sprite>
+      <sprite>sprites\B_Letter_Name_spr</sprite>
     </sprites>
     <sprites name="Documents">
       <sprite>sprites\document_spr</sprite>

@@ -68,7 +68,6 @@
     <instance objName="receiver" x="512" y="640" name="inst_E1B4C984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="document" x="64" y="448" name="inst_57FD8D20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="attacher" x="640" y="544" name="inst_9204177B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="hudButton" x="256" y="610" name="inst_9A60EF29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
