@@ -176,15 +176,20 @@ if ( plungerHeight &lt; plungerGoal ) {
         var tInst = gridItemAtPoint(
             gridToRoomX( cx ), gridToRoomY( cy + 1 ) );
         if ( instance_exists( tInst ) || ( itemAdd &gt;= 0 ) ) {
+            var tResultY = gridToRoomY( cy + 1 );
             var tItemBase = -1;
             if ( instance_exists( tInst ) ) {
                 tItemBase = tInst.itemID;
+                tResultY = tInst.y;
                 with ( tInst ) instance_destroy( );
             }
-            var tResult = recipeResult(
-                object_get_name( object_index ),
-                tItemBase, itemAdd );
-            itemCreate( gridToRoomX( cx ), gridToRoomY( cy + 1 ), tResult );
+            var tResult = max( tItemBase, itemAdd );
+            if ( ( tItemBase &gt;= 0 ) &amp;&amp; ( itemAdd &gt;= 0 ) ) {
+                tResult = recipeResult(
+                    object_get_name( object_index ),
+                    tItemBase, itemAdd );
+            }
+            itemCreate( gridToRoomX( cx ), tResultY, tResult );
         }
         //Clear collisions
         cellSolid[1] = GridSolid.Open;
