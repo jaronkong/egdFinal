@@ -28,8 +28,7 @@
             <string>/// Initialization
 
 nameSprite = B_Recipe_Name_spr;
-baseY = 5;
-baseX = 0;
+baseY = 3;
 targetHeight = 512;
 
 currentFrame = 0;
@@ -62,22 +61,18 @@ image_speed = 0;
             <string>/// React when moused over
 
 if (mouse_x &gt; bbox_left &amp;&amp; mouse_x &lt; bbox_right &amp;&amp; mouse_y &gt; bbox_top &amp;&amp; mouse_y &lt; bbox_bottom) {
-    if (!mouseHover) {
-        currentFrame = 0;
-    }
     mouseHover = true;
     image_index = 1;
+    currentFrame++;
 }
 
-else if (mouseHover) {
+else {
     mouseHover = false;
     image_index = 0;
+    currentFrame --;
 }
 
-if (mouseHover) {
-    currentFrame++;
-    currentFrame = clamp(currentFrame,0,maxFrame);
-}
+currentFrame = clamp(currentFrame,0,maxFrame);
 </string>
           </argument>
         </arguments>
@@ -103,14 +98,12 @@ if (mouseHover) {
             <string>/// Draw the name sprite
 draw_self();
 
-if (mouseHover) {
     var progress = currentFrame / maxFrame;
-    var xScale = progress;
+    var xScale = clamp(progress * 1.5 - .5,0,1);   
     var yScale = baseY * (1 - progress) + 1;
     var bounce = 5*sin(current_time/250);
     draw_sprite_ext(nameSprite, 0, x, y - (y - targetHeight) * progress + bounce, 
                     xScale,yScale,0,c_white,1);
-}
 
 </string>
           </argument>
