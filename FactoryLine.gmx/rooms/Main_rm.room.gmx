@@ -72,6 +72,7 @@
     <instance objName="oven" x="576" y="224" name="inst_FE33CC0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="weaver" x="448" y="224" name="inst_534CA896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zapper" x="800" y="224" name="inst_2AB12C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="document" x="320" y="448" name="inst_2690B59D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

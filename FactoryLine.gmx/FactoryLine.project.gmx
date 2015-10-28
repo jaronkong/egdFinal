@@ -144,11 +144,15 @@
       <script>scripts\gridBlockAtPoint.gml</script>
       <script>scripts\gridItemAtPoint.gml</script>
     </scripts>
-    <script>scripts\mouseClicked.gml</script>
-    <script>scripts\mouseReleased.gml</script>
-    <script>scripts\mouseRightClicked.gml</script>
-    <script>scripts\mouseDownOn.gml</script>
-    <script>scripts\mouseHoverOn.gml</script>
+    <scripts name="ClickingAndInput">
+      <script>scripts\clickableAddToTop.gml</script>
+      <script>scripts\clickableIsAble.gml</script>
+      <script>scripts\mouseClicked.gml</script>
+      <script>scripts\mouseReleased.gml</script>
+      <script>scripts\mouseDownOn.gml</script>
+      <script>scripts\mouseHoverOn.gml</script>
+      <script>scripts\mouseRightClicked.gml</script>
+    </scripts>
     <scripts name="DraggingAndManipulatingElements">
       <script>scripts\createPlaceableItem.gml</script>
       <script>scripts\isPlaceableLocation.gml</script>
@@ -294,6 +298,8 @@
       <object>objects\rebindPoker</object>
       <object>objects\testCon</object>
       <object>objects\selectionController</object>
+      <object>objects\inputMaskingController</object>
+      <object>objects\inputMaskableObject</object>
       <objects name="Papers">
         <object>objects\deskController</object>
         <object>objects\document</object>
