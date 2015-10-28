@@ -43,11 +43,11 @@
 
 cellPosX[0] = 0;
 cellPosY[0] = 0;
-cellSolid[0] = ( GridSolid.Top | GridSolid.Bottom | GridSolid.Left );
+cellSolid[0] = GridSolid.Top;
 
 cellPosX[1] = 1;
 cellPosY[1] = 0;
-cellSolid[1] = ( GridSolid.Top | GridSolid.Bottom | GridSolid.Right );
+cellSolid[1] = GridSolid.Top;
 
 cellCount = 2;
 </string>
