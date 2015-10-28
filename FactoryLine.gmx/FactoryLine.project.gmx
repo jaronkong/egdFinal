@@ -304,7 +304,12 @@
         <object>objects\conveyorBeltDouble</object>
       </objects>
       <object>objects\dispenser</object>
-      <object>objects\modifier</object>
+      <objects name="Modifiers">
+        <object>objects\modifier</object>
+        <object>objects\oven</object>
+        <object>objects\weaver</object>
+        <object>objects\zapper</object>
+      </objects>
       <object>objects\combiner</object>
       <object>objects\attacher</object>
       <object>objects\receiver</object>
