@@ -199,7 +199,8 @@ shakeDecayTween = 0.1;
             <kind>1</kind>
             <string>///Clicked for dragging
 
-if ( active &amp;&amp; mouseClicked( id ) ) {
+if ( active &amp;&amp; mouseClicked( id )
+    &amp;&amp; gridBlockAtPoint( mouse_x, mouse_y ) == id ) {
     with ( createPlaceableItem( x, y, id, originTraySection ) ) {
         //held = true;
     }
