@@ -85,7 +85,7 @@ perspectiveTiltScale_target = 0.3;
 perspectiveTiltScale_tween = 0.2;
 
 smallSpriteAlpha_current = 0;
-smallSpriteAlpha_target = 0;
+smallSpriteAlpha_target = 1;
 smallSpriteAlpha_tween = 0.1;
 
 </string>

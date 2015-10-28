@@ -6,8 +6,8 @@ if ( instance_exists( aDragItem ) ) {
     var tHeldBlock = aDragItem.heldItem;
     var tTargetX = aDragItem.targetX;
     var tTargetY = aDragItem.targetY;
-    var tStartX = tHeldBlock.x;
-    var tStartY = tHeldBlock.y;
+    var tStartX = aDragItem.heldStartX;
+    var tStartY = aDragItem.heldStartY;
 
     if ( isPlaceableLocation( tTargetX, tTargetY, tHeldBlock ) ) {
         //If can place where want to place, then do it

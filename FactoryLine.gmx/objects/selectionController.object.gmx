@@ -86,7 +86,8 @@ for ( var i = 0; i &lt; ds_list_size( selectionList ); ++i ) {
         if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
             d3d_set_fog( true, bindKeyColor, depth, depth );
             draw_sprite_ext( sprite_index, image_index, x, y, 
-                        highlightOutlineSize, highlightOutlineSize, 0, highlightColor, highlightAlpha );
+                        highlightOutlineSize * image_xscale, highlightOutlineSize * image_yscale, 
+                        0, highlightColor, highlightAlpha );
             d3d_set_fog( false, bindKeyColor, depth, depth );
         }
     }
