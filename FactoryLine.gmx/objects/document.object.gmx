@@ -53,8 +53,8 @@ targetX = x;
 targetY = y;
 moveTween = 0.2;
 
-targetXScale = 0.1;
-targetYScale = 0.1;
+targetXScale = 0.15;
+targetYScale = 0.15;
 scaleXTween = 0.2;
 scaleYTween = 0.2;
 
