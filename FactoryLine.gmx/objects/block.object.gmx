@@ -302,7 +302,7 @@ shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
             <kind>1</kind>
             <string>///Draw self
 
-if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
+if ( sprite_exists( sprite_index ) ) {
 
     draw_sprite_ext( sprite_index, image_index, 
                     x + shakeOffsetX, y + shakeOffsetY,
@@ -360,7 +360,7 @@ fluidObstacle_addToQueue( id );
             <string>///Draw Self and highlights
 
 //Highlight
-if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
+if ( sprite_exists( sprite_index ) ) {
 
     if ( mouseHoverOn( id ) ) {
         d3d_set_fog( true, highlightColor, depth, depth );
