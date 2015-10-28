@@ -39,6 +39,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Only the top is solid
+
+cellSolid[0] = GridSolid.Top;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Define direction
 
 dir = 1;
@@ -111,10 +134,12 @@ button = ord( 'R' );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Audio loop
+            <string>///Effects
 
 audioLoop = audio_play_sound( conveyorLoops_sd, 1, true );
 audio_sound_gain( audioLoop, 0, 0 );
+
+frame = 0;
 </string>
           </argument>
         </arguments>
@@ -217,6 +242,17 @@ if ( tMove || tStop ) {
     }
 }
 
+if ( tMove ) {
+    frame += ( 0.5 * dir );
+    var tImg = conveyor_wheel_spr;
+    while ( frame &gt;= sprite_get_number( tImg ) ) {
+        frame -= sprite_get_number( tImg );
+    }
+    while ( frame &lt; 0 ) {
+        frame += sprite_get_number( tImg );
+    }
+}
+
 if ( tStart ) {
     audio_sound_gain( audioLoop, 0.25, 100 );
 } else if ( tStop ) {
@@ -263,6 +299,80 @@ if ( tStart ) {
 dir = -dir;
 
 audio_play_sound( conveyorStart_sd, 0, false );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw the conveyor belt
+
+var tScale = 0.2;
+
+var cx = gridFromRoomX( x );
+var tOffsetX = ( x - gridToRoomX( cx ) );
+var tImgScale = ( 2 * tScale * 64 / sprite_get_width( conveyor_wheel_spr ) );
+var tScaleX = ( image_xscale * tImgScale );
+var tScaleY = ( image_yscale * tImgScale );
+
+//Get the left/right edges
+var tLeft = 0;
+var tRight = 0;
+for ( var i = 0; i &lt; cellCount; ++i ) {
+    tLeft = min( cellPosX[i], tLeft );
+    tRight = max( cellPosX[i], tRight );
+}
+
+var tPosLeft = ( gridToRoomX( cx + tLeft - 0.5 + tScale ) + tOffsetX );
+var tPosRight = ( gridToRoomX( cx + tRight + 0.5 - tScale ) + tOffsetX );
+var py, tPosY = ( y - ( ( 0.5 - tScale ) * 64 ) );
+
+//Draw a line between the sprites
+draw_set_color( c_black );
+draw_set_alpha( 1 );
+py = ( tPosY - ( tScale * 64 ) + 1 );
+draw_line_width( tPosLeft, py, tPosRight, py, 2 );
+py = ( tPosY + ( tScale * 64 ) - 3 );
+draw_line_width( tPosLeft, py, tPosRight, py, 2 );
+draw_set_color( c_white );
+draw_set_alpha( 1 );
+
+//Draw the sprites
+draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosLeft, tPosY,
+    tScaleX, tScaleY, 0, image_blend, image_alpha );
+
+draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosRight, tPosY,
+    tScaleX, tScaleY, 0, image_blend, image_alpha );
 </string>
           </argument>
         </arguments>
