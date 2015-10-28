@@ -63,14 +63,14 @@ while ( !file_text_eof( tFile ) ) {
     while( !file_text_eoln( tFile ) ) {
         tRecipe += file_text_read_string( tFile );
     }
-    if ( string_pos( "=", tRecipe ) &gt; 0 ) {
+    if ( string_count( "=", tRecipe ) &gt; 0 ) {
         tRecipe = string_replace( tRecipe, "=", ( "=" + tMethod + ":" ) );
         if ( script_exists( tDefine ) ) {
             recipeParse( tRecipe, tDefine );
         } else {
             recipeParse( tRecipe );
         }
-    } else if ( string_pos( ":", tRecipe ) &gt; 0 ) {
+    } else if ( string_count( ":", tRecipe ) &gt; 0 ) {
         tMethod = string_replace_all( tRecipe, ":", "" );
     } else if ( asset_get_type( tRecipe ) == asset_script ) {
         tDefine = asset_get_index( tRecipe );
