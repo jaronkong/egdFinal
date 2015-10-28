@@ -91,6 +91,7 @@
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
       <sprite>sprites\slime_spr</sprite>
+      <sprite>sprites\item_spr</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\distortMap_spr</sprite>
@@ -247,6 +248,7 @@
   <fonts name="fonts">
     <font>fonts\main_ft</font>
     <font>fonts\letter_ft</font>
+    <font>fonts\counter_ft</font>
   </fonts>
   <objects name="objects">
     <object>objects\mainController</object>
@@ -307,7 +309,12 @@
         <object>objects\conveyorBeltDouble</object>
       </objects>
       <object>objects\dispenser</object>
-      <object>objects\modifier</object>
+      <objects name="Modifiers">
+        <object>objects\modifier</object>
+        <object>objects\oven</object>
+        <object>objects\weaver</object>
+        <object>objects\zapper</object>
+      </objects>
       <object>objects\combiner</object>
       <object>objects\attacher</object>
       <object>objects\receiver</object>

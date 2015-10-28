@@ -28,7 +28,7 @@
             <string>///Setup
 
 sprite_index = document_spr;
-smallSprite = documentSmall_spr;
+smallSprite = documentSmallConfirm_spr;
 
 text = "hello#this is a test";
 

@@ -1,14 +1,16 @@
 ///itemFromTag( tag )
 ///Get an itemID from the tag
 
-if ( !is_string( argument0 ) ) {
-    return argument0;
+var aItem = argument0;
+
+if ( is_real( aItem ) ) {
+    return aItem;
 }
 
 with ( itemManager ) {
     var tPos = ds_grid_value_x( items, 0, Item.tag,
-        ds_grid_height( items ), Item.tag, argument0 );
+        ds_grid_width( items ), Item.tag, aItem );
     if ( tPos >= 0 ) return tPos;
 }
 
-return -1;
+return itemLoad( aItem );

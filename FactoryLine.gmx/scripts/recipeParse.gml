@@ -1,7 +1,7 @@
 ///recipeParse( str )
 //Parse and load a recipe
 
-var aInput = argument0;
+var aInput = string_replace_all( argument0, " ", "" );
 
 var tPos, tStr = aInput;
 var tResult, tMethod;
@@ -27,12 +27,6 @@ while ( tPos > 0 ) {
 
 //Get the last ingredient
 tItem[tItemCount++] = tStr;
-
-//Ensure all items are loaded
-itemLoad( tResult );
-for ( var i = 0; i < tItemCount; ++i ) {
-    itemLoad( tItem[i] );
-}
 
 //Insert the recipe
 recipeDefine( tResult, tMethod, tItem );

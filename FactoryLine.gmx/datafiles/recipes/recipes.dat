@@ -1,3 +1,6 @@
-slime=modifier:garbage
-slime=combiner:garbage+garbage
-slime=attacher:garbage+garbage
+dragon_teeth = oven: teeth
+hard_plating = oven: fuzz
+strands = weaver: slime
+wing = weaver: fuzz
+ectoplasm = zapper: bones
+metal = zapper: slime

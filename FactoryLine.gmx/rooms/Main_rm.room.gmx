@@ -55,18 +55,23 @@
     <instance objName="gridManager" x="0" y="0" name="inst_A4EBF76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="itemManager" x="16" y="0" name="inst_B1AB1933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="item" x="576" y="64" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="dispenser" x="544" y="0" name="inst_880E3D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBelt" x="736" y="352" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBelt" x="672" y="544" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="modifier" x="576" y="320" name="inst_CD67BCFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="conveyorBeltDouble" x="512" y="384" name="inst_0C3380BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="selectionController" x="16" y="0" name="inst_B4CF20AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="544" y="0" name="inst_880E3D41" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="736" y="288" name="inst_75E45DFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBelt" x="640" y="416" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conveyorBeltDouble" x="512" y="288" name="inst_0C3380BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="postEffectsGlobalCon" x="32" y="32" name="inst_CC6B45A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mainController" x="32" y="0" name="inst_4BDAB96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="192" y="96" name="inst_792E0327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="receiver" x="512" y="640" name="inst_E1B4C984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="document" x="64" y="448" name="inst_57FD8D20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="attacher" x="640" y="544" name="inst_9204177B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="attacher" x="640" y="256" name="inst_9204177B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="608" y="0" name="inst_DF52DE07" locked="0" code="itemID = itemFromTag( &quot;bone&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="672" y="0" name="inst_2A7D0F9C" locked="0" code="itemID = itemFromTag( &quot;eye&quot; );" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="800" y="0" name="inst_C97410FD" locked="0" code="itemID = itemFromTag( &quot;fuzz&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="736" y="0" name="inst_BC9C62D5" locked="0" code="itemID = itemFromTag( &quot;teeth&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oven" x="576" y="224" name="inst_FE33CC0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weaver" x="448" y="224" name="inst_534CA896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zapper" x="800" y="224" name="inst_2AB12C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
