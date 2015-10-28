@@ -8,10 +8,9 @@ if ( is_real( aItem ) ) {
 }
 
 with ( itemManager ) {
-    var tt = Item.tag;
     var tPos = ds_grid_value_x( items, 0, Item.tag,
         ds_grid_width( items ), Item.tag, aItem );
     if ( tPos >= 0 ) return tPos;
 }
 
-return -1;
+return itemLoad( aItem );

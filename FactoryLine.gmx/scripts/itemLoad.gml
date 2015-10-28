@@ -3,10 +3,14 @@
 
 var aTag = argument0;
 
-var tIndex = itemFromTag( aTag )
-if ( tIndex >= 0 ) return tIndex;
+var tIndex = -1;
 
-var tName = ini_read_string( aTag, "name", aTag );
-var tSprite = asset_get_index( ini_read_string( aTag, "sprite", "" ) );
+ini_open( working_directory + "/recipes/items.dat" );
+if ( ini_section_exists( aTag ) ) {
+    var tName = ini_read_string( aTag, "name", aTag );
+    var tSprite = asset_get_index( ini_read_string( aTag, "sprite", "" ) );
+    tIndex = itemDefine( aTag, tName, tSprite );
+}
+ini_close( );
 
-return itemDefine( aTag, tName, tSprite );
+return tIndex;

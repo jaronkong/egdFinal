@@ -28,11 +28,5 @@ while ( tPos > 0 ) {
 //Get the last ingredient
 tItem[tItemCount++] = tStr;
 
-//Ensure all items are loaded
-itemLoad( tResult );
-for ( var i = 0; i < tItemCount; ++i ) {
-    itemLoad( tItem[i] );
-}
-
 //Insert the recipe
 recipeDefine( tResult, tMethod, tItem );

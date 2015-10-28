@@ -55,8 +55,6 @@ recipes = ds_map_create( );
             <kind>1</kind>
             <string>///Load data
 
-ini_open( working_directory + "/recipes/items.dat" );
-itemLoad( "garbage" );
 var tFile = file_text_open_read( working_directory + "/recipes/recipes.dat" );
 while ( !file_text_eof( tFile ) ) {
     var tRecipe = "";
@@ -69,7 +67,6 @@ while ( !file_text_eof( tFile ) ) {
     file_text_readln( tFile );
 }
 file_text_close( tFile );
-ini_close( );
 </string>
           </argument>
         </arguments>
