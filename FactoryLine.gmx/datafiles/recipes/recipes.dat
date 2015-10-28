@@ -1,6 +1,23 @@
-dragon_teeth = oven: teeth
-hard_plating = oven: fuzz
-strands = weaver: slime
-wing = weaver: fuzz
-ectoplasm = zapper: bones
-metal = zapper: slime
+pressurizer:
+bone_hardened = bone
+muscle = slime
+
+infuser:
+body_fur = body_skin + fur
+feathers = bone + fur
+body_feathers = body_skin + feathers
+body_scaly = body_skin + bone_hardened
+tooth = bone_hardened + slime
+
+recipeDefineUnordered
+
+combiner:
+body_skin = bone + slime
+body_slime = slime + slime
+jaw = bone + tooth
+jaw_beaked = bone + bone_hardened
+mouth_toothy = jaw + muscle
+mouth_beaked = jaw_beaked + muscle
+tentacle = slime + muscle
+leg = muscle + bone_hardened
+wing = leg + feathers

@@ -3,46 +3,13 @@ name = "Garbage"
 sprite = garbage_spr
 
 [slime]
-name = "Slime Ball"
+name = "Slime"
 sprite = slime_spr
 
 [bone]
 name = "Bone"
 sprite = bone_spr
 
-[eye]
-name = "Eye"
-sprite = eye_spr
-
-[teeth]
-name = "Teeth"
-sprite = teeth_spr
-
-[fuzz]
-name = "Fuzz"
-sprite = fuzz_spr
-
-
-[wing]
-name = "Wing"
-sprite = wing_spr
-
-[hard_plating]
-name = "Hard Plating"
-sprite = hardPlating_spr
-
-[strands]
-name = "Strands"
-sprite = strands_spr
-
-[metal]
-name = "Metal"
-sprite = metal_spr
-
-[dragon_teeth]
-name = "Dragon Teeth"
-sprite = dragonTeeth_spr
-
-[ectoplasm]
-name = "Ectoplasm"
-sprite = ectoplasm_spr
+[fur]
+name = "Fur"
+sprite = fur_spr

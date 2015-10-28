@@ -1,7 +1,11 @@
-///recipeParse( str )
+///recipeParse( str, definer = recipeDefine )
 //Parse and load a recipe
 
-var aInput = string_replace_all( argument0, " ", "" );
+var aInput = string_replace_all( argument[0], " ", "" );
+var aDefine = recipeDefine;
+if ( argument_count > 1 ) {
+    aDefine = argument[1];
+}
 
 var tPos, tStr = aInput;
 var tResult, tMethod;
@@ -29,4 +33,4 @@ while ( tPos > 0 ) {
 tItem[tItemCount++] = tStr;
 
 //Insert the recipe
-recipeDefine( tResult, tMethod, tItem );
+script_execute( aDefine, tResult, tMethod, tItem );

@@ -86,6 +86,7 @@
       <sprites name="conveyor">
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
+        <sprite>sprites\conveyor_wheel_spr</sprite>
       </sprites>
     </sprites>
     <sprites name="Items">
@@ -220,6 +221,7 @@
         <script>scripts\itemLoad.gml</script>
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
+        <script>scripts\recipeDefineUnordered.gml</script>
       </scripts>
       <script>scripts\itemDraw.gml</script>
     </scripts>
@@ -317,11 +319,10 @@
       <object>objects\dispenser</object>
       <objects name="Modifiers">
         <object>objects\modifier</object>
-        <object>objects\oven</object>
-        <object>objects\weaver</object>
-        <object>objects\zapper</object>
+        <object>objects\pressurizer</object>
       </objects>
       <object>objects\combiner</object>
+      <object>objects\infuser</object>
       <object>objects\attacher</object>
       <object>objects\receiver</object>
     </objects>
