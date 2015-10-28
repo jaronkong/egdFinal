@@ -86,6 +86,7 @@
       <sprites name="conveyor">
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
+        <sprite>sprites\conveyor_wheel_spr</sprite>
       </sprites>
     </sprites>
     <sprites name="Items">
