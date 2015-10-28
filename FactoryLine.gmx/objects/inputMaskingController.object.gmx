@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-150</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Setup
 
-selectionList = ds_list_create();
+clickableList = ds_list_create(); //Order of windows to do input masking
 
 
 </string>
@@ -54,7 +54,7 @@ selectionList = ds_list_create();
             <kind>1</kind>
             <string>///Clean up
 
-ds_list_destroy( selectionList );
+ds_list_destroy( clickableList );
 
 </string>
           </argument>
@@ -78,20 +78,13 @@ ds_list_destroy( selectionList );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw highlights of selected elements
+            <string>///Draw stacked clickable items.
 
-for ( var i = 0; i &lt; ds_list_size( selectionList ); ++i ) {
+for ( var i = 0; i &lt; ds_list_size( clickableList ); ++i ) {
+    with ( clickableList[| i] ){
 
-    with ( selectionList[| i ] ) {
-        if ( sprite_exists( sprite_index ) &amp;&amp; active ) {
-            d3d_set_fog( true, bindKeyColor, depth, depth );
-            draw_sprite_ext( sprite_index, image_index, x, y, 
-                        highlightOutlineSize * image_xscale, highlightOutlineSize * image_yscale, 
-                        0, highlightColor, highlightAlpha );
-            d3d_set_fog( false, bindKeyColor, depth, depth );
-        }
+        event_user( 0 );
     }
-
 }
 
 </string>

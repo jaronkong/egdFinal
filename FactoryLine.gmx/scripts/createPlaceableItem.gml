@@ -8,6 +8,8 @@ var tNewItem = instance_create( argument0, argument1, placeableItem );
 with ( tNewItem ) {
     heldItem = aHeldItem;
     image = heldItem.sprite_index;
+    heldStartX = heldItem.x;
+    heldStartY = heldItem.y;
     originTraySection = aOriginTraySection;
     image_xscale = heldItem.image_xscale;
     image_yscale = heldItem.image_yscale;
