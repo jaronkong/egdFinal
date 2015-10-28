@@ -120,6 +120,8 @@
     </sprites>
     <sprites name="Documents">
       <sprite>sprites\document_spr</sprite>
+      <sprite>sprites\documentSmallConfirm_spr</sprite>
+      <sprite>sprites\documentSmallDeny_spr</sprite>
       <sprite>sprites\documentSmall_spr</sprite>
     </sprites>
   </sprites>
@@ -245,6 +247,7 @@
   </shaders>
   <fonts name="fonts">
     <font>fonts\main_ft</font>
+    <font>fonts\letter_ft</font>
   </fonts>
   <objects name="objects">
     <object>objects\mainController</object>
@@ -294,6 +297,7 @@
       <objects name="Papers">
         <object>objects\deskController</object>
         <object>objects\document</object>
+        <object>objects\restrictionDoc</object>
       </objects>
     </objects>
     <objects name="Blocks">

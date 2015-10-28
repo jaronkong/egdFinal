@@ -60,7 +60,6 @@
     <instance objName="conveyorBelt" x="640" y="416" name="inst_5200D47C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="conveyorBeltDouble" x="512" y="288" name="inst_0C3380BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="selectionController" x="16" y="0" name="inst_B4CF20AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="fluidController" x="16" y="32" name="inst_CD1C7FB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="postEffectsGlobalCon" x="32" y="32" name="inst_CC6B45A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mainController" x="32" y="0" name="inst_4BDAB96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="192" y="96" name="inst_792E0327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
