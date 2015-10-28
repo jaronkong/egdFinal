@@ -318,11 +318,10 @@
       <object>objects\dispenser</object>
       <objects name="Modifiers">
         <object>objects\modifier</object>
-        <object>objects\oven</object>
-        <object>objects\weaver</object>
-        <object>objects\zapper</object>
+        <object>objects\pressurizer</object>
       </objects>
       <object>objects\combiner</object>
+      <object>objects\infuser</object>
       <object>objects\attacher</object>
       <object>objects\receiver</object>
     </objects>

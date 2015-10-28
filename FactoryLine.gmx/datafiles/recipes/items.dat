@@ -3,5 +3,13 @@ name = "Garbage"
 sprite = garbage_spr
 
 [slime]
-name = "Slime Ball"
+name = "Slime"
 sprite = slime_spr
+
+[bone]
+name = "Bone"
+sprite = bone_spr
+
+[fur]
+name = "Fur"
+sprite = fur_spr
