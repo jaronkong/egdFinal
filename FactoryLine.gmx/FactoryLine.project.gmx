@@ -248,6 +248,7 @@
   <fonts name="fonts">
     <font>fonts\main_ft</font>
     <font>fonts\letter_ft</font>
+    <font>fonts\counter_ft</font>
   </fonts>
   <objects name="objects">
     <object>objects\mainController</object>
