@@ -216,6 +216,7 @@
         <script>scripts\itemLoad.gml</script>
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
+        <script>scripts\recipeDefineUnordered.gml</script>
       </scripts>
       <script>scripts\itemDraw.gml</script>
     </scripts>

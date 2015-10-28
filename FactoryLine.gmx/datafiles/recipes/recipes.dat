@@ -4,3 +4,7 @@ strands = weaver: slime
 wing = weaver: fuzz
 ectoplasm = zapper: bones
 metal = zapper: slime
+
+recipeDefineUnordered
+meat_body = combiner: bone + slime
+fur_body = combiner: meat + fuzz
