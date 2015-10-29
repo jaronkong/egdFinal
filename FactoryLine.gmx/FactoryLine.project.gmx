@@ -170,6 +170,7 @@
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
       <script>scripts\setTrayPositions.gml</script>
+      <script>scripts\verticalTrayCreate.gml</script>
       <scripts name="Desk">
         <script>scripts\deskIsOn.gml</script>
         <script>scripts\deskSnapDocumentTo.gml</script>
