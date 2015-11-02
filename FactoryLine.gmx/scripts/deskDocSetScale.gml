@@ -6,6 +6,9 @@ with ( argument0 ) {
         targetYScale = 1;
         perspectiveTiltScale_target = 0;
         smallSpriteAlpha_target = 0;
+        if ( y - height/2 < deskController.y ) {
+            targetY = deskController.y - height/2 - 32;
+        }
     }
     else {
         targetXScale = perspectiveSmallScale;

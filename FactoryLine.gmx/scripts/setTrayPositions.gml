@@ -58,7 +58,7 @@ yPos = 610;
 xPos = 250;
 xDiff = 150;
 
-var recipes = instance_create(xPos + xDiff * 0,yPos,recipieBook);
+var recipes = instance_create(xPos + xDiff * 0,yPos,recipeBook);
 //recipes.sprite_index = B_Recipe_spr;
 //recipes.nameSprite = B_Recipe_Name_spr;
 

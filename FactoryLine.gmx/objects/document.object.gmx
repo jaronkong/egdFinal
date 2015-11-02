@@ -48,6 +48,7 @@ text = "hello#this is a test";
 
 width = sprite_width;
 height = sprite_height;
+fullImageIndex = 0;
 
 targetX = x;
 targetY = y;
@@ -267,7 +268,7 @@ var tHalfHeight = height / 2 * image_yscale;
 var tWidthTiltOffset = tHalfWidth * perspectiveTiltScale_current;
 var tHeightTiltOffset = tHalfHeight * perspectiveTiltScale_current;
 
-draw_sprite_pos( sprite_index, image_index, 
+draw_sprite_pos( sprite_index, fullImageIndex, 
                     x - tHalfWidth + tWidthTiltOffset, y - floatOffset_current - tHalfHeight + tHeightTiltOffset,
                     x + tHalfWidth - tWidthTiltOffset, y - floatOffset_current - tHalfHeight + tHeightTiltOffset,
                     x + tHalfWidth + tWidthTiltOffset, y - floatOffset_current + tHalfHeight - tHeightTiltOffset,
