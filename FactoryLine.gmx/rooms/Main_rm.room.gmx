@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="HUDmain" x="-224" y="1088" name="inst_34D19212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridManager" x="0" y="0" name="inst_A4EBF76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="itemManager" x="16" y="0" name="inst_B1AB1933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="item" x="576" y="64" name="inst_14F16CF2" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -63,14 +62,13 @@
     <instance objName="mainController" x="32" y="0" name="inst_4BDAB96E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="192" y="96" name="inst_792E0327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="receiver" x="512" y="640" name="inst_E1B4C984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="document" x="64" y="448" name="inst_57FD8D20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="attacher" x="640" y="256" name="inst_9204177B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dispenser" x="608" y="0" name="inst_DF52DE07" locked="0" code="itemID = itemFromTag( &quot;bone&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dispenser" x="672" y="0" name="inst_2A7D0F9C" locked="0" code="itemID = itemFromTag( &quot;eye&quot; );" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dispenser" x="736" y="0" name="inst_C97410FD" locked="0" code="itemID = itemFromTag( &quot;fur&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="pressurizer" x="800" y="224" name="inst_2AB12C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="document" x="320" y="448" name="inst_2690B59D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="infuser" x="448" y="288" name="inst_C151B47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="HUDmain" x="-224" y="1088" name="inst_34D19212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -162,7 +162,7 @@ currentFrame = clamp(currentFrame,0,maxFrame);
           <argument>
             <kind>1</kind>
             <string>/// Draw the name sprite
-draw_self();
+//draw_self();
 
     var progress = currentFrame / maxFrame;
     var xScale = clamp(progress * 1.5 - .5,0,1);   
@@ -187,6 +187,20 @@ draw_self();
         <exetype>1</exetype>
         <functionname>action_inherited</functionname>
         <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>500</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring>draw_self();</codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
