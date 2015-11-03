@@ -1,0 +1,52 @@
+[base]
+0 = body_skin
+1 = body_slime
+
+[attach]
+0 = eye
+1 = leg
+
+
+[body_skin]
+eye-max = 3
+leg-max = 2
+
+[body_slime]
+eye-max = 3
+leg-max = 3
+
+
+[eye]
+[eye-0]
+sprite = item_spr
+sprite-missing = slime_spr
+x = 0
+y = -8
+s = 0.1
+[eye-1]
+sprite = item_spr
+x = -4
+y = -4
+s = 0.1
+[eye-2]
+sprite = item_spr
+x = 4
+y = -4
+s = 0.1
+
+[leg]
+[leg-0]
+sprite = item_spr
+x = 0
+y = 8
+s = 0.1
+[leg-1]
+sprite = item_spr
+x = -4
+y = 4
+s = 0.1
+[leg-2]
+sprite = item_spr
+x = 4
+y = 4
+s = 0.1
