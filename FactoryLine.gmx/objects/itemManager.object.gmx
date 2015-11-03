@@ -53,7 +53,7 @@ recipes = ds_map_create( );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Load data
+            <string>///Load generic recipes
 
 var tFile = file_text_open_read( working_directory + "/recipes/recipes.dat" );
 var tDefine = noone;
@@ -78,6 +78,58 @@ while ( !file_text_eof( tFile ) ) {
     file_text_readln( tFile );
 }
 file_text_close( tFile );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Load recipes
+
+var tFile = ( working_directory + "/recipes/attachments.dat" );
+
+var tBaseParts = ds_list_create( );
+var tAttachParts = ds_list_create( );
+
+//Load in base parts and attachable parts
+ini_open( tFile );
+tIndex = 0;
+while ( ini_key_exists( "base", string( tIndex ) ) ) {
+    ds_list_add( tBaseParts,
+        ini_read_string( "base", string( tIndex ), "" )
+    );
+    ++tIndex;
+}
+tIndex = 0;
+while ( ini_key_exists( "attach", string( tIndex ) ) ) {
+    ds_list_add( tAttachParts,
+        ini_read_string( "attach", string( tIndex ), "" )
+    );
+    ++tIndex;
+}
+ini_close( );
+
+//Load in item data for each
+for ( var i = 0; i &lt; ds_list_size( tBaseParts ); ++i ) {
+    tBaseParts[| i] = itemProperty( tBaseParts[| i], Item.tag );
+}
+for ( var i = 0; i &lt; ds_list_size( tAttachParts ); ++i ) {
+    tAttachParts[| i] = itemProperty( tAttachParts[| i], Item.tag );
+}
 </string>
           </argument>
         </arguments>
