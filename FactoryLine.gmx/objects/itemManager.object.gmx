@@ -104,16 +104,21 @@ var tFile = ( working_directory + "/recipes/attachments.dat" );
 
 var tBase, tBaseCount = 0;
 var tAttach, tAttachCount = 0;
+var tBaseAttach = false;
 
 //Load in base parts and attachable parts
 ini_open( tFile );
-while ( ini_key_exists( "base", string( tBaseCount ) ) ) {
-    tBase[tBaseCount] = ini_read_string( "base", string( tBaseCount ), "" );
-    ++tBaseCount;
-}
 while ( ini_key_exists( "attach", string( tAttachCount ) ) ) {
     tAttach[tAttachCount] = ini_read_string( "attach", string( tAttachCount ), "" );
     ++tAttachCount;
+}
+while ( ini_key_exists( "base", string( tBaseCount ) ) ) {
+    tBase[tBaseCount] = ini_read_string( "base", string( tBaseCount ), "" );
+    for ( var i = 0; i &lt; tAttachCount; ++i ) {
+        tBaseAttach[tBaseCount, i] = ini_read_real(
+            tBase[tBaseCount], tAttach[i]+"-max", 0 );
+    }
+    ++tBaseCount;
 }
 ini_close( );
 
