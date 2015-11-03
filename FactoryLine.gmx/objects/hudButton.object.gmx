@@ -89,7 +89,11 @@ image_speed = 0;
             <kind>1</kind>
             <string>/// React when moused over
 
-if (mouse_x &gt; bbox_left &amp;&amp; mouse_x &lt; bbox_right &amp;&amp; mouse_y &gt; bbox_top &amp;&amp; mouse_y &lt; bbox_bottom) {
+if (mouse_x &gt; bbox_left
+    &amp;&amp; mouse_x &lt; bbox_right 
+    &amp;&amp; mouse_y &gt; bbox_top 
+    &amp;&amp; mouse_y &lt; bbox_bottom
+    &amp;&amp; !fullscale) {
     mouseHover = true;
     image_index = 1;
     currentFrame++;
