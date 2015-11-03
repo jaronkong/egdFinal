@@ -102,33 +102,27 @@ file_text_close( tFile );
 
 var tFile = ( working_directory + "/recipes/attachments.dat" );
 
-var tBaseParts = ds_list_create( );
-var tAttachParts = ds_list_create( );
+var tBase, tBaseCount = 0;
+var tAttach, tAttachCount = 0;
 
 //Load in base parts and attachable parts
 ini_open( tFile );
-tIndex = 0;
-while ( ini_key_exists( "base", string( tIndex ) ) ) {
-    ds_list_add( tBaseParts,
-        ini_read_string( "base", string( tIndex ), "" )
-    );
-    ++tIndex;
+while ( ini_key_exists( "base", string( tBaseCount ) ) ) {
+    tBase[tBaseCount] = ini_read_string( "base", string( tBaseCount ), "" );
+    ++tBaseCount;
 }
-tIndex = 0;
-while ( ini_key_exists( "attach", string( tIndex ) ) ) {
-    ds_list_add( tAttachParts,
-        ini_read_string( "attach", string( tIndex ), "" )
-    );
-    ++tIndex;
+while ( ini_key_exists( "attach", string( tAttachCount ) ) ) {
+    tAttach[tAttachCount] = ini_read_string( "attach", string( tAttachCount ), "" );
+    ++tAttachCount;
 }
 ini_close( );
 
 //Load in item data for each
-for ( var i = 0; i &lt; ds_list_size( tBaseParts ); ++i ) {
-    tBaseParts[| i] = itemProperty( tBaseParts[| i], Item.tag );
+for ( var i = 0; i &lt; tBaseCount; ++i ) {
+    tBase[i] = itemProperty( tBase[i], Item.tag );
 }
-for ( var i = 0; i &lt; ds_list_size( tAttachParts ); ++i ) {
-    tAttachParts[| i] = itemProperty( tAttachParts[| i], Item.tag );
+for ( var i = 0; i &lt; tAttachCount; ++i ) {
+    tAttach[i] = itemProperty( tAttach[i], Item.tag );
 }
 </string>
           </argument>
