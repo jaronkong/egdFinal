@@ -1,15 +1,18 @@
 [base]
 0 = body_skin
 1 = body_slime
+2 = body_fur
+3 = body_feathers
+4 = body_scaly
 
 [attach]
 0 = eye
-1 = leg
+1 = tentacle
+2 = leg
+3 = wing
+4 = mouth_beaked
+5 = mouth_toothy
 
-
-[body_skin]
-eye-max = 3
-leg-max = 2
 
 [body_slime]
 eye-max = 3
@@ -17,6 +20,7 @@ leg-max = 3
 
 
 [eye]
+max = 2
 [eye-0]
 sprite = slime_spr
 x = 0
@@ -33,19 +37,57 @@ x = 6
 y = -6
 s = 0.3
 
+[tentacle]
+max = 1
+[tentacle-0]
+sprite = slime_spr
+x = 0
+y = 4
+s = 0.4
+
 [leg]
+max = 2
 [leg-0]
 sprite = item_spr
 x = 0
 y = 8
-s = 0.2
+s = 0.25
 [leg-1]
 sprite = item_spr
 x = -4
-y = 4
-s = 0.2
+y = 6
+s = 0.25
 [leg-2]
 sprite = item_spr
 x = 4
-y = 4
-s = 0.2
+y = 6
+s = 0.25
+
+[wing]
+max = 2
+[wing-0]
+sprite = garbage_spr
+x = -16
+y = 0
+s = 0.5
+[wing-1]
+sprite = garbage_spr
+x = 16
+y = 0
+s = 0.5
+
+[mouth_beaked]
+max = 1
+[mouth_beaked-0]
+sprite = item_spr
+x = 0
+y = 0
+s = 0.4
+
+[mouth_toothy]
+max = 1
+[mouth_toothy-0]
+sprite = item_spr
+x = 0
+y = 0
+s = 0.4

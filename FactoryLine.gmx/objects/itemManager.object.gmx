@@ -118,7 +118,8 @@ while ( ini_key_exists( "base", string( tBaseCount ) ) ) {
     tBase[tBaseCount] = ini_read_string( "base", string( tBaseCount ), "" );
     for ( var i = 0; i &lt; tAttachCount; ++i ) {
         tBaseAttach[tBaseCount, i] = ini_read_real(
-            tBase[tBaseCount], tAttach[i]+"-max", 0 );
+            tBase[tBaseCount], tAttach[i]+"-max",
+            ini_read_real( tAttach[i], "max", 0 ) );
     }
     ++tBaseCount;
 }
