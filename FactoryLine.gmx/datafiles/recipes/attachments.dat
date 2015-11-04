@@ -21,6 +21,11 @@ leg-max = 8
 
 [eye]
 max = 3
+manual = 1
+0 = ""
+1 = "0"
+2 = "1,2"
+3 = "1,2,0"
 [eye-0]
 sprite = slime_spr
 x = 0

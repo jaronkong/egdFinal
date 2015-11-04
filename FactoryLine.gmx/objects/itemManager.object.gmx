@@ -195,8 +195,6 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
                 ds_queue_enqueue( tQueue, tItemNew, tDataNew );
             }
         }
-        
-        tDataOld = false;
     }
 }
 ds_queue_destroy( tQueue );
