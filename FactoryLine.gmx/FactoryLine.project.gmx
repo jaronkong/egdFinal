@@ -234,6 +234,7 @@
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
       <script>scripts\itemFromTag.gml</script>
+      <script>scripts\itemExists.gml</script>
       <script>scripts\itemCreate.gml</script>
       <script>scripts\itemProperty.gml</script>
       <script>scripts\recipeResult.gml</script>

@@ -8,6 +8,18 @@ var aCount = argument3;
 var tTag = itemProperty( aBase, Item.tag );
 var tName = itemProperty( aBase, Item.name );
 var tSprite = itemProperty( aBase, Item.sprite );
+
+for ( var i = 0; i < aCount; ++i ) {
+    if ( aAttachCount[i] > 0 ) {
+        tTag += "-" + string( aAttachCount[i] ) + itemProperty( aAttach[i], Item.tag );
+        tName += "#" + string( aAttachCount[i] ) + " " + itemProperty( aAttach[i], Item.name );
+    }
+}
+
+if ( itemExists( tTag ) ) {
+    return itemFromTag( tTag );
+}
+
 var tLayers = ds_grid_create( 0, ItemLayer.count );
 
 ini_open( working_directory + "/recipes/attachments.dat" );
@@ -25,7 +37,7 @@ for ( var i = 0; i < aCount; ++i ) {
             ini_read_string( tLayerTag, "sprite", "" ) );
         tLayers[# tIndex, ItemLayer.x] = ini_read_real( tLayerTag, "x", 0 );
         tLayers[# tIndex, ItemLayer.y] = ini_read_real( tLayerTag, "y", 0 );
-        tLayers[# tIndex, ItemLayer.scale] = ini_read_real( tLayerTag, "s", 0 );
+        tLayers[# tIndex, ItemLayer.scale] = ini_read_real( tLayerTag, "s", 1 );
     }
 }
 ini_close( )
