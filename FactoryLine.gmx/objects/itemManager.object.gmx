@@ -108,6 +108,7 @@ file_text_close( tFile );
 var tBase, tBaseCount = 0;
 var tAttach, tAttachCount = 0;
 var tBaseAttachMax = false;
+var tAttachBlock = false;
 
 //Load in base parts and attachable parts
 ini_open( working_directory + "/recipes/attachments.dat" );
@@ -123,6 +124,12 @@ while ( ini_key_exists( "base", string( tBaseCount ) ) ) {
             ini_read_real( tAttach[i], "max", 0 ) );
     }
     ++tBaseCount;
+}
+for ( var i = 0; i &lt; tAttachCount; ++i ) {
+    for ( var j = 0; j &lt; tAttachCount; ++j ) {
+        tAttachBlock[i, j] = ini_read_real(
+            tAttach[i], "block-"+tAttach[j], false );
+    }
 }
 ini_close( );
 
@@ -150,8 +157,18 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
         var tItemOld = ds_queue_dequeue( tQueue );
         var tDataOld = ds_queue_dequeue( tQueue );
         
+        var tBlock = false;
+        for ( var j = ( tAttachCount - 1 ); j &gt;= 0; --j ) {
+            tBlock[j] = false;
+            for ( var k = ( tAttachCount - 1 ); k &gt;= 0; --k ) {
+                if ( ( tDataOld[k] &gt; 0 ) &amp;&amp; tAttachBlock[k, j] ) {
+                    tBlock[j] = true;
+                }
+            }
+        }
+        
         for ( var j = 0; j &lt; tAttachCount; ++j ) {
-            if ( tDataOld[j] &lt; tBaseAttachMax[i, j] ) {
+            if ( ( tDataOld[j] &lt; tBaseAttachMax[i, j] ) &amp;&amp; !tBlock[j] ) {
                 if ( recipeExists( "attacher", tItemOld, tAttach[j] ) ) continue;
                 
                 //Copy the data to a new array;
