@@ -98,7 +98,7 @@ file_text_close( tFile );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Load recipes
+            <string>///Load attachment recipes
 
 var tFile = ( working_directory + "/recipes/attachments.dat" );
 
@@ -129,6 +129,60 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
 for ( var i = 0; i &lt; tAttachCount; ++i ) {
     tAttach[i] = itemProperty( tAttach[i], Item.tag );
 }
+
+//Generate combinations
+var tQueue = ds_queue_create( );
+for ( var i = 0; i &lt; tBaseCount; ++i ) {
+    //Seed the queue
+    var tBaseSeed = false;
+    var tDataSeed = false;
+    for ( var  j = 0; j &lt; tAttachCount; ++j ) {
+        tBaseSeed[j] = 0;
+        tDataSeed[j] = tBaseAttach[i, j];
+    }
+    ds_queue_enqueue( tQueue, tBase[i], tBaseSeed, tDataSeed );
+    
+    //Attempt all combinations
+    while ( !ds_queue_empty( tQueue ) ) {
+        var tTagOld = ds_queue_dequeue( tQueue );
+        var tBaseOld = ds_queue_dequeue( tQueue );
+        var tDataOld = ds_queue_dequeue( tQueue );
+        
+        for ( var j = 0; j &lt; tAttachCount; ++j ) {
+            if ( tDataOld[j] &gt; 0 ) {
+                //Copy the data to a new array;
+                var tBaseNew = false;
+                var tDataNew = false;
+                for ( var k = 0; k &lt; tAttachCount; ++k ) {
+                    tBaseNew[k] = tBaseOld[k];
+                    tDataNew[k] = tDataOld[k];
+                }
+                
+                //Transfer one attachment over
+                ++tBaseNew[j];
+                --tDataNew[j];
+                
+                //Define the new item
+                var tTagNew = tBase[i];
+                for ( var k = 0; k &lt; tAttachCount; ++k ) {
+                    if ( tBaseNew[k] &gt; 0 ) {
+                        tTagNew += "-" + string( tBaseNew[k] ) + tAttach[k];
+                    }
+                }
+                itemDefine( tTagNew, tTagNew, itemProperty( tTagOld, Item.sprite ) );
+                
+                //Define a recipe
+                recipeDefine( tTagNew, "attacher", tTagOld, tAttach[j] );
+                
+                //Put it back in the queue
+                ds_queue_enqueue( tQueue, tTagNew, tBaseNew, tDataNew );
+            }
+        }
+    }
+    
+    ds_queue_clear( tQueue );
+}
+ds_queue_destroy( tQueue );
 </string>
           </argument>
         </arguments>
