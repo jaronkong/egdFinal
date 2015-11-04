@@ -18,35 +18,34 @@ leg-max = 3
 
 [eye]
 [eye-0]
-sprite = item_spr
-sprite-missing = slime_spr
+sprite = slime_spr
 x = 0
-y = -8
-s = 0.1
+y = -4
+s = 0.3
 [eye-1]
-sprite = item_spr
-x = -4
-y = -4
-s = 0.1
+sprite = slime_spr
+x = -6
+y = -6
+s = 0.3
 [eye-2]
-sprite = item_spr
-x = 4
-y = -4
-s = 0.1
+sprite = slime_spr
+x = 6
+y = -6
+s = 0.3
 
 [leg]
 [leg-0]
 sprite = item_spr
 x = 0
 y = 8
-s = 0.1
+s = 0.2
 [leg-1]
 sprite = item_spr
 x = -4
 y = 4
-s = 0.1
+s = 0.2
 [leg-2]
 sprite = item_spr
 x = 4
 y = 4
-s = 0.1
+s = 0.2

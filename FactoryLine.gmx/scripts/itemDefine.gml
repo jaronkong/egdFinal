@@ -6,7 +6,7 @@ var aSprite = argument[2];
 var aLayers = -1;
 
 if ( argument_count > 3 ) {
-    aLayers = argument[4];
+    aLayers = argument[3];
 }
 
 if ( !sprite_exists( aSprite ) ) {
