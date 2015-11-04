@@ -104,14 +104,12 @@ file_text_close( tFile );
             <kind>1</kind>
             <string>///Load attachment recipes
 
-var tFile = ( working_directory + "/recipes/attachments.dat" );
-
 var tBase, tBaseCount = 0;
 var tAttach, tAttachCount = 0;
 var tBaseAttach = false;
 
 //Load in base parts and attachable parts
-ini_open( tFile );
+ini_open( working_directory + "/recipes/attachments.dat" );
 while ( ini_key_exists( "attach", string( tAttachCount ) ) ) {
     tAttach[tAttachCount] = ini_read_string( "attach", string( tAttachCount ), "" );
     ++tAttachCount;
@@ -148,7 +146,7 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
     
     //Attempt all combinations
     while ( !ds_queue_empty( tQueue ) ) {
-        var tTagOld = ds_queue_dequeue( tQueue );
+        var tItemOld = ds_queue_dequeue( tQueue );
         var tBaseOld = ds_queue_dequeue( tQueue );
         var tDataOld = ds_queue_dequeue( tQueue );
         
@@ -167,19 +165,13 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
                 --tDataNew[j];
                 
                 //Define the new item
-                var tTagNew = tBase[i];
-                for ( var k = 0; k &lt; tAttachCount; ++k ) {
-                    if ( tBaseNew[k] &gt; 0 ) {
-                        tTagNew += "-" + string( tBaseNew[k] ) + tAttach[k];
-                    }
-                }
-                itemDefine( tTagNew, tTagNew, itemProperty( tTagOld, Item.sprite ) );
+                var tItemNew = itemLoadAttach( tBase[i], tAttach, tBaseNew, tAttachCount );
                 
                 //Define a recipe
-                recipeDefine( tTagNew, "attacher", tTagOld, tAttach[j] );
+                recipeDefine( tItemNew, "attacher", tItemOld, tAttach[j] );
                 
                 //Put it back in the queue
-                ds_queue_enqueue( tQueue, tTagNew, tBaseNew, tDataNew );
+                ds_queue_enqueue( tQueue, tItemNew, tBaseNew, tDataNew );
             }
         }
     }
