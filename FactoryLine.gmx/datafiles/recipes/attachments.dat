@@ -15,12 +15,12 @@
 
 
 [body_slime]
-eye-max = 3
-leg-max = 3
+tentacle-max = 8
+leg-max = 8
 
 
 [eye]
-max = 2
+max = 3
 [eye-0]
 sprite = slime_spr
 x = 0
@@ -38,7 +38,8 @@ y = -6
 s = 0.3
 
 [tentacle]
-max = 3
+max = 4
+block-leg = 1
 [tentacle-0]
 sprite = slime_spr
 x = 0
@@ -46,7 +47,8 @@ y = 4
 s = 0.4
 
 [leg]
-max = 2
+max = 4
+block-tentacle = 1
 [leg-0]
 sprite = item_spr
 x = 0
@@ -78,6 +80,7 @@ s = 0.5
 
 [mouth_beaked]
 max = 1
+block-mouth_toothy = 1
 [mouth_beaked-0]
 sprite = item_spr
 x = 0
@@ -86,6 +89,7 @@ s = 0.4
 
 [mouth_toothy]
 max = 1
+block-mouth_beaked = 1
 [mouth_toothy-0]
 sprite = item_spr
 x = 0
