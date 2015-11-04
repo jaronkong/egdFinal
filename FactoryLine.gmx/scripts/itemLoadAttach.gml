@@ -23,9 +23,9 @@ if ( itemExists( tTag ) ) {
 }
 
 //Load layers
+ini_open( working_directory + "/recipes/attachments.dat" );
 var tLayers = undefined;
 for ( var i = 0; i < aCount; ++i ) {
-    ini_open( working_directory + "/recipes/attachments.dat" );
     var tLayerData = false;
     if ( !ini_read_real( aAttach[i], "manual", false ) ) {
         for ( var j = 0; j < aAttachCount[i]; ++j ) {
@@ -40,11 +40,11 @@ for ( var i = 0; i < aCount; ++i ) {
         }
         if ( tString != "" ) tLayerData[array_length_1d(tLayerData)] = tString;
     }
-    ini_close( );
     for ( var j = 0; j < array_length_1d( tLayerData ); ++j ) {
         var tLayerTag = ( aAttach[i] + "-" + string( tLayerData[j] ) );
         tLayers[array_length_1d(tLayers)] = itemLayerLoad( tLayerTag );
     }
 }
+ini_close( );
 
 return itemDefine( tTag, tName, tSprite, tLayers );
