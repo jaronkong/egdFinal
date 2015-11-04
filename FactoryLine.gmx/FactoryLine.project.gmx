@@ -238,6 +238,7 @@
       <script>scripts\itemCreate.gml</script>
       <script>scripts\itemProperty.gml</script>
       <script>scripts\recipeResult.gml</script>
+      <script>scripts\recipeExists.gml</script>
       <scripts name="Loading">
         <script>scripts\itemDefine.gml</script>
         <script>scripts\itemLoad.gml</script>

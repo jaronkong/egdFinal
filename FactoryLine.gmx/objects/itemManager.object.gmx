@@ -151,7 +151,8 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
         var tDataOld = ds_queue_dequeue( tQueue );
         
         for ( var j = 0; j &lt; tAttachCount; ++j ) {
-            if ( tDataOld[# 1, j] &gt; 0 ) {
+            if ( ( tDataOld[# 1, j] &gt; 0 ) &amp;&amp; !recipeExists(
+                    "attacher", tItemOld, tAttach[j] ) ) {
                 //Copy the data to a new array;
                 var tDataNew = ds_grid_create( 2, tAttachCount );
                 ds_grid_copy( tDataNew, tDataOld );
@@ -165,6 +166,11 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
                 
                 //Define a recipe
                 recipeDefine( tItemNew, "attacher", tItemOld, tAttach[j] );
+                
+                ++tCount;
+                if ( ( tCount % 1000 ) == 0 ) {
+                    show_debug_message(tCount);
+                }
                 
                 //Put it back in the queue
                 ds_queue_enqueue( tQueue, tItemNew, tDataNew );
