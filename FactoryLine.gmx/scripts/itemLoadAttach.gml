@@ -1,18 +1,18 @@
-///itemLoadAttach( base, attachments, counts, count )
+///itemLoadAttach( base, attachments, counts )
 
 var aBase = argument0;
 var aAttach = argument1;
 var aAttachCount = argument2;
-var aCount = argument3;
+var aCount = ds_grid_height( aAttachCount );
 
 var tTag = itemProperty( aBase, Item.tag );
 var tName = itemProperty( aBase, Item.name );
 var tSprite = itemProperty( aBase, Item.sprite );
 
 for ( var i = 0; i < aCount; ++i ) {
-    if ( aAttachCount[i] > 0 ) {
-        tTag += "-" + string( aAttachCount[i] ) + itemProperty( aAttach[i], Item.tag );
-        tName += "#" + string( aAttachCount[i] ) + " " + itemProperty( aAttach[i], Item.name );
+    if ( aAttachCount[# 0, i] > 0 ) {
+        tTag += "-" + string( aAttachCount[#0,i] ) + itemProperty( aAttach[i], Item.tag );
+        tName += "#" + string( aAttachCount[#0,i] ) + " " + itemProperty( aAttach[i], Item.name );
     }
 }
 
@@ -20,15 +20,12 @@ if ( itemExists( tTag ) ) {
     return itemFromTag( tTag );
 }
 
+//Load layers
 var tLayers = ds_grid_create( 0, ItemLayer.count );
 
 ini_open( working_directory + "/recipes/attachments.dat" );
 for ( var i = 0; i < aCount; ++i ) {
-    if ( aAttachCount[i] > 0 ) {
-        tTag += "-" + string( aAttachCount[i] ) + itemProperty( aAttach[i], Item.tag );
-        tName += "#" + string( aAttachCount[i] ) + " " + itemProperty( aAttach[i], Item.name );
-    }
-    for ( var j = 0; j < aAttachCount[i]; ++j ) {
+    for ( var j = 0; j < aAttachCount[# 0, i]; ++j ) {
         var tIndex = ds_grid_width( tLayers );
         ds_grid_resize( tLayers, ( tIndex + 1 ), ItemLayer.count );
         

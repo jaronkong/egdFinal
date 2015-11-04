@@ -134,50 +134,45 @@ for ( var i = 0; i &lt; tAttachCount; ++i ) {
 }
 
 //Generate combinations
+var tCount = 0;
 var tQueue = ds_queue_create( );
 for ( var i = 0; i &lt; tBaseCount; ++i ) {
     //Seed the queue
-    var tBaseSeed = false;
-    var tDataSeed = false;
+    var tDataSeed = ds_grid_create( 2, tAttachCount );
     for ( var  j = 0; j &lt; tAttachCount; ++j ) {
-        tBaseSeed[j] = 0;
-        tDataSeed[j] = tBaseAttach[i, j];
+        tDataSeed[# 0, j] = 0;
+        tDataSeed[# 1, j] = tBaseAttach[i, j];
     }
-    ds_queue_enqueue( tQueue, tBase[i], tBaseSeed, tDataSeed );
+    ds_queue_enqueue( tQueue, tBase[i], tDataSeed );
     
     //Attempt all combinations
     while ( !ds_queue_empty( tQueue ) ) {
         var tItemOld = ds_queue_dequeue( tQueue );
-        var tBaseOld = ds_queue_dequeue( tQueue );
         var tDataOld = ds_queue_dequeue( tQueue );
         
         for ( var j = 0; j &lt; tAttachCount; ++j ) {
-            if ( tDataOld[j] &gt; 0 ) {
+            if ( tDataOld[# 1, j] &gt; 0 ) {
                 //Copy the data to a new array;
-                var tBaseNew = false;
-                var tDataNew = false;
-                for ( var k = 0; k &lt; tAttachCount; ++k ) {
-                    tBaseNew[k] = tBaseOld[k];
-                    tDataNew[k] = tDataOld[k];
-                }
+                var tDataNew = ds_grid_create( 2, tAttachCount );
+                ds_grid_copy( tDataNew, tDataOld );
                 
                 //Transfer one attachment over
-                ++tBaseNew[j];
-                --tDataNew[j];
+                ++tDataNew[# 0, j];
+                --tDataNew[# 1, j];
                 
                 //Define the new item
-                var tItemNew = itemLoadAttach( tBase[i], tAttach, tBaseNew, tAttachCount );
+                var tItemNew = itemLoadAttach( tBase[i], tAttach, tDataNew );
                 
                 //Define a recipe
                 recipeDefine( tItemNew, "attacher", tItemOld, tAttach[j] );
                 
                 //Put it back in the queue
-                ds_queue_enqueue( tQueue, tItemNew, tBaseNew, tDataNew );
+                ds_queue_enqueue( tQueue, tItemNew, tDataNew );
             }
         }
+        
+        ds_grid_destroy( tDataOld );
     }
-    
-    ds_queue_clear( tQueue );
 }
 ds_queue_destroy( tQueue );
 </string>
