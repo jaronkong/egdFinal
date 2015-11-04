@@ -99,6 +99,7 @@
       </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
       <sprite>sprites\modifier_placeholder</sprite>
+      <sprite>sprites\infuser_spr</sprite>
       <sprite>sprites\receiver_placeholder</sprite>
       <sprite>sprites\combiner_spr</sprite>
       <sprites name="conveyor">
