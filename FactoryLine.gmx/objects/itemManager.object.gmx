@@ -32,9 +32,10 @@ enum Item {
 }
 
 enum ItemLayer {
-    sprite, x, y, scale, count
+    tag, sprite, x, y, scale, count
 }
 
+layers = ds_grid_create( 0, ItemLayer.count );
 items = ds_grid_create( 0, Item.count );
 recipes = ds_map_create( );
 </string>
@@ -206,14 +207,8 @@ ds_queue_destroy( tQueue );
             <string>///Free data structures
 
 ds_map_destroy( recipes );
-
-for ( var i = 0; i &lt; ds_grid_width( items ); ++i ) {
-    var tLayers = ds_grid_get( items, i, Item.layers );
-    if ( ds_exists( tLayers, ds_type_grid ) ) {
-        ds_grid_destroy( tLayers );
-    }
-}
 ds_grid_destroy( items );
+ds_grid_destroy( layers );
 </string>
           </argument>
         </arguments>

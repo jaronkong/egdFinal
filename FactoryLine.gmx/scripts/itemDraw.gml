@@ -12,14 +12,16 @@ var tSprite = itemProperty( tItem, Item.sprite );
 draw_sprite_ext( tSprite, 0, aPosX, aPosY, aScaleX, aScaleY, 0, c_white, 1 );
 
 var tLayers = itemProperty( tItem, Item.layers );
-if ( ds_exists( tLayers, ds_type_grid ) ) {
-    for ( var i = 0; i < ds_grid_width( tLayers ); ++i ) {
+var tLayerData = itemManager.layers;
+if ( is_array( tLayers ) ) {
+    for ( var i = 0; i < array_length_1d( tLayers ); ++i ) {
+        var tIndex = tLayers[i];
         draw_sprite_ext(
-            tLayers[#i, ItemLayer.sprite], 0,
-            aPosX + (tLayers[#i, ItemLayer.x] * aScaleX),
-            aPosY + (tLayers[#i, ItemLayer.y] * aScaleY),
-            aScaleX * tLayers[#i, ItemLayer.scale],
-            aScaleY * tLayers[#i, ItemLayer.scale],
+            tLayerData[#tIndex, ItemLayer.sprite], 0,
+            aPosX + (tLayerData[#tIndex, ItemLayer.x] * aScaleX),
+            aPosY + (tLayerData[#tIndex, ItemLayer.y] * aScaleY),
+            aScaleX * tLayerData[#tIndex, ItemLayer.scale],
+            aScaleY * tLayerData[#tIndex, ItemLayer.scale],
             0, c_white, 1 );
     }
 }

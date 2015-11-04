@@ -3,7 +3,7 @@
 var aTag = argument[0];
 var aName = argument[1];
 var aSprite = argument[2];
-var aLayers = -1;
+var aLayers = undefined;
 
 if ( argument_count > 3 ) {
     aLayers = argument[3];
@@ -19,11 +19,6 @@ with ( itemManager ) {
     if ( tIndex < 0 ) {
         tIndex = ds_grid_width( items );
         ds_grid_resize( items, ( tIndex + 1 ), ds_grid_height( items ) );
-    } else {
-        var tLayers = items[# tIndex, Item.layers];
-        if ( ds_exists( tLayers, ds_type_grid ) ) {
-            ds_grid_destroy( tLayers );
-        }
     }
     ds_grid_set( items, tIndex, Item.tag, aTag );
     ds_grid_set( items, tIndex, Item.name, aName );

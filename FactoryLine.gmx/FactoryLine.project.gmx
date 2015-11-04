@@ -242,6 +242,7 @@
       <scripts name="Loading">
         <script>scripts\itemDefine.gml</script>
         <script>scripts\itemLoad.gml</script>
+        <script>scripts\itemLayerLoad.gml</script>
         <script>scripts\itemLoadAttach.gml</script>
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
