@@ -68,6 +68,7 @@
     <sound>sound\craneMove_sd</sound>
     <sound>sound\placeItem_sd</sound>
     <sound>sound\placementFail_sd</sound>
+    <sound>sound\pageTurn_sd</sound>
     <sounds name="GeneralGameplay">
       <sound>sound\makeJunk_sd</sound>
     </sounds>
@@ -104,6 +105,7 @@
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
         <sprite>sprites\conveyor_wheel_spr</sprite>
+        <sprite>sprites\conveyor_stand</sprite>
       </sprites>
     </sprites>
     <sprites name="Items">
@@ -138,6 +140,7 @@
     </sprites>
     <sprites name="Documents">
       <sprite>sprites\document_spr</sprite>
+      <sprite>sprites\recipieBookOpen_spr</sprite>
       <sprite>sprites\documentSmallConfirm_spr</sprite>
       <sprite>sprites\documentSmallDeny_spr</sprite>
       <sprite>sprites\documentSmall_spr</sprite>
@@ -185,6 +188,7 @@
     <scripts name="InterfaceActions">
       <script>scripts\callRebindCrane.gml</script>
       <script>scripts\setTrayPositions.gml</script>
+      <script>scripts\verticalTrayCreate.gml</script>
       <scripts name="Desk">
         <script>scripts\deskIsOn.gml</script>
         <script>scripts\deskSnapDocumentTo.gml</script>
@@ -324,6 +328,7 @@
         <object>objects\deskController</object>
         <object>objects\document</object>
         <object>objects\restrictionDoc</object>
+        <object>objects\recipeBook</object>
       </objects>
     </objects>
     <objects name="Blocks">

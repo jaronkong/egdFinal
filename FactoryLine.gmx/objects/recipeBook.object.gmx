@@ -3,9 +3,9 @@
   <spriteName>recipieBookOpen_spr</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-101</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>document</parentName>
+  <parentName>hudButton</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -39,18 +39,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialization
+            <string>///Dragable Document Overrides
 
+sprite_index = recipieBookOpen_spr;
+smallSprite = B_Recipe_spr;
+width = sprite_width;
+height = sprite_height;
+text = "";
 
-nameSprite = B_Recipe_Name_spr;
-baseY = 3;
-targetHeight = 512;
+numPages = 2;
+currentPage = 0;
+pageTurnRegionSize = 0.25;
 
-currentFrame = 0;
-maxFrame = 10;
+clickDownPosX = x;
+clickDownPosY = y;
+clickDownDistTolerance = 2;
 
-mouseHover = false;
-image_speed = 0;
+dragTolerance = 0; //Set this to zero since the recipe book will handle it's own closing
+
 </string>
           </argument>
         </arguments>
@@ -59,20 +65,6 @@ image_speed = 0;
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -87,77 +79,48 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// React when moused over
+            <string>///Page turning
 
-if (mouse_x &gt; bbox_left
-    &amp;&amp; mouse_x &lt; bbox_right 
-    &amp;&amp; mouse_y &gt; bbox_top 
-    &amp;&amp; mouse_y &lt; bbox_bottom
-    &amp;&amp; !fullscale) {
-    mouseHover = true;
-    image_index = 1;
-    currentFrame++;
+if ( mouseClicked( id ) ) {
+    clickDownPosX = mouse_x;
+    clickDownPosY = mouse_y;
 }
 
-else {
-    mouseHover = false;
-    image_index = 0;
-    currentFrame --;
+if ( mouseReleased( id ) ) {
+    if ( point_distance( mouse_x, mouse_y, clickDownPosX, clickDownPosY ) &lt; clickDownDistTolerance ) {
+        //Clicking in place, therefore turn the page
+        if ( mouse_x &gt; x + width*pageTurnRegionSize ) {
+            currentPage += 1;
+            if ( currentPage &gt;= numPages ) {
+                currentPage = 0;
+            }
+            audio_play_sound( pageTurn_sd, 1, false );
+        }
+        else if ( mouse_x &lt; x - width*pageTurnRegionSize ){
+            currentPage -= 1;
+            if ( currentPage &lt; 0 ) {
+                currentPage = numPages - 1;
+            }
+            audio_play_sound( pageTurn_sd, 1, false );
+        }
+        else {
+            fullscale = !fullscale;
+            dragging = false;
+            if ( fullscale ) {
+                deskDocSetScale( id, true );
+            }
+            else {
+                deskDocSetScale( id, false );
+            }
+        }
+        fullImageIndex = currentPage;
+    }    
 }
-
-currentFrame = clamp(currentFrame,0,maxFrame);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Draw the name sprite
-//draw_self();
-
-    var progress = currentFrame / maxFrame;
-    var xScale = clamp(progress * 1.5 - .5,0,1);   
-    var yScale = baseY * (1 - progress) + 1;
-    var bounce = 5*sin(current_time/250);
-    draw_sprite_ext(nameSprite, 0, x, y - (y - targetHeight) * progress + bounce, 
-                    xScale,yScale,0,c_white,1);
 
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>604</id>

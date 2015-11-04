@@ -48,13 +48,14 @@ text = "hello#this is a test";
 
 width = sprite_width;
 height = sprite_height;
+fullImageIndex = 0;
 
 targetX = x;
 targetY = y;
 moveTween = 0.2;
 
-targetXScale = 0.1;
-targetYScale = 0.1;
+targetXScale = 0.15;
+targetYScale = 0.15;
 scaleXTween = 0.2;
 scaleYTween = 0.2;
 
@@ -232,6 +233,20 @@ if (
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -253,7 +268,7 @@ var tHalfHeight = height / 2 * image_yscale;
 var tWidthTiltOffset = tHalfWidth * perspectiveTiltScale_current;
 var tHeightTiltOffset = tHalfHeight * perspectiveTiltScale_current;
 
-draw_sprite_pos( sprite_index, image_index, 
+draw_sprite_pos( sprite_index, fullImageIndex, 
                     x - tHalfWidth + tWidthTiltOffset, y - floatOffset_current - tHalfHeight + tHeightTiltOffset,
                     x + tHalfWidth - tWidthTiltOffset, y - floatOffset_current - tHalfHeight + tHeightTiltOffset,
                     x + tHalfWidth + tWidthTiltOffset, y - floatOffset_current + tHalfHeight - tHeightTiltOffset,
