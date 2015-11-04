@@ -139,9 +139,9 @@ var tCount = 0;
 var tQueue = ds_queue_create( );
 for ( var i = 0; i &lt; tBaseCount; ++i ) {
     //Seed the queue
-    var tDataSeed = ds_grid_create( 1, tAttachCount );
+    var tDataSeed = false;
     for ( var  j = 0; j &lt; tAttachCount; ++j ) {
-        tDataSeed[# 0, j] = 0;
+        tDataSeed[j] = 0;
     }
     ds_queue_enqueue( tQueue, tBase[i], tDataSeed );
     
@@ -151,15 +151,17 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
         var tDataOld = ds_queue_dequeue( tQueue );
         
         for ( var j = 0; j &lt; tAttachCount; ++j ) {
-            if ( tDataOld[# 0, j] &lt; tBaseAttachMax[i, j] ) {
+            if ( tDataOld[j] &lt; tBaseAttachMax[i, j] ) {
                 if ( recipeExists( "attacher", tItemOld, tAttach[j] ) ) continue;
                 
                 //Copy the data to a new array;
-                var tDataNew = ds_grid_create( 1, tAttachCount );
-                ds_grid_copy( tDataNew, tDataOld );
+                var tDataNew = false;
+                for ( var k = ( tAttachCount - 1 ); k &gt;= 0; --k ) {
+                    tDataNew[k] = tDataOld[k];
+                }
                 
                 //Add the attachment
-                ++tDataNew[# 0, j];
+                ++tDataNew[j];
                 
                 //Define the new item
                 var tItemNew = itemLoadAttach( tBase[i], tAttach, tDataNew );
@@ -177,7 +179,7 @@ for ( var i = 0; i &lt; tBaseCount; ++i ) {
             }
         }
         
-        ds_grid_destroy( tDataOld );
+        tDataOld = false;
     }
 }
 ds_queue_destroy( tQueue );
