@@ -28,7 +28,11 @@
             <string>///Define data structures
 
 enum Item {
-    tag, name, sprite, count
+    tag, name, sprite, layers, count
+}
+
+enum ItemLayer {
+    sprite, x, y, scale, count
 }
 
 items = ds_grid_create( 0, Item.count );
@@ -207,8 +211,15 @@ ds_queue_destroy( tQueue );
             <kind>1</kind>
             <string>///Free data structures
 
-ds_grid_destroy( items );
 ds_map_destroy( recipes );
+
+for ( var i = 0; i &lt; ds_grid_width( items ); ++i ) {
+    var tLayers = ds_grid_get( items, i, Item.layers );
+    if ( ds_exists( tLayers, ds_type_grid ) ) {
+        ds_grid_destroy( tLayers );
+    }
+}
+ds_grid_destroy( items );
 </string>
           </argument>
         </arguments>

@@ -11,6 +11,19 @@ var tSprite = itemProperty( tItem, Item.sprite );
 
 draw_sprite_ext( tSprite, 0, aPosX, aPosY, aScaleX, aScaleY, 0, c_white, 1 );
 
+var tLayers = itemProperty( tItem, Item.layers );
+if ( ds_exists( tLayers, ds_type_grid ) ) {
+    for ( var i = 0; i < ds_grid_width( tLayers ); ++i ) {
+        draw_sprite_ext(
+            tLayers[#i, ItemLayer.sprite], 0,
+            aPosX + (tLayers[#i, ItemLayer.x] * aScaleX),
+            aPosY + (tLayers[#i, ItemLayer.y] * aScaleY),
+            aScaleX * tLayers[#i, ItemLayer.scale],
+            aScaleY * tLayers[#i, ItemLayer.scale],
+            0, c_white, 1 );
+    }
+}
+
 draw_set_color( c_white );
 draw_set_alpha( 1 );
 draw_set_font( main_ft );
