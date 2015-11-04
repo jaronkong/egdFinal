@@ -9,12 +9,14 @@ var tTag = itemProperty( aBase, Item.tag );
 var tName = itemProperty( aBase, Item.name );
 var tSprite = itemProperty( aBase, Item.sprite );
 
+tName += "#";
 for ( var i = 0; i < aCount; ++i ) {
     if ( aAttachCount[# 0, i] > 0 ) {
         tTag += "-" + string( aAttachCount[#0,i] ) + itemProperty( aAttach[i], Item.tag );
-        tName += "#" + string( aAttachCount[#0,i] ) + " " + itemProperty( aAttach[i], Item.name );
+        tName += " " + string( aAttachCount[#0,i] ) + " " + itemProperty( aAttach[i], Item.name );
     }
 }
+tName += " ";
 
 if ( itemExists( tTag ) ) {
     return itemFromTag( tTag );
