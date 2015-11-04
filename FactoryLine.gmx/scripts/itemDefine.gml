@@ -1,4 +1,4 @@
-///itemDefine( tag, name, sprite, subimages )
+///itemDefine( tag, name, sprite, [subimages] )
 
 var aTag = argument[0];
 var aName = argument[1];
@@ -7,12 +7,6 @@ var aLayers = -1;
 
 if ( argument_count > 3 ) {
     aLayers = argument[4];
-} else {
-    aLayers = ds_grid_create( 1, ItemLayer.count );
-    ds_grid_set( aLayers, 0, ItemLayer.sprite, garbage_spr );
-    ds_grid_set( aLayers, 0, ItemLayer.x, 0 );
-    ds_grid_set( aLayers, 0, ItemLayer.y, 8 );
-    ds_grid_set( aLayers, 0, ItemLayer.scale, 0.25 );
 }
 
 if ( !sprite_exists( aSprite ) ) {

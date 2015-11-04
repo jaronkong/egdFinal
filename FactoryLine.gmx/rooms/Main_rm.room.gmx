@@ -69,6 +69,7 @@
     <instance objName="pressurizer" x="800" y="224" name="inst_2AB12C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="infuser" x="448" y="288" name="inst_C151B47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="HUDmain" x="-224" y="1088" name="inst_34D19212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dispenser" x="480" y="0" name="inst_F2EFBC67" locked="0" code="itemID = itemFromTag( &quot;slime&quot; );&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
