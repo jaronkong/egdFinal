@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="recipes">
+  <datafiles number="4" name="datafiles">
+    <datafiles number="4" name="recipes">
       <datafile>
         <name>items.dat</name>
         <exists>-1</exists>
@@ -38,6 +38,23 @@
           </Config>
         </ConfigOptions>
         <filename>recipes.dat</filename>
+      </datafile>
+      <datafile>
+        <name>attachments.dat</name>
+        <exists>-1</exists>
+        <size>814</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>attachments.dat</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -217,12 +234,16 @@
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
       <script>scripts\itemFromTag.gml</script>
+      <script>scripts\itemExists.gml</script>
       <script>scripts\itemCreate.gml</script>
       <script>scripts\itemProperty.gml</script>
       <script>scripts\recipeResult.gml</script>
+      <script>scripts\recipeExists.gml</script>
       <scripts name="Loading">
         <script>scripts\itemDefine.gml</script>
         <script>scripts\itemLoad.gml</script>
+        <script>scripts\itemLayerLoad.gml</script>
+        <script>scripts\itemLoadAttach.gml</script>
         <script>scripts\recipeDefine.gml</script>
         <script>scripts\recipeParse.gml</script>
         <script>scripts\recipeDefineUnordered.gml</script>
