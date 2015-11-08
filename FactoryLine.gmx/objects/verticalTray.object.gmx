@@ -216,6 +216,7 @@ for ( var i = 0; i &lt; numSections; ++i ) {
         ownerTray = other.id;
         heldItemType = other.trayContents[ i, 0 ];
         heldItemQuantity = other.trayContents[ i, 1 ];
+        tooltip = other.trayContents[ i, 2 ];
         heldItemImage = object_get_sprite( heldItemType );
     }
 }

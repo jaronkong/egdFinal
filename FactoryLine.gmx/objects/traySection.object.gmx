@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///setup
+            <string>///Setup
 
 sectionHeight = 64;
 sectionOffset = 0;
@@ -34,6 +34,7 @@ ownerTray = noone;
 heldItemType = dispenser;
 heldItemImage = object_get_sprite( heldItemType );
 heldItemQuantity = 2; //-1 for unlimited
+tooltip = "";
 
 heldItemSize = 0.1;
 
@@ -79,6 +80,50 @@ if ( instance_exists( ownerTray ) ) {
         
     }
     
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tooltip
+
+var tWidth = 200;
+var tHeight = 32;
+
+if ( instance_exists( ownerTray ) ) {
+    
+
+    if ( mouseHoverOn( id ) &amp;&amp; ownerTray.currentSlideOffset &lt; 0 ) {
+        draw_set_color( c_black );
+        draw_set_alpha( 0.8 );
+        draw_rectangle( mouse_x - tWidth, mouse_y - tHeight, mouse_x, mouse_y, false );
+        
+        draw_set_alpha( 1 );
+        draw_set_font( main_ft );
+        draw_set_valign( fa_center );
+        draw_set_halign( fa_center );
+        draw_set_color( c_lime );
+        draw_text( mouse_x - tWidth/2, mouse_y - tHeight/2, tooltip );
+    }
 }
 
 </string>
