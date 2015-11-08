@@ -72,6 +72,8 @@
     <sounds name="GeneralGameplay">
       <sound>sound\makeJunk_sd</sound>
       <sound>sound\removeElement_sd</sound>
+      <sound>sound\bindCreate_sd</sound>
+      <sound>sound\selectionMake_sd</sound>
     </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>

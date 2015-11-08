@@ -60,7 +60,7 @@ image_index = 0;
 if (parent.mouseHover) {
     image_index = 1;
 }
-
+draw_set_alpha( 1 );
 draw_self();
 </string>
           </argument>

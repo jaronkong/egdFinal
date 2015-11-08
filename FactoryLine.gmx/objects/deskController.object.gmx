@@ -55,10 +55,11 @@ height = 100;
           <argument>
             <kind>1</kind>
             <string>///Draw
-
+/*
 draw_set_color( c_yellow );
 draw_set_alpha( 1 );
 draw_rectangle( x, y, x + width, y + height, true );
+*/
 
 </string>
           </argument>

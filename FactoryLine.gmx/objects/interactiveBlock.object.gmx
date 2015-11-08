@@ -190,6 +190,7 @@ if ( selected ) {
             bindingWindowScale_target = bindingWindowScaleLocked;
             confirmingKey = true;
             bindingWindowOverColorDuration = bindingWindowOverColorDurationMax;
+            audio_play_sound( bindCreate_sd, 1, false );
         }
     }
 }
