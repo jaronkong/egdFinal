@@ -348,6 +348,11 @@
         <object>objects\conveyorBeltDouble</object>
       </objects>
       <object>objects\dispenser</object>
+      <objects name="Dispensers">
+        <object>objects\dispenser_slime</object>
+        <object>objects\dispenser_bone</object>
+        <object>objects\dispenser_fur</object>
+      </objects>
       <objects name="Modifiers">
         <object>objects\modifier</object>
         <object>objects\pressurizer</object>
