@@ -71,6 +71,7 @@
     <sound>sound\pageTurn_sd</sound>
     <sounds name="GeneralGameplay">
       <sound>sound\makeJunk_sd</sound>
+      <sound>sound\removeElement_sd</sound>
     </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>
@@ -181,6 +182,7 @@
       <script>scripts\placeItemAttempt.gml</script>
       <scripts name="Selections">
         <script>scripts\selectionAdd.gml</script>
+        <script>scripts\selectionGetSize.gml</script>
         <script>scripts\selectionsIsSelected.gml</script>
         <script>scripts\selectionsClear.gml</script>
         <script>scripts\selectionsRemove.gml</script>
