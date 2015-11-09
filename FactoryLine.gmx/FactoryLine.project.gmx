@@ -71,6 +71,9 @@
     <sound>sound\pageTurn_sd</sound>
     <sounds name="GeneralGameplay">
       <sound>sound\makeJunk_sd</sound>
+      <sound>sound\removeElement_sd</sound>
+      <sound>sound\bindCreate_sd</sound>
+      <sound>sound\selectionMake_sd</sound>
     </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>
@@ -181,6 +184,7 @@
       <script>scripts\placeItemAttempt.gml</script>
       <scripts name="Selections">
         <script>scripts\selectionAdd.gml</script>
+        <script>scripts\selectionGetSize.gml</script>
         <script>scripts\selectionsIsSelected.gml</script>
         <script>scripts\selectionsClear.gml</script>
         <script>scripts\selectionsRemove.gml</script>
@@ -344,6 +348,11 @@
         <object>objects\conveyorBeltDouble</object>
       </objects>
       <object>objects\dispenser</object>
+      <objects name="Dispensers">
+        <object>objects\dispenser_slime</object>
+        <object>objects\dispenser_bone</object>
+        <object>objects\dispenser_fur</object>
+      </objects>
       <objects name="Modifiers">
         <object>objects\modifier</object>
         <object>objects\pressurizer</object>

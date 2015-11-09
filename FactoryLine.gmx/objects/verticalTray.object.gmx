@@ -114,7 +114,7 @@ if ( mouse_x &gt; x - trayWidth/2 &amp;&amp; mouse_x &lt; x + trayWidth / 2
 
     if ( !mouseHover ) {
         audio_play_sound( trayOpen_sd, 1, false );
-        instance_create( x, y, smokeTrayEmerge );
+        //instance_create( x, y, smokeTrayEmerge );
     }
     mouseHover = true;
 }
@@ -216,6 +216,7 @@ for ( var i = 0; i &lt; numSections; ++i ) {
         ownerTray = other.id;
         heldItemType = other.trayContents[ i, 0 ];
         heldItemQuantity = other.trayContents[ i, 1 ];
+        tooltip = other.trayContents[ i, 2 ];
         heldItemImage = object_get_sprite( heldItemType );
     }
 }
@@ -272,6 +273,7 @@ event_user( 0 );
             <string>///Draw
 
 //Draw the head tab
+draw_set_alpha( 1 );
 draw_sprite( itemTrayHead_spr, 0, x, y + currentSlideOffset );
 </string>
           </argument>
