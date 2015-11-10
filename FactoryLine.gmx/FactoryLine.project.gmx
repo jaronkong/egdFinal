@@ -100,6 +100,22 @@
         <sprite>sprites\attacher_body</sprite>
         <sprite>sprites\attacher_plunger</sprite>
       </sprites>
+      <sprites name="disintegrator">
+        <sprites name="electricity">
+          <sprite>sprites\elec1_spr</sprite>
+          <sprite>sprites\elec2_spr</sprite>
+          <sprite>sprites\elec3_spr</sprite>
+          <sprite>sprites\elec4_spr</sprite>
+          <sprite>sprites\elec5_spr</sprite>
+          <sprite>sprites\elec6_spr</sprite>
+          <sprite>sprites\elec7_spr</sprite>
+          <sprite>sprites\elec8_spr</sprite>
+          <sprite>sprites\elec9_spr</sprite>
+        </sprites>
+        <sprite>sprites\disintegrattor_body_spr</sprite>
+        <sprite>sprites\disintegrator_backlegs_spr</sprite>
+        <sprite>sprites\disintegrator_frontlegs_spr</sprite>
+      </sprites>
       <sprite>sprites\dispenser_placeholder</sprite>
       <sprite>sprites\modifier_placeholder</sprite>
       <sprite>sprites\infuser_spr</sprite>
