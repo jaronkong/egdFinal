@@ -132,6 +132,15 @@
     <sprites name="Items">
       <sprite>sprites\garbage_spr</sprite>
       <sprite>sprites\slime_spr</sprite>
+      <sprite>sprites\feather_spr</sprite>
+      <sprite>sprites\bone_spr</sprite>
+      <sprite>sprites\eyematerial_spr</sprite>
+      <sprite>sprites\fur_spr</sprite>
+      <sprite>sprites\hardened_bone_spr</sprite>
+      <sprite>sprites\jaw_spr</sprite>
+      <sprite>sprites\beaked_jaw_spr</sprite>
+      <sprite>sprites\muscle_spr</sprite>
+      <sprite>sprites\tooth_spr</sprite>
       <sprite>sprites\item_spr</sprite>
     </sprites>
     <sprites name="Effects">
