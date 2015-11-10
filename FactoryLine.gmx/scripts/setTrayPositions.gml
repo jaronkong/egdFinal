@@ -40,15 +40,15 @@ attacherContents[ attacherSections, 0 ] = combiner;
 attacherContents[ attacherSections, 1 ] = -1;
 attacherContents[ attacherSections, 2 ] = "Combiner";         //Tooltip
 attacherSections++;
+attacherContents[ attacherSections, 0 ] = infuser;
+attacherContents[ attacherSections, 1 ] = -1;
+attacherContents[ attacherSections, 2 ] = "Infuser";         //Tooltip
+attacherSections++;
 var attachers = verticalTrayCreate(xPos + xDiff * 2, yPos, attacherContents, attacherSections);
 attachers.button.sprite_index = B_Attacher_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 var modifierContents = 0;
 var modifierSections = 0;
-modifierContents[ modifierSections, 0 ] = modifier; //Item
-modifierContents[ modifierSections, 1 ] = -1;         //Quantity
-modifierContents[ modifierSections, 2 ] = "Modifier";         //Tooltip
-modifierSections++;
 modifierContents[ modifierSections, 0 ] = pressurizer;
 modifierContents[ modifierSections, 1 ] = -1;
 modifierContents[ modifierSections, 2 ] = "Pressurizer";         //Tooltip

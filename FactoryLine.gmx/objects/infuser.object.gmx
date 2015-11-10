@@ -64,7 +64,7 @@ cellSolid[0] &amp;= ( GridSolid.Top | GridSolid.Bottom );
             <kind>1</kind>
             <string>///Set default binding
 
-button = ord( 'W' );
+button = noone;
 
 cooldown = 0.6;
 </string>

@@ -289,6 +289,7 @@ shakeOffsetY = random( shakeAmount ) * choose( 1, -1 );
 if ( mouseHoverOn( id ) ) {
     if ( keyboard_check_pressed( vk_delete ) ) {
         instance_destroy();
+        audio_play_sound( removeElement_sd, 1, false );
     }
 }
 
