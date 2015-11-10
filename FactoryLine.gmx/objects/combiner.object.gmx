@@ -76,7 +76,7 @@ cellCount = 3;
             <kind>1</kind>
             <string>///Set default binding
 
-button = ord( 'Q' );
+button = noone;
 
 result = -1;
 </string>

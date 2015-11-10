@@ -108,6 +108,7 @@ if ( instance_exists( ownerTray ) ) {
 
 var tWidth = 200;
 var tHeight = 32;
+var tXOffset = -32;
 
 if ( instance_exists( ownerTray ) ) {
     
@@ -115,14 +116,14 @@ if ( instance_exists( ownerTray ) ) {
     if ( mouseHoverOn( id ) &amp;&amp; ownerTray.currentSlideOffset &lt; 0 ) {
         draw_set_color( c_black );
         draw_set_alpha( 0.8 );
-        draw_rectangle( mouse_x - tWidth, mouse_y - tHeight, mouse_x, mouse_y, false );
+        draw_rectangle( mouse_x - tWidth + tXOffset, mouse_y - tHeight, mouse_x + tXOffset, mouse_y, false );
         
         draw_set_alpha( 1 );
         draw_set_font( main_ft );
         draw_set_valign( fa_center );
         draw_set_halign( fa_center );
         draw_set_color( c_lime );
-        draw_text( mouse_x - tWidth/2, mouse_y - tHeight/2, tooltip );
+        draw_text( mouse_x - tWidth/2 + tXOffset, mouse_y - tHeight/2, tooltip );
     }
 }
 

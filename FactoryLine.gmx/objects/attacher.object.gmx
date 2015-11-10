@@ -72,7 +72,7 @@ cellCount = 2;
             <kind>1</kind>
             <string>///Set default binding
 
-button = ord( 'Q' );
+button = noone;
 cooldown = 0.75;
 </string>
           </argument>
