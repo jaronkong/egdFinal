@@ -373,6 +373,16 @@ draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosLeft, tPosY,
 
 draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosRight, tPosY,
     tScaleX, tScaleY, 0, image_blend, image_alpha );
+    
+//Draw direction
+var tArrowLength = 16 * sign( dir );
+var tArrowMaxTravel = 32;
+var tArrowCurrentTravel = tArrowMaxTravel * mainController.globalTween;
+var tArrowYOffset = -48;
+var tArrowSize = 8;
+draw_set_color( c_yellow );
+draw_arrow( x - tArrowLength/2 + tArrowCurrentTravel* sign( dir ), y + tArrowYOffset, 
+            x + tArrowLength - tArrowLength/2 + tArrowCurrentTravel* sign( dir ), y + tArrowYOffset, tArrowSize );
 </string>
           </argument>
         </arguments>
