@@ -1,0 +1,15 @@
+checklist:
+
+-restrictions (urgent)
+-eye dispenser (make sure it dispenses eye material and not eye part)
+-title screen 
+-title music (also trailer music)
+-trailer
+-Boss pics
+-arrow for conveyors
+-letter sprite
+-implement disintegrators
+-polish, polish, polish
+-(if time)more level music
+
+if you think of anything that needs to be added, add it
