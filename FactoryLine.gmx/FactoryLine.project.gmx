@@ -192,6 +192,7 @@
       <sprite>sprites\scaly_body_spr</sprite>
       <sprite>sprites\skin_body_spr</sprite>
       <sprite>sprites\wing_spr</sprite>
+      <sprite>sprites\tentacle_spr</sprite>
       <sprite>sprites\leg_spr</sprite>
     </sprites>
   </sprites>
