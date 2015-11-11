@@ -186,6 +186,12 @@
         <sprite>sprites\teeth_spr</sprite>
       </sprites>
       <sprite>sprites\beaked_mouth_spr</sprite>
+      <sprite>sprites\slime_body_spr</sprite>
+      <sprite>sprites\feathered_body_spr</sprite>
+      <sprite>sprites\fur_body_spr</sprite>
+      <sprite>sprites\scaly_body_spr</sprite>
+      <sprite>sprites\skin_body_spr</sprite>
+      <sprite>sprites\wing_spr</sprite>
       <sprite>sprites\leg_spr</sprite>
     </sprites>
   </sprites>
