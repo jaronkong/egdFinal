@@ -400,6 +400,7 @@
         <object>objects\dispenser_slime</object>
         <object>objects\dispenser_bone</object>
         <object>objects\dispenser_fur</object>
+        <object>objects\dispenser_eye</object>
       </objects>
       <objects name="Modifiers">
         <object>objects\modifier</object>

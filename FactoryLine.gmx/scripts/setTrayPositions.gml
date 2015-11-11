@@ -18,6 +18,10 @@ dispenserContents[ dispenserSections, 0 ] = dispenser_fur; //Item
 dispenserContents[ dispenserSections, 1 ] = 1;         //Quantity
 dispenserContents[ dispenserSections, 2 ] = "Fur Dispenser";         //Tooltip
 dispenserSections++
+dispenserContents[ dispenserSections, 0 ] = dispenser_eye; //Item
+dispenserContents[ dispenserSections, 1 ] = 1;         //Quantity
+dispenserContents[ dispenserSections, 2 ] = "Eye Dispenser";         //Tooltip
+dispenserSections++
 var dispensers = verticalTrayCreate( xPos + xDiff * 0, yPos, dispenserContents, dispenserSections);
 dispensers.button.sprite_index = B_Dispenser_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
