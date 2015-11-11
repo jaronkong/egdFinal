@@ -46,6 +46,7 @@ name = "Leg"
 
 [wing]
 name = "Wing"
+sprite = leg_spr
 
 
 [jaw]
