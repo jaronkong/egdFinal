@@ -135,9 +135,7 @@ image_index = 0;
 
 if ( time &gt; 0 ) {
     image_index = floor( image_number - ( time / cooldown * image_number ) );
-}
-
-if ( !instance_exists( gridItemAtPoint( x, y ) ) ) {
+} else if ( !instance_exists( gridItemAtPoint( x, y ) ) ) {
     image_index = lerp( image_index, 0, 0.25 );
 }
 </string>
