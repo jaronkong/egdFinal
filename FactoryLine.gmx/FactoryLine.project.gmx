@@ -175,6 +175,19 @@
       <sprite>sprites\documentSmallDeny_spr</sprite>
       <sprite>sprites\documentSmall_spr</sprite>
     </sprites>
+    <sprites name="parts">
+      <sprites name="eye">
+        <sprite>sprites\eye_part_spr</sprite>
+        <sprite>sprites\eye_skin_spr</sprite>
+        <sprite>sprites\eye_bckgrd_spr</sprite>
+      </sprites>
+      <sprites name="toothed mouth">
+        <sprite>sprites\toothed_mouth_lip_spr</sprite>
+        <sprite>sprites\teeth_spr</sprite>
+      </sprites>
+      <sprite>sprites\beaked_mouth_spr</sprite>
+      <sprite>sprites\leg_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
