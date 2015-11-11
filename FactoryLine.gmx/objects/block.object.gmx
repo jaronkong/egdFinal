@@ -290,6 +290,12 @@ if ( mouseHoverOn( id ) ) {
     if ( keyboard_check_pressed( vk_delete ) ) {
         instance_destroy();
         audio_play_sound( removeElement_sd, 1, false );
+        with ( originTraySection ) {
+            //Refund the item quantity
+            if ( heldItemQuantity &gt;= 0 ) {
+                heldItemQuantity += 1;
+            }
+        }
     }
 }
 
