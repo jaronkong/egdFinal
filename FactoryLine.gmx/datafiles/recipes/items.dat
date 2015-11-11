@@ -2,6 +2,7 @@
 name = "Garbage"
 sprite = garbage_spr
 
+
 [slime]
 name = "Slime"
 sprite = slime_spr
@@ -13,3 +14,66 @@ sprite = bone_spr
 [fur]
 name = "Fur"
 sprite = fur_spr
+
+[eye]
+name = "Eye"
+sprite = eyematerial_spr
+
+
+[bone_hardened]
+name = "Hardened Bone"
+sprite = hardened_bone_spr
+
+[muscle]
+name = "Muscle"
+sprite = muscle_spr
+
+
+[feathers]
+name = "Feathers"
+sprite = feather_spr
+
+[tooth]
+name = "Teeth"
+sprite = tooth_spr
+
+
+[tentacle]
+name = "Tentacle"
+
+[leg]
+name = "Leg"
+
+[wing]
+name = "Wing"
+
+
+[jaw]
+name = "Jaw"
+sprite = jaw_spr
+
+[jaw_beaked]
+name = "Beak Jaw"
+sprite = beaked_jaw_spr
+
+[mouth_toothy]
+name = "Mouth"
+
+[mouth_beaked]
+name = "Beak"
+
+
+[body_fur]
+name = "Furry Body"
+
+[body_feathers]
+name = "Feathery Body"
+
+[body_scaly]
+name = "Scaly Body"
+
+[body_skin]
+name = "Skin Body"
+
+[body_slime]
+name = "Slimy Body"
