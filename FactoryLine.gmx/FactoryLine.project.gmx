@@ -227,6 +227,7 @@
     <scripts name="DraggingAndManipulatingElements">
       <script>scripts\createPlaceableItem.gml</script>
       <script>scripts\isPlaceableLocation.gml</script>
+      <script>scripts\removeElement.gml</script>
       <script>scripts\placeItemAttempt.gml</script>
       <scripts name="Selections">
         <script>scripts\selectionAdd.gml</script>
@@ -240,6 +241,7 @@
       <script>scripts\callRebindCrane.gml</script>
       <script>scripts\setTrayPositions.gml</script>
       <script>scripts\verticalTrayCreate.gml</script>
+      <script>scripts\isBelowHUD.gml</script>
       <scripts name="Desk">
         <script>scripts\deskIsOn.gml</script>
         <script>scripts\deskSnapDocumentTo.gml</script>
