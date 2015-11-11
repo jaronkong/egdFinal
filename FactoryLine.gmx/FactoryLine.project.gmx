@@ -181,6 +181,7 @@
         <sprite>sprites\eye_skin_spr</sprite>
         <sprite>sprites\eye_bckgrd_spr</sprite>
       </sprites>
+      <sprite>sprites\leg_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
