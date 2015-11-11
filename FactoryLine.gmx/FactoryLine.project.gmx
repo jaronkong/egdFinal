@@ -229,6 +229,7 @@
       <script>scripts\isPlaceableLocation.gml</script>
       <script>scripts\removeElement.gml</script>
       <script>scripts\placeItemAttempt.gml</script>
+      <script>scripts\confirmingDoesExist.gml</script>
       <scripts name="Selections">
         <script>scripts\selectionAdd.gml</script>
         <script>scripts\selectionGetSize.gml</script>
