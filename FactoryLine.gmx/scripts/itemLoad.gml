@@ -10,7 +10,8 @@ if ( itemExists( aTag ) ) {
 ini_open( working_directory + "/recipes/items.dat" );
 var tName = ini_read_string( aTag, "name", aTag );
 var tSprite = asset_get_index( ini_read_string( aTag, "sprite", "" ) );
-var tIndex = itemDefine( aTag, tName, tSprite );
+var tScale = ini_read_real( aTag, "scale", 1 );
+var tIndex = itemDefine( aTag, tName, tSprite, tScale );
 ini_close( );
 
 return tIndex;

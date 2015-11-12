@@ -245,6 +245,8 @@ if ( !gridValidPoint( gridManager.x, ( y - height/2 ) ) ) {
 
 if ( itemID &gt;= 0 ) {
     sprite_index = itemProperty( itemID, Item.sprite );
+    image_xscale = itemProperty( itemID, Item.scale );
+    image_yscale = itemProperty( itemID, Item.scale );
     width = ( bbox_right - bbox_left );
     height = ( bbox_bottom - bbox_top );
 }
@@ -286,7 +288,7 @@ if ( itemID &gt;= 0 ) {
             <kind>1</kind>
             <string>///Draw self
 
-itemDraw( itemID, x, y, image_xscale, image_yscale );
+itemDraw( itemID, x, y );
 </string>
           </argument>
         </arguments>
