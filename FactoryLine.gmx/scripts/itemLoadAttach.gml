@@ -43,8 +43,7 @@ for ( var i = 0; i < aCount; ++i ) {
         if ( tString != "" ) tLayerData[array_length_1d(tLayerData)] = tString;
     }
     for ( var j = 0; j < array_length_1d( tLayerData ); ++j ) {
-        var tLayerTag = ( aAttach[i] + "-" + string( tLayerData[j] ) );
-        tLayers[array_length_1d(tLayers)] = itemLayerLoad( tLayerTag );
+        tLayers[array_length_1d(tLayers)] = itemLayerLoad( aAttach[i], tLayerData[j] );
     }
 }
 ini_close( );

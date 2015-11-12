@@ -21,87 +21,74 @@ manual = 1
 1 = "0"
 2 = "1,2"
 3 = "1,2,0"
-[eye-0]
 sprite = eye_part_spr
 color = 0
+s = 0.2
+[eye-0]
 x = 0
 y = -12
-s = 0.2
 [eye-1]
-sprite = eye_part_spr
-color = 0
 x = -12
 y = -10
-s = 0.2
 [eye-2]
-sprite = eye_part_spr
 mirror = 1
-color = 0
 x = 12
 y = -10
-s = 0.2
 
 [tentacle]
 max = 2
 block-leg = 1
-[tentacle-0]
 sprite = tentacle_spr
+s = 0.2
+[tentacle-0]
 x = -18
 y = 14
-s = 0.2
 [tentacle-1]
-sprite = tentacle_spr
 mirror = 1
 x = 18
 y = 14
-s = 0.2
 
 [leg]
 max = 2
 block-tentacle = 1
-[leg-0]
 sprite = leg_spr
+s = 0.2
+[leg-0]
 x = -14
 y = 14
-s = 0.2
 [leg-1]
-sprite = leg_spr
 mirror = 1
 x = 14
 y = 14
-s = 0.2
 
 [wing]
 max = 2
-[wing-0]
 sprite = wing_spr
 color = 0
+s = 0.2
+[wing-0]
 x = -16
 y = 0
-s = 0.2
 [wing-1]
-sprite = wing_spr
 mirror = 1
-color = 0
 x = 16
 y = 0
-s = 0.2
 
 [mouth_beaked]
 max = 1
 block-mouth_toothy = 1
-[mouth_beaked-0]
 sprite = beaked_mouth_spr
 color = 0
+s = 0.2
+[mouth_beaked-0]
 x = 0
 y = 0
-s = 0.2
 
 [mouth_toothy]
 max = 1
 block-mouth_beaked = 1
-[mouth_toothy-0]
 sprite = toothed_mouth_lip_spr
+s = 0.2
+[mouth_toothy-0]
 x = 0
 y = 2
-s = 0.2
