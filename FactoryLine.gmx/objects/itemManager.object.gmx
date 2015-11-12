@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -202,6 +202,29 @@ ds_queue_destroy( tQueue );
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item debugging
+
+debugItem = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="1" enumb="0">
       <action>
@@ -225,6 +248,113 @@ ds_queue_destroy( tQueue );
 ds_map_destroy( recipes );
 ds_grid_destroy( items );
 ds_grid_destroy( layers );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change display item
+
+var tOldItem = "";
+if ( debugItem &gt;= 0 ) {
+    tOldItem = itemProperty( debugItem, Item.tag );
+}
+var tNewItem = tOldItem;
+
+if ( keyboard_check_pressed( vk_f1 ) ) {
+    tNewItem = "";
+} else if ( keyboard_check_pressed( vk_f2 ) ) {
+    tNewItem = "body_skin";
+} else if ( keyboard_check_pressed( vk_f3 ) ) {
+    tNewItem = "body_slime";
+} else if ( keyboard_check_pressed( vk_f4 ) ) {
+    tNewItem = "body_fur";
+} else if ( keyboard_check_pressed( vk_f5 ) ) {
+    tNewItem = "body_feathers";
+} else if ( keyboard_check_pressed( vk_f6 ) ) {
+    tNewItem = "body_scaly";
+}
+
+var tAttach = "";
+if ( keyboard_check_pressed( vk_f7 ) ) {
+    tAttach = "eye";
+} else if ( keyboard_check_pressed( vk_f8 ) ) {
+    tAttach = "tentacle";
+} else if ( keyboard_check_pressed( vk_f9 ) ) {
+    tAttach = "leg";
+} else if ( keyboard_check_pressed( vk_f10 ) ) {
+    tAttach = "wing";
+} else if ( keyboard_check_pressed( vk_f11 ) ) {
+    tAttach = "mouth_beaked";
+} else if ( keyboard_check_pressed( vk_f12 ) ) {
+    tAttach = "mouth_toothy";
+}
+if ( recipeExists( "attacher", tOldItem, tAttach ) &amp;&amp; ( tAttach != "" ) ) {
+    tNewItem = itemProperty( recipeResult( "attacher", tOldItem, tAttach ), Item.tag );
+}
+
+if ( tNewItem != tOldItem ) {
+    debugItem = -1;
+    if ( tNewItem != "" ) {
+        debugItem = itemFromTag( tNewItem );
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw the debug item
+
+if ( debugItem &gt;= 0 ) {
+    var tScale = 4;
+    var px = ( room_width / 2 );
+    var py = ( room_height / 2 );
+    
+    draw_set_color( c_black );
+    draw_set_alpha( 0.2 );
+    var tw = ( gridToRoomX( 0 ) * tScale );
+    var th = ( gridToRoomY( 0 ) * tScale );
+    draw_rectangle( px-tw, py-th, px+tw, py+th, false );
+    draw_set_color( c_white );
+    draw_set_alpha( 1 );
+    
+    itemDraw( debugItem, px, py, tScale, tScale );
+}
 </string>
           </argument>
         </arguments>
