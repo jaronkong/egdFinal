@@ -24,46 +24,46 @@ manual = 1
 [eye-0]
 sprite = eye_part_spr
 x = 0
-y = -4
-s = 0.3
+y = -12
+s = 0.2
 [eye-1]
 sprite = eye_part_spr
-x = -6
-y = -6
-s = 0.3
+x = -12
+y = -10
+s = 0.2
 [eye-2]
 sprite = eye_part_spr
-x = 6
-y = -6
-s = 0.3
+x = 12
+y = -10
+s = 0.2
 
 [tentacle]
 max = 2
 block-leg = 1
 [tentacle-0]
 sprite = tentacle_spr
-x = -4
-y = 6
-s = 0.4
+x = -16
+y = 16
+s = 0.2
 [tentacle-1]
 sprite = tentacle_spr
-x = 4
-y = 6
-s = 0.4
+x = 16
+y = 16
+s = 0.2
 
 [leg]
 max = 2
 block-tentacle = 1
 [leg-0]
 sprite = leg_spr
-x = -4
-y = 6
-s = 0.25
+x = -16
+y = 16
+s = 0.22
 [leg-1]
 sprite = leg_spr
-x = 4
-y = 6
-s = 0.25
+x = 16
+y = 16
+s = 0.2
 
 [wing]
 max = 2
@@ -71,12 +71,12 @@ max = 2
 sprite = wing_spr
 x = -16
 y = 0
-s = 0.5
+s = 0.2
 [wing-1]
 sprite = wing_spr
 x = 16
 y = 0
-s = 0.5
+s = 0.2
 
 [mouth_beaked]
 max = 1
@@ -85,7 +85,7 @@ block-mouth_toothy = 1
 sprite = beaked_mouth_spr
 x = 0
 y = 0
-s = 0.4
+s = 0.2
 
 [mouth_toothy]
 max = 1
@@ -93,5 +93,5 @@ block-mouth_beaked = 1
 [mouth_toothy-0]
 sprite = toothed_mouth_lip_spr
 x = 0
-y = 0
-s = 0.4
+y = 6
+s = 0.2
