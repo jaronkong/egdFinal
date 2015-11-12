@@ -300,6 +300,7 @@
         <script>scripts\recipeDefineUnordered.gml</script>
       </scripts>
       <script>scripts\itemDraw.gml</script>
+      <script>scripts\itemDrawLayers.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

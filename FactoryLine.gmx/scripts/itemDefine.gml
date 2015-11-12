@@ -1,13 +1,15 @@
-///itemDefine( tag, name, sprite, scale, color, [subimages] )
+///itemDefine( tag, name, sprite, scale, color, [above, below] )
 
 var aTag = argument[0];
 var aName = argument[1];
 var aSprite = argument[2];
 var aScale = argument[3];
 var aColor = argument[4];
-var aLayers = undefined;
-if ( argument_count > 5 ) {
-    aLayers = argument[5];
+var aLayersF = undefined;
+var aLayersB = undefined;
+if ( argument_count > 6 ) {
+    aLayersF = argument[5];
+    aLayersB = argument[6];
 }
 
 if ( !sprite_exists( aSprite ) ) {
@@ -26,7 +28,8 @@ with ( itemManager ) {
     ds_grid_set( items, tIndex, Item.sprite, aSprite );
     ds_grid_set( items, tIndex, Item.scale, aScale );
     ds_grid_set( items, tIndex, Item.color, aColor );
-    ds_grid_set( items, tIndex, Item.layers, aLayers );
+    ds_grid_set( items, tIndex, Item.above, aLayersF );
+    ds_grid_set( items, tIndex, Item.below, aLayersB );
 }
 
 return tIndex;

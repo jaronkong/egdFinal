@@ -6,33 +6,35 @@
 4 = body_scaly
 
 [attach]
-0 = eye
-1 = tentacle
-2 = leg
-3 = wing
-4 = mouth_beaked
-5 = mouth_toothy
+0 = wing
+1 = eye
+2 = mouth_beaked
+3 = mouth_toothy
+4 = tentacle
+5 = leg
 
 
 [eye]
-max = 3
+max = 2
 manual = 1
 0 = ""
 1 = "0"
 2 = "1,2"
 3 = "1,2,0"
-sprite = eye_part_spr
-color = 0
+b-sprite = eye_bckgrd_spr
+sprite = eye_skin_spr
+f-sprite = eye_part_spr
+f-color = 0
 s = 0.2
 [eye-0]
 x = 0
 y = -12
 [eye-1]
-x = -12
+x = -7
 y = -10
 [eye-2]
 mirror = 1
-x = 12
+x = 7
 y = -10
 
 [tentacle]
@@ -63,8 +65,8 @@ y = 14
 
 [wing]
 max = 2
-sprite = wing_spr
-color = 0
+b-sprite = wing_spr
+b-color = 0
 s = 0.2
 [wing-0]
 x = -16
@@ -87,7 +89,9 @@ y = 0
 [mouth_toothy]
 max = 1
 block-mouth_beaked = 1
-sprite = toothed_mouth_lip_spr
+sprite = teeth_spr
+color = 0
+f-sprite = toothed_mouth_lip_spr
 s = 0.2
 [mouth_toothy-0]
 x = 0

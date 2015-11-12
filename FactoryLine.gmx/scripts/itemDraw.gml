@@ -17,36 +17,18 @@ if ( argument_count >= 6 ) {
 }
 
 var tItem = itemFromTag( aItem );
+
+itemDrawLayers( tItem, aPosX, aPosY, Item.below, aColor, aScaleX, aScaleY );
+
 var tSprite = itemProperty( tItem, Item.sprite );
 var tScale = itemProperty( tItem, Item.scale );
 var tColor = aColor;
 if ( !itemProperty( tItem, Item.color ) ) {
     tColor = c_white;
 }
-
 draw_sprite_ext( tSprite, 0, aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, tColor, 1 );
 
-var tLayers = itemProperty( tItem, Item.layers );
-var tLayerData = itemManager.layers;
-if ( is_array( tLayers ) ) {
-    for ( var i = 0; i < array_length_1d( tLayers ); ++i ) {
-        var tIndex = tLayers[i];
-        var tScaleX = ( aScaleX * tLayerData[#tIndex, ItemLayer.scale] );
-        if ( tLayerData[#tIndex, ItemLayer.mirror] ) {
-            tScaleX = -tScaleX;
-        }
-        var tColor = aColor;
-        if ( !tLayerData[#tIndex, ItemLayer.color] ) {
-            tColor = c_white;
-        }
-        draw_sprite_ext(
-            tLayerData[#tIndex, ItemLayer.sprite], 0,
-            aPosX + (tLayerData[#tIndex, ItemLayer.x] * aScaleX),
-            aPosY + (tLayerData[#tIndex, ItemLayer.y] * aScaleY),
-            tScaleX, (aScaleY * tLayerData[#tIndex, ItemLayer.scale]),
-            0, tColor, 1 );
-    }
-}
+itemDrawLayers( tItem, aPosX, aPosY, Item.above, aColor, aScaleX, aScaleY );
 
 draw_set_color( c_white );
 draw_set_alpha( 1 );
