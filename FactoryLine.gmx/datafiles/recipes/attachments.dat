@@ -35,6 +35,7 @@ y = -10
 s = 0.2
 [eye-2]
 sprite = eye_part_spr
+mirror = 1
 color = 0
 x = 12
 y = -10
@@ -50,6 +51,7 @@ y = 14
 s = 0.2
 [tentacle-1]
 sprite = tentacle_spr
+mirror = 1
 x = 18
 y = 14
 s = 0.2
@@ -64,6 +66,7 @@ y = 14
 s = 0.2
 [leg-1]
 sprite = leg_spr
+mirror = 1
 x = 14
 y = 14
 s = 0.2

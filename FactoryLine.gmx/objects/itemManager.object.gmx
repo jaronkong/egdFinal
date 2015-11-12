@@ -32,7 +32,7 @@ enum Item {
 }
 
 enum ItemLayer {
-    tag, sprite, x, y, scale, color, count
+    tag, sprite, x, y, scale, color, mirror, count
 }
 
 layers = ds_grid_create( 0, ItemLayer.count );

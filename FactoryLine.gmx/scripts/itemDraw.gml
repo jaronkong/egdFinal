@@ -31,6 +31,10 @@ var tLayerData = itemManager.layers;
 if ( is_array( tLayers ) ) {
     for ( var i = 0; i < array_length_1d( tLayers ); ++i ) {
         var tIndex = tLayers[i];
+        var tScaleX = ( aScaleX * tLayerData[#tIndex, ItemLayer.scale] );
+        if ( tLayerData[#tIndex, ItemLayer.mirror] ) {
+            tScaleX = -tScaleX;
+        }
         var tColor = aColor;
         if ( !tLayerData[#tIndex, ItemLayer.color] ) {
             tColor = c_white;
@@ -39,8 +43,7 @@ if ( is_array( tLayers ) ) {
             tLayerData[#tIndex, ItemLayer.sprite], 0,
             aPosX + (tLayerData[#tIndex, ItemLayer.x] * aScaleX),
             aPosY + (tLayerData[#tIndex, ItemLayer.y] * aScaleY),
-            aScaleX * tLayerData[#tIndex, ItemLayer.scale],
-            aScaleY * tLayerData[#tIndex, ItemLayer.scale],
+            tScaleX, (aScaleY * tLayerData[#tIndex, ItemLayer.scale]),
             0, tColor, 1 );
     }
 }
