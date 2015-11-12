@@ -17,6 +17,7 @@ with ( itemManager ) {
         layers[# tIndex, ItemLayer.x] = ini_read_real( aTag, "x", 0 );
         layers[# tIndex, ItemLayer.y] = ini_read_real( aTag, "y", 0 );
         layers[# tIndex, ItemLayer.scale] = ini_read_real( aTag, "s", 1 );
+        layers[# tIndex, ItemLayer.color] = ini_read_real( aTag, "color", true );
     }
     
     return tIndex;

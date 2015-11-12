@@ -1,6 +1,7 @@
 [garbage]
 name = "Garbage"
 sprite = garbage_spr
+color = 1
 
 
 [slime]
@@ -40,13 +41,15 @@ sprite = tooth_spr
 
 [tentacle]
 name = "Tentacle"
+sprite = tentacle_spr
 
 [leg]
 name = "Leg"
+sprite = leg_spr
 
 [wing]
 name = "Wing"
-sprite = leg_spr
+sprite = wing_spr
 
 
 [jaw]
@@ -59,6 +62,7 @@ sprite = beaked_jaw_spr
 
 [mouth_toothy]
 name = "Mouth"
+sprite = 
 
 [mouth_beaked]
 name = "Beak"
@@ -68,23 +72,28 @@ name = "Beak"
 name = "Furry Body"
 sprite = fur_body_spr
 scale = 0.2
+color = 1
 
 [body_feathers]
 name = "Feathery Body"
 sprite = feathered_body_spr
 scale = 0.2
+color = 1
 
 [body_scaly]
 name = "Scaly Body"
 sprite = scaly_body_spr
 scale = 0.2
+color = 1
 
 [body_skin]
 name = "Skin Body"
 sprite = skin_body_spr
 scale = 0.2
+color = 1
 
 [body_slime]
 name = "Slimy Body"
 sprite = slime_body_spr
 scale = 0.2
+color = 1

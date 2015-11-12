@@ -288,7 +288,7 @@ if ( itemID &gt;= 0 ) {
             <kind>1</kind>
             <string>///Draw self
 
-itemDraw( itemID, x, y );
+itemDraw( itemID, x, y, image_blend );
 </string>
           </argument>
         </arguments>
