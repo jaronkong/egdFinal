@@ -56,7 +56,9 @@ if ( instance_exists( aDragItem ) ) {
             
             with ( originTraySection ) {
                 //Refund the item quantity
-                heldItemQuantity += 1;
+                if ( heldItemQuantity >= 0 ) {
+                    heldItemQuantity += 1;
+                }
             }
             audio_play_sound( placementFail_sd, 1, false );
             instance_destroy();

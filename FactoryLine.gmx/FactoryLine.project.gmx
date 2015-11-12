@@ -227,7 +227,9 @@
     <scripts name="DraggingAndManipulatingElements">
       <script>scripts\createPlaceableItem.gml</script>
       <script>scripts\isPlaceableLocation.gml</script>
+      <script>scripts\removeElement.gml</script>
       <script>scripts\placeItemAttempt.gml</script>
+      <script>scripts\confirmingDoesExist.gml</script>
       <scripts name="Selections">
         <script>scripts\selectionAdd.gml</script>
         <script>scripts\selectionGetSize.gml</script>
@@ -240,6 +242,7 @@
       <script>scripts\callRebindCrane.gml</script>
       <script>scripts\setTrayPositions.gml</script>
       <script>scripts\verticalTrayCreate.gml</script>
+      <script>scripts\isBelowHUD.gml</script>
       <scripts name="Desk">
         <script>scripts\deskIsOn.gml</script>
         <script>scripts\deskSnapDocumentTo.gml</script>
@@ -399,6 +402,7 @@
         <object>objects\dispenser_slime</object>
         <object>objects\dispenser_bone</object>
         <object>objects\dispenser_fur</object>
+        <object>objects\dispenser_eye</object>
       </objects>
       <objects name="Modifiers">
         <object>objects\modifier</object>

@@ -128,6 +128,11 @@ instance_create( 0, 0, inputMaskingController );
 
 levelTime = 10 * 60;
 
+globalTween = 0;
+globalTween_rate = 0.1;
+tweenDelay = room_speed * 0.5;
+alarm[ 0 ] = tweenDelay;
+
 
 </string>
           </argument>
@@ -160,6 +165,33 @@ ds_map_destroy( produced );
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset global tween
+
+globalTween = 0;
+
+alarm[ 0 ] = tweenDelay;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -180,6 +212,32 @@ ds_map_destroy( produced );
             <string>///Tick Time
 
 levelTime -= delta_time / 1000000;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Advance global tween
+
+//Used for things like conveyor belt arrow effect
+
+globalTween = lerp( globalTween, 1, globalTween_rate );
 
 </string>
           </argument>
