@@ -14,11 +14,6 @@
 5 = mouth_toothy
 
 
-[body_slime]
-tentacle-max = 8
-leg-max = 8
-
-
 [eye]
 max = 3
 manual = 1
@@ -27,45 +22,45 @@ manual = 1
 2 = "1,2"
 3 = "1,2,0"
 [eye-0]
-sprite = slime_spr
+sprite = eye_part_spr
 x = 0
 y = -4
 s = 0.3
 [eye-1]
-sprite = slime_spr
+sprite = eye_part_spr
 x = -6
 y = -6
 s = 0.3
 [eye-2]
-sprite = slime_spr
+sprite = eye_part_spr
 x = 6
 y = -6
 s = 0.3
 
 [tentacle]
-max = 4
+max = 2
 block-leg = 1
 [tentacle-0]
-sprite = slime_spr
-x = 0
-y = 4
+sprite = tentacle_spr
+x = -4
+y = 6
+s = 0.4
+[tentacle-1]
+sprite = tentacle_spr
+x = 4
+y = 6
 s = 0.4
 
 [leg]
-max = 4
+max = 2
 block-tentacle = 1
 [leg-0]
-sprite = item_spr
-x = 0
-y = 8
-s = 0.25
-[leg-1]
-sprite = item_spr
+sprite = leg_spr
 x = -4
 y = 6
 s = 0.25
-[leg-2]
-sprite = item_spr
+[leg-1]
+sprite = leg_spr
 x = 4
 y = 6
 s = 0.25
@@ -73,12 +68,12 @@ s = 0.25
 [wing]
 max = 2
 [wing-0]
-sprite = garbage_spr
+sprite = wing_spr
 x = -16
 y = 0
 s = 0.5
 [wing-1]
-sprite = garbage_spr
+sprite = wing_spr
 x = 16
 y = 0
 s = 0.5
@@ -87,7 +82,7 @@ s = 0.5
 max = 1
 block-mouth_toothy = 1
 [mouth_beaked-0]
-sprite = item_spr
+sprite = beaked_mouth_spr
 x = 0
 y = 0
 s = 0.4
@@ -96,7 +91,7 @@ s = 0.4
 max = 1
 block-mouth_beaked = 1
 [mouth_toothy-0]
-sprite = item_spr
+sprite = toothed_mouth_lip_spr
 x = 0
 y = 0
 s = 0.4

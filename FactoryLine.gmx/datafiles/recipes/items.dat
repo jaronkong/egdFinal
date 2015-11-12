@@ -66,15 +66,25 @@ name = "Beak"
 
 [body_fur]
 name = "Furry Body"
+sprite = fur_body_spr
+scale = 0.2
 
 [body_feathers]
 name = "Feathery Body"
+sprite = feathered_body_spr
+scale = 0.2
 
 [body_scaly]
 name = "Scaly Body"
+sprite = scaly_body_spr
+scale = 0.2
 
 [body_skin]
 name = "Skin Body"
+sprite = skin_body_spr
+scale = 0.2
 
 [body_slime]
 name = "Slimy Body"
+sprite = slime_body_spr
+scale = 0.2
