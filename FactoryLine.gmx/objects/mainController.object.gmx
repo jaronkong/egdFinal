@@ -277,7 +277,7 @@ for ( var i = 0; i &lt; ds_grid_width( quota ); ++i ) {
     }
     var tString = ( string( tProduced ) + " / " + string( tRequired ) );
     draw_text( room_width - 64, 256 + 100 * i, tString );
-    itemDraw( tItem, room_width - 48, 256 + 100 * i, 1, 1 );
+    itemDraw( tItem, room_width - 48, 256 + 100 * i );
 }
 
 draw_set_color( c_white );
