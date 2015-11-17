@@ -70,9 +70,8 @@ cellCount = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set default binding
+            <string>///Set cooldown
 
-button = noone;
 cooldown = 0.75;
 </string>
           </argument>

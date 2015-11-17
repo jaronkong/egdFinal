@@ -74,12 +74,13 @@ cellCount = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set default binding
+            <string>///Display settings
 
-button = noone;
+var tScale = ( 96 / sprite_height );
+image_xscale = tScale;
+image_yscale = tScale;
 
-result = -1;
-resultColor = c_white;
+image_speed = 0.375;
 </string>
           </argument>
         </arguments>
@@ -100,13 +101,10 @@ resultColor = c_white;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Display settings
+            <string>///Set state
 
-var tScale = ( 96 / sprite_height );
-image_xscale = tScale;
-image_yscale = tScale;
-
-image_speed = 0.375;
+result = -1;
+resultColor = c_white;
 </string>
           </argument>
         </arguments>
