@@ -346,6 +346,12 @@ draw_line_width( tPosLeft, py, tPosRight, py, 2 );
 draw_set_color( c_white );
 draw_set_alpha( 1 );
 
+//Draw supports
+draw_sprite_ext( conveyor_stand, 0, tPosLeft, tPosY,
+    tScaleX, tScaleY, 0, image_blend, image_alpha );
+draw_sprite_ext( conveyor_stand, 0, tPosRight, tPosY,
+    tScaleX, tScaleY, 0, image_blend, image_alpha );
+
 //Draw sprite highlights
 if ( mouseHoverOn( id ) ) {
     drawSpriteHighlight( conveyor_wheel_spr, floor( frame ),
@@ -359,7 +365,6 @@ if ( mouseHoverOn( id ) ) {
 //Draw the sprites
 draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosLeft, tPosY,
     tScaleX, tScaleY, 0, image_blend, image_alpha );
-
 draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosRight, tPosY,
     tScaleX, tScaleY, 0, image_blend, image_alpha );
     
@@ -375,22 +380,6 @@ draw_arrow( x - tArrowLength/2 + tArrowCurrentTravel* sign( dir ), y + tArrowYOf
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
