@@ -443,6 +443,7 @@
       <object>objects\attacher</object>
       <object>objects\receiver</object>
       <object>objects\disintegrator</object>
+      <object>objects\blockLayer</object>
     </objects>
     <objects name="Items">
       <object>objects\itemManager</object>
