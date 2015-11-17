@@ -214,7 +214,7 @@ if ( held ) {
                 1, 1, 0, c_white, 1 );
     
     if ( isPlaceableLocation( targetX, targetY, heldItem ) ) {
-        draw_sprite_ext( image, 0, x, y, image_xscale, image_yscale, 0, c_white, alpha);
+        //draw_sprite_ext( image, 0, x, y, image_xscale, image_yscale, 0, c_white, alpha);
     }
     else {
         draw_sprite_ext( image, 0, x, y, image_xscale, image_yscale, 0, c_red, alpha);
