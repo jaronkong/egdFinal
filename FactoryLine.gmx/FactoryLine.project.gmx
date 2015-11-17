@@ -442,6 +442,7 @@
       <object>objects\infuser</object>
       <object>objects\attacher</object>
       <object>objects\receiver</object>
+      <object>objects\disintegrator</object>
     </objects>
     <objects name="Items">
       <object>objects\itemManager</object>

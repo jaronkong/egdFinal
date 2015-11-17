@@ -57,6 +57,10 @@ modifierContents[ modifierSections, 0 ] = pressurizer;
 modifierContents[ modifierSections, 1 ] = -1;
 modifierContents[ modifierSections, 2 ] = "Pressurizer";         //Tooltip
 modifierSections++;
+modifierContents[ modifierSections, 0 ] = disintegrator;
+modifierContents[ modifierSections, 1 ] = -1;
+modifierContents[ modifierSections, 2 ] = "Disintegrator";         //Tooltip
+modifierSections++;
 var modifiers = verticalTrayCreate(xPos + xDiff * 3, yPos, modifierContents, modifierSections);
 modifiers.button.sprite_index = B_Modifier_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
