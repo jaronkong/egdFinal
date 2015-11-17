@@ -96,10 +96,9 @@ active = true;
             <kind>1</kind>
             <string>///General Info
 
+drawSprite = true;
 
 originTraySection = noone; //Which tray section this item came from.
-
-
 </string>
           </argument>
         </arguments>
@@ -334,8 +333,7 @@ if ( mouseHoverOn( id ) ) {
             <kind>1</kind>
             <string>///Draw self
 
-if ( sprite_exists( sprite_index ) ) {
-
+if ( sprite_exists( sprite_index ) &amp;&amp; drawSprite ) {
     draw_sprite_ext( sprite_index, image_index, 
                     x + shakeOffsetX, y + shakeOffsetY,
                     image_xscale, image_yscale, image_angle,
@@ -389,25 +387,56 @@ fluidObstacle_addToQueue( id );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Self and highlights
+            <string>///Draw highlights
 
 //Highlight
-if ( sprite_exists( sprite_index ) ) {
-
+if ( sprite_exists( sprite_index ) &amp;&amp; drawSprite ) {
     if ( mouseHoverOn( id ) ) {
-        d3d_set_fog( true, highlightColor, depth, depth );
-        draw_sprite_ext( sprite_index, image_index, 
-                    x + shakeOffsetX, y + shakeOffsetY, 
-                    highlightOutlineSize*image_xscale,
-                    highlightOutlineSize*image_yscale, image_angle,
-                    highlightColor, highlightAlpha*image_alpha );
-        d3d_set_fog( false, highlightColor, depth, depth );
+        drawSpriteHighlight( sprite_index, image_index,
+            x + shakeOffsetX, y + shakeOffsetY,
+            image_xscale, image_yscale, image_angle,
+            highlightColor, highlightAlpha*image_alpha,
+            highlightOutlineSize );
     }
-
 }
 
-event_user( 0 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Call the normal draw event
 
+event_user( 0 );
 </string>
           </argument>
         </arguments>

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>interactiveBlock</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>conveyor_placeholder</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -135,6 +135,8 @@ button = ord( 'R' );
           <argument>
             <kind>1</kind>
             <string>///Effects
+
+drawSprite = false;
 
 audioLoop = audio_play_sound( conveyorLoops_sd, 1, true );
 audio_sound_gain( audioLoop, 0, 0 );
@@ -353,9 +355,9 @@ for ( var i = 0; i &lt; cellCount; ++i ) {
     tRight = max( cellPosX[i], tRight );
 }
 
-var tPosLeft = ( gridToRoomX( cx + tLeft - 0.5 + tScale ) + tOffsetX );
-var tPosRight = ( gridToRoomX( cx + tRight + 0.5 - tScale ) + tOffsetX );
-var py, tPosY = ( y - ( ( 0.5 - tScale ) * 64 ) );
+var tPosLeft = ( gridToRoomX( cx + tLeft - 0.5 + tScale ) + tOffsetX + shakeOffsetX );
+var tPosRight = ( gridToRoomX( cx + tRight + 0.5 - tScale ) + tOffsetX + shakeOffsetX );
+var py, tPosY = ( y - ( ( 0.5 - tScale ) * 64 ) + shakeOffsetY );
 
 //Draw a line between the sprites
 draw_set_color( c_black );
@@ -366,6 +368,16 @@ py = ( tPosY + ( tScale * 64 ) - 3 );
 draw_line_width( tPosLeft, py, tPosRight, py, 2 );
 draw_set_color( c_white );
 draw_set_alpha( 1 );
+
+//Draw sprite highlights
+if ( mouseHoverOn( id ) ) {
+    drawSpriteHighlight( conveyor_wheel_spr, floor( frame ),
+        tPosLeft, tPosY, tScaleX, tScaleY, 0, highlightColor,
+        highlightAlpha*image_alpha, highlightOutlineSize );
+    drawSpriteHighlight( conveyor_wheel_spr, floor( frame ),
+        tPosRight, tPosY, tScaleX, tScaleY, 0, highlightColor,
+        highlightAlpha*image_alpha, highlightOutlineSize );
+}
 
 //Draw the sprites
 draw_sprite_ext( conveyor_wheel_spr, floor( frame ), tPosLeft, tPosY,
