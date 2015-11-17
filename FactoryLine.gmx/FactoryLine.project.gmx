@@ -125,6 +125,7 @@
       <sprites name="conveyor">
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
+        <sprite>sprites\conveyorFive_placeholder</sprite>
         <sprite>sprites\conveyor_wheel_spr</sprite>
         <sprite>sprites\conveyor_stand</sprite>
       </sprites>
@@ -397,6 +398,7 @@
       <objects name="ConveyorBelts">
         <object>objects\conveyorBelt</object>
         <object>objects\conveyorBeltDouble</object>
+        <object>objects\conveyorBeltFive</object>
       </objects>
       <object>objects\dispenser</object>
       <objects name="Dispensers">

@@ -70,6 +70,10 @@ conveyorContents[ conveyorSections, 0 ] = conveyorBeltDouble;
 conveyorContents[ conveyorSections, 1 ] = -1;
 conveyorContents[ conveyorSections, 2 ] = "Double Conveyor";         //Tooltip
 conveyorSections++;
+conveyorContents[ conveyorSections, 0 ] = conveyorBeltFive;
+conveyorContents[ conveyorSections, 1 ] = -1;
+conveyorContents[ conveyorSections, 2 ] = "Quintuple Conveyor";         //Tooltip
+conveyorSections++;
 var conveyors = verticalTrayCreate(xPos + xDiff * 4, yPos, conveyorContents, conveyorSections);
 conveyors.button.sprite_index = B_Conveyor_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
