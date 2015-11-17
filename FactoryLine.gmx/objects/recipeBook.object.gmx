@@ -47,7 +47,7 @@ width = sprite_width;
 height = sprite_height;
 text = "";
 
-numPages = 2;
+numPages = 4;
 currentPage = 0;
 pageTurnRegionSize = 0.25;
 

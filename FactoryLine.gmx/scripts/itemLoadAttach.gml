@@ -8,7 +8,9 @@ var aCount = array_length_1d( aAttachCount );
 var tTag = itemProperty( aBase, Item.tag );
 var tName = itemProperty( aBase, Item.name );
 var tSprite = itemProperty( aBase, Item.sprite );
+var tBack = itemProperty( aBase, Item.back );
 var tScale = itemProperty( aBase, Item.scale );
+var tSpeed = itemProperty( aBase, Item.speed );
 var tColor = itemProperty( aBase, Item.color );
 
 tName += "#";
@@ -64,4 +66,4 @@ for ( var i = 0; i < aCount; ++i ) {
 }
 ini_close( );
 
-return itemDefine( tTag, tName, tSprite, tScale, tColor, tLayersF, tLayersB );
+return itemDefine( tTag, tName, tSprite, tBack, tScale, tSpeed, tColor, tLayersF, tLayersB );

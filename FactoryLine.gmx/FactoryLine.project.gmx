@@ -3,8 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
-    <datafiles number="4" name="recipes">
+  <datafiles number="5" name="datafiles">
+    <datafile>
+      <name>restrictions.dat</name>
+      <exists>-1</exists>
+      <size>244</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>restrictions.dat</filename>
+    </datafile>
+    <datafiles number="5" name="recipes">
       <datafile>
         <name>items.dat</name>
         <exists>-1</exists>
@@ -125,6 +142,7 @@
       <sprites name="conveyor">
         <sprite>sprites\conveyor_placeholder</sprite>
         <sprite>sprites\conveyorDouble_placeholder</sprite>
+        <sprite>sprites\conveyorFive_placeholder</sprite>
         <sprite>sprites\conveyor_wheel_spr</sprite>
         <sprite>sprites\conveyor_stand</sprite>
       </sprites>
@@ -174,6 +192,7 @@
       <sprite>sprites\documentSmallConfirm_spr</sprite>
       <sprite>sprites\documentSmallDeny_spr</sprite>
       <sprite>sprites\documentSmall_spr</sprite>
+      <sprite>sprites\notice_spr</sprite>
     </sprites>
     <sprites name="parts">
       <sprites name="eye">
@@ -236,6 +255,7 @@
         <script>scripts\selectionsIsSelected.gml</script>
         <script>scripts\selectionsClear.gml</script>
         <script>scripts\selectionsRemove.gml</script>
+        <script>scripts\drawSpriteHighlight.gml</script>
       </scripts>
     </scripts>
     <scripts name="InterfaceActions">
@@ -284,6 +304,9 @@
       <script>scripts\effects_surfaceInit.gml</script>
       <script>scripts\effects_getShaderSurface.gml</script>
       <script>scripts\effects_globalSurfaceExists.gml</script>
+    </scripts>
+    <scripts name="Restrictions">
+      <script>scripts\restrictionCreate.gml</script>
     </scripts>
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
@@ -341,6 +364,10 @@
     <object>objects\mainController</object>
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
+    <objects name="Restrictions">
+      <object>objects\restrictionPar</object>
+      <object>objects\restrictionElementCount</object>
+    </objects>
     <objects name="Effects">
       <objects name="PostEffects">
         <object>objects\postEffectsGlobalCon</object>
@@ -397,6 +424,7 @@
       <objects name="ConveyorBelts">
         <object>objects\conveyorBelt</object>
         <object>objects\conveyorBeltDouble</object>
+        <object>objects\conveyorBeltFive</object>
       </objects>
       <object>objects\dispenser</object>
       <objects name="Dispensers">

@@ -188,7 +188,6 @@ if ( instance_exists( tAdd ) ) {
         tItem = tInst.itemID;
     }
     var tItemAdd = tAdd.itemID;
-    with ( tAdd ) instance_destroy( );
     var tResult = recipeResult( object_get_name( object_index ), tItem, tItemAdd );
     if ( instance_exists( tInst ) ) {
         var tNew = itemCreate( tInst.x, tInst.y, tResult );
@@ -199,6 +198,7 @@ if ( instance_exists( tAdd ) ) {
         var tNew = itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), tResult );
         tNew.image_blend = tAdd.image_blend;
     }
+    with ( tAdd ) instance_destroy( );
 }
 </string>
           </argument>

@@ -9,6 +9,7 @@ with ( argument0 ) {
         if ( y - height/2 < deskController.y ) {
             targetY = deskController.y - height/2 - 32;
         }
+        flashing = false;
     }
     else {
         targetXScale = perspectiveSmallScale;

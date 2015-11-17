@@ -70,6 +70,10 @@ conveyorContents[ conveyorSections, 0 ] = conveyorBeltDouble;
 conveyorContents[ conveyorSections, 1 ] = -1;
 conveyorContents[ conveyorSections, 2 ] = "Double Conveyor";         //Tooltip
 conveyorSections++;
+conveyorContents[ conveyorSections, 0 ] = conveyorBeltFive;
+conveyorContents[ conveyorSections, 1 ] = -1;
+conveyorContents[ conveyorSections, 2 ] = "Quintuple Conveyor";         //Tooltip
+conveyorSections++;
 var conveyors = verticalTrayCreate(xPos + xDiff * 4, yPos, conveyorContents, conveyorSections);
 conveyors.button.sprite_index = B_Conveyor_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +86,6 @@ var recipes = instance_create(xPos + xDiff * 0,yPos,recipeBook);
 //recipes.sprite_index = B_Recipe_spr;
 //recipes.nameSprite = B_Recipe_Name_spr;
 
-var letters = instance_create(xPos + xDiff * 1,yPos,hudButton);
-letters.sprite_index = B_Letter_spr;
-letters.nameSprite = B_Letter_Name_spr;
+var letters = instance_create(xPos + xDiff * 1,yPos,restrictionDoc);
+//letters.sprite_index = B_Letter_spr;
+//letters.nameSprite = B_Letter_Name_spr;

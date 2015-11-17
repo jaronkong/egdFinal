@@ -8,8 +8,8 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>2</bbox_left>
-  <bbox_right>62</bbox_right>
-  <bbox_top>1</bbox_top>
+  <bbox_right>317</bbox_right>
+  <bbox_top>0</bbox_top>
   <bbox_bottom>62</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -17,9 +17,9 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>64</width>
+  <width>320</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\conveyor_placeholder_0.png</frame>
+    <frame index="0">images\conveyorFive_placeholder_0.png</frame>
   </frames>
 </sprite>

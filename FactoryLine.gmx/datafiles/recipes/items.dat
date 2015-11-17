@@ -42,30 +42,42 @@ sprite = tooth_spr
 [tentacle]
 name = "Tentacle"
 sprite = tentacle_spr
+scale = 0.25
+color = 0
 
 [leg]
 name = "Leg"
 sprite = leg_spr
+scale = 0.25
+color = 0
 
 [wing]
 name = "Wing"
 sprite = wing_spr
+scale = 0.25
 
 
 [jaw]
 name = "Jaw"
 sprite = jaw_spr
+scale = 0.25
 
 [jaw_beaked]
 name = "Beak Jaw"
 sprite = beaked_jaw_spr
+scale = 0.25
 
 [mouth_toothy]
 name = "Mouth"
-sprite = 
+b-sprite = teeth_spr
+sprite = toothed_mouth_lip_spr
+scale = 0.25
+color = 0
 
 [mouth_beaked]
 name = "Beak"
+sprite = beaked_mouth_spr
+scale = 0.25
 
 
 [body_fur]

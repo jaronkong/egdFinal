@@ -307,6 +307,13 @@ if ( instance_exists( tInst ) ) {
             <kind>1</kind>
             <string>///Draw plunger
 
+if ( mouseHoverOn( id ) ) {
+    drawSpriteHighlight( attacher_plunger, 0,
+        x + shakeOffsetX, y + lerp( 32, 64, plungerHeight ) + shakeOffsetY,
+        image_xscale, image_yscale, image_angle, highlightColor,
+        highlightAlpha*image_alpha, highlightOutlineSize );
+}
+
 draw_sprite_ext( attacher_plunger, 0, x, y + lerp( 32, 64, plungerHeight ),
     image_xscale, image_yscale, image_angle, image_blend, image_alpha );
 </string>

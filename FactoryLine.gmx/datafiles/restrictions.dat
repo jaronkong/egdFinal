@@ -1,0 +1,7 @@
+[singleCount]
+obj=restrictionElementCount
+text="you are hearby ordered to only use#one of each type of dispenser max."
+
+[doubleCount]
+obj=restrictionElementCount
+text="you are hearby ordered to only use#two of each type of dispenser max."

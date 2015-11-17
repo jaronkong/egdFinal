@@ -28,11 +28,11 @@
             <string>///Define data structures
 
 enum Item {
-    tag, name, sprite, scale, color, above, below, count
+    tag, name, sprite, back, scale, speed, color, above, below, count
 }
 
 enum ItemLayer {
-    tag, sprite, x, y, scale, color, mirror, count
+    tag, sprite, x, y, scale, color, mirror, speed, count
 }
 
 layers = ds_grid_create( 0, ItemLayer.count );
@@ -353,7 +353,9 @@ if ( debugItem &gt;= 0 ) {
     draw_set_color( c_white );
     draw_set_alpha( 1 );
     
-    itemDraw( debugItem, px, py, make_color_hsv( floor(get_timer()/100000)%255, 192, 128 ), tScale, tScale );
+    itemDraw( debugItem, px, py, (get_timer()/1000000),
+        make_color_hsv( floor(get_timer()/100000)%255, 192, 128 ),
+        tScale, tScale );
 }
 </string>
           </argument>
