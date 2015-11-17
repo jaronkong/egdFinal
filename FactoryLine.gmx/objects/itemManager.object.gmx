@@ -28,7 +28,7 @@
             <string>///Define data structures
 
 enum Item {
-    tag, name, sprite, scale, color, above, below, count
+    tag, name, sprite, back, scale, speed, color, above, below, count
 }
 
 enum ItemLayer {

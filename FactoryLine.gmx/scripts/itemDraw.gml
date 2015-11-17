@@ -25,14 +25,24 @@ var tItem = itemFromTag( aItem );
 
 itemDrawLayers( tItem, aPosX, aPosY, Item.below, aFrame, aColor, aScaleX, aScaleY );
 
-var tSprite = itemProperty( tItem, Item.sprite );
 var tScale = itemProperty( tItem, Item.scale );
-var tColor = aColor;
-if ( !itemProperty( tItem, Item.color ) ) {
-    tColor = c_white;
+var tFrame = ( itemProperty( tItem, Item.speed ) * aFrame );
+
+var tBack = itemProperty( tItem, Item.back );
+if ( sprite_exists( tBack ) ) {
+    draw_sprite_ext( tBack, ( tFrame % sprite_get_number( tBack ) ),
+        aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, aColor, 1 );
 }
-draw_sprite_ext( tSprite, ( aFrame % sprite_get_number( tSprite ) ),
-    aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, tColor, 1 );
+
+var tSprite = itemProperty( tItem, Item.sprite );
+if ( sprite_exists( tSprite ) ) {
+    var tColor = aColor;
+    if ( !itemProperty( tItem, Item.color ) ) {
+        tColor = c_white;
+    }
+    draw_sprite_ext( tSprite, ( tFrame % sprite_get_number( tSprite ) ),
+        aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, tColor, 1 );
+}
 
 itemDrawLayers( tItem, aPosX, aPosY, Item.above, aFrame, aColor, aScaleX, aScaleY );
 

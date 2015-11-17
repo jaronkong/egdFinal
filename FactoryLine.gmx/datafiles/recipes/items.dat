@@ -43,11 +43,13 @@ sprite = tooth_spr
 name = "Tentacle"
 sprite = tentacle_spr
 scale = 0.25
+color = 1
 
 [leg]
 name = "Leg"
 sprite = leg_spr
 scale = 0.25
+color = 1
 
 [wing]
 name = "Wing"
@@ -67,9 +69,15 @@ scale = 0.25
 
 [mouth_toothy]
 name = "Mouth"
+b-sprite = teeth_spr
+sprite = toothed_mouth_lip_spr
+scale = 0.25
+color = 1
 
 [mouth_beaked]
 name = "Beak"
+sprite = beaked_mouth_spr
+scale = 0.25
 
 
 [body_fur]
