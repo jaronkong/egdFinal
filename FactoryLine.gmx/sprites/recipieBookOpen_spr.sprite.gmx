@@ -21,5 +21,8 @@
   <height>360</height>
   <frames>
     <frame index="0">images\recipieBookOpen_spr_0.png</frame>
+    <frame index="1">images\recipieBookOpen_spr_1.png</frame>
+    <frame index="2">images\recipieBookOpen_spr_2.png</frame>
+    <frame index="3">images\recipieBookOpen_spr_3.png</frame>
   </frames>
 </sprite>
