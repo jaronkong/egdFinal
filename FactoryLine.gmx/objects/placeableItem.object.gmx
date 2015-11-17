@@ -142,8 +142,7 @@ if ( mouse_check_button( mb_left ) ) {
         
         if ( !held ) {
             //Grabbing for first time
-            grabOffset = grabOffsetMax;
-            audio_play_sound( craneSlam_sd, 1, false );
+            
             /*
             if ( !instance_exists( heldItem ) &amp;&amp; heldItem != noone) {
                 instance_create( x, y, heldItem );
@@ -222,7 +221,7 @@ if ( held ) {
     
 }
 else {
-    draw_sprite_ext( image, 0, x, y, previewScaling, previewScaling, 0, c_white, alpha);
+    draw_sprite_ext( image, 0, x, y, previewScaling, previewScaling, 0, c_red, 0.15);
 
 }
 </string>
