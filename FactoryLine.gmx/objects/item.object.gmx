@@ -118,6 +118,29 @@ image_blend = make_color_hsv( irandom( 255 ), 192, 128 );
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set frame
+
+frame = random( 1000 );
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="1">
       <action>
@@ -232,6 +255,29 @@ if ( !gridValidPoint( gridManager.x, ( y - height/2 ) ) ) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Increment frame
+
+frame += ( 1 / room_speed );
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="25">
       <action>
@@ -311,7 +357,7 @@ if ( itemID &gt;= 0 ) {
             <kind>1</kind>
             <string>///Draw self
 
-itemDraw( itemID, x, y, image_blend );
+itemDraw( itemID, x, y, frame, image_blend );
 </string>
           </argument>
         </arguments>

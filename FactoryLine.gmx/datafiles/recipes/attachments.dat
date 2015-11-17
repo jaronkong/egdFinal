@@ -29,13 +29,16 @@ s = 0.2
 [eye-0]
 x = 0
 y = -12
+speed = -5
 [eye-1]
 x = -7
 y = -10
+speed = -5
 [eye-2]
 mirror = 1
 x = 7
 y = -10
+speed = -5
 
 [tentacle]
 max = 2
@@ -45,10 +48,12 @@ s = 0.2
 [tentacle-0]
 x = -18
 y = 14
+speed = 7.5
 [tentacle-1]
 mirror = 1
 x = 18
 y = 14
+speed = 7.55
 
 [leg]
 max = 2
@@ -58,10 +63,12 @@ s = 0.2
 [leg-0]
 x = -14
 y = 14
+speed = 5
 [leg-1]
 mirror = 1
 x = 14
 y = 14
+speed = 5
 
 [wing]
 max = 2
@@ -71,10 +78,12 @@ s = 0.2
 [wing-0]
 x = -16
 y = 0
+speed = 5
 [wing-1]
 mirror = 1
 x = 16
 y = 0
+speed = 5
 
 [mouth_beaked]
 max = 1

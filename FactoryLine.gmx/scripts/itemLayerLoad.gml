@@ -31,6 +31,7 @@ with ( itemManager ) {
         layers[# tIndex, ItemLayer.x] = ini_read_real( tTag, "x", 0 );
         layers[# tIndex, ItemLayer.y] = ini_read_real( tTag, "y", 0 );;
         layers[# tIndex, ItemLayer.mirror] = ini_read_real( tTag, "mirror", false );
+        layers[# tIndex, ItemLayer.speed] = ini_read_real( tTag, "speed", 1 );
     }
     
     return tIndex;
