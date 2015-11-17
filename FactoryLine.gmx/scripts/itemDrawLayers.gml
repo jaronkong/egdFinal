@@ -39,16 +39,16 @@ if ( is_array( tLayers ) ) {
             tColor = c_white;
         }
         var tSpeed = tLayerData[#tIndex, ItemLayer.speed]
-        var tFrame = floor( aFrame * tSpeed );
+        var tFrame = ( aFrame * tSpeed );
         if ( tSpeed < 0 ) {
-            if ( ( abs( tFrame ) % abs( tSpeed * 15 ) ) < 1 ) {
+            if ( ( abs( tFrame ) % abs( tSpeed * 10 ) ) < 1 ) {
                 tFrame = 1;
             } else {
                 tFrame = 0;
             }
         }
         draw_sprite_ext(
-            tSprite, ( tFrame % sprite_get_number( tSprite ) ),
+            tSprite, floor( tFrame % sprite_get_number( tSprite ) ),
             aPosX + (tLayerData[#tIndex, ItemLayer.x] * aScaleX),
             aPosY + (tLayerData[#tIndex, ItemLayer.y] * aScaleY),
             tScaleX, (aScaleY * tLayerData[#tIndex, ItemLayer.scale]),
