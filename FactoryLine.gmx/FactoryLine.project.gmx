@@ -304,6 +304,7 @@
       </scripts>
       <script>scripts\itemDraw.gml</script>
       <script>scripts\itemDrawLayers.gml</script>
+      <script>scripts\itemColorMerge.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

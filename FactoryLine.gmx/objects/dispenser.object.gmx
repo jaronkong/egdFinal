@@ -198,7 +198,7 @@ itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), itemID );
             <kind>1</kind>
             <string>///Draw the spawned item
 
-itemDraw( itemID, x, y + 14, image_xscale, image_yscale );
+itemDraw( itemID, x, y + 14 );
 </string>
           </argument>
         </arguments>

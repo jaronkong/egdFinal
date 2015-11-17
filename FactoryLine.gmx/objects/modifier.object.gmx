@@ -111,6 +111,7 @@ if ( instance_exists( tInst ) ) {
     var tResult = recipeResult( object_get_name( object_index ), tItem );
     var tNew = itemCreate( tInst.x, tInst.y, tResult );
     tNew.goalX = tInst.goalX;
+    tNew.image_blend = tInst.image_blend;
     with ( tInst ) instance_destroy( );
 }
 </string>

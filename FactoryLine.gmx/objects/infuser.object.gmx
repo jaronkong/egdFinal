@@ -193,9 +193,11 @@ if ( instance_exists( tAdd ) ) {
     if ( instance_exists( tInst ) ) {
         var tNew = itemCreate( tInst.x, tInst.y, tResult );
         tNew.goalX = tInst.goalX;
+        tNew.image_blend = itemColorMerge( tInst.image_blend, tAdd.image_blend, 0.2 );
         with ( tInst ) instance_destroy( );
     } else {
-        itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), tResult );
+        var tNew = itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), tResult );
+        tNew.image_blend = tAdd.image_blend;
     }
 }
 </string>

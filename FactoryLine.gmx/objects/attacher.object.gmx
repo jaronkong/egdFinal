@@ -124,6 +124,7 @@ image_speed = 0.25;
             <string>///Define state
 
 itemAdd = -1;
+itemAddColor = c_black;
 
 plungerHeight = 0;
 plungerGoal = 0;
@@ -178,18 +179,23 @@ if ( plungerHeight &lt; plungerGoal ) {
         if ( instance_exists( tInst ) || ( itemAdd &gt;= 0 ) ) {
             var tResultY = gridToRoomY( cy + 1 );
             var tItemBase = -1;
+            var tColorBase = c_black;
             if ( instance_exists( tInst ) ) {
                 tItemBase = tInst.itemID;
+                tColorBase = tInst.image_blend;
                 tResultY = tInst.y;
                 with ( tInst ) instance_destroy( );
             }
             var tResult = max( tItemBase, itemAdd );
+            var tResultColor = max( tColorBase, itemAddColor );
             if ( ( tItemBase &gt;= 0 ) &amp;&amp; ( itemAdd &gt;= 0 ) ) {
                 tResult = recipeResult(
                     object_get_name( object_index ),
                     tItemBase, itemAdd );
+                tResultColor = itemColorMerge( tColorBase, itemAddColor, 0.2 );
             }
-            itemCreate( gridToRoomX( cx ), tResultY, tResult );
+            var tNew = itemCreate( gridToRoomX( cx ), tResultY, tResult );
+            tNew.image_blend = tResultColor;
         }
         //Clear collisions
         cellSolid[1] = GridSolid.Open;
@@ -269,10 +275,12 @@ var cx = gridFromRoomX( x );
 var cy = gridFromRoomY( y );
 
 itemAdd = -1;
+itemAddColor = c_black;
 var tInst = gridItemAtPoint(
     gridToRoomX( cx ), gridToRoomY( cy - 1 ) );
 if ( instance_exists( tInst ) ) {
     itemAdd = tInst.itemID;
+    itemAddColor = tInst.image_blend;
     with ( tInst ) instance_destroy( );
 }
 </string>

@@ -79,6 +79,7 @@ cellCount = 3;
 button = noone;
 
 result = -1;
+resultColor = c_white;
 </string>
           </argument>
         </arguments>
@@ -130,8 +131,9 @@ image_speed = 0.375;
             <kind>1</kind>
             <string>///Spawn the item
 
-itemCreate( gridToRoomX( gridFromRoomX( x ) ),
+var tInst = itemCreate( gridToRoomX( gridFromRoomX( x ) ),
     gridToRoomY( gridFromRoomY( y ) ), result );
+tInst.image_blend = resultColor;
 </string>
           </argument>
         </arguments>
@@ -179,15 +181,21 @@ var tInstA = gridItemAtPoint( gridToRoomX( cx - 1 ), gridToRoomY( cy - 1 ) );
 var tInstB = gridItemAtPoint( gridToRoomX( cx + 1 ), gridToRoomY( cy - 1 ) );
 
 if ( instance_exists( tInstA ) || instance_exists( tInstB ) ) {
+    resultColor = c_white;
     var tItemA = -1;
     if ( instance_exists( tInstA ) ) {
         tItemA = tInstA.itemID;
+        resultColor = tInstA.image_blend;
         with ( tInstA ) instance_destroy( );
     }
     var tItemB = -1;
     if ( instance_exists( tInstB ) ) {
         tItemB = tInstB.itemID;
+        resultColor = tInstB.image_blend;
         with ( tInstB ) instance_destroy( );
+    }
+    if ( instance_exists( tInstB ) &amp;&amp; instance_exists( tInstA ) ) {
+        resultColor = itemColorMerge( tInstA.image_blend, tInstB.image_blend, 0.5 );
     }
     
     result = recipeResult( object_get_name( object_index ), tItemA, tItemB );
