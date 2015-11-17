@@ -2,3 +2,4 @@ Fonts:
 ------
 
 CREATURE COUNTER: Fixedsys - 16pt - RGB (115,136,22)
+TIMER: Swis721 BlkCn BT Black - 48pt - RGB (131,245,44)

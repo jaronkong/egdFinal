@@ -63,10 +63,16 @@ draw_set_font( counter_ft );
 draw_set_color( make_color_rgb( 115, 136, 22 ) );
 draw_set_valign( fa_center );
 draw_set_halign( fa_right );
-draw_text_transformed( x + 690, y - 148, string( tMinutes ), 1, 1, 0 );
+
+var toPrint = string(tMinutes);
+if (tMinutes &lt; 10) {toPrint = string_insert("0",toPrint,0);}
+draw_text_transformed( x + 692, y - 148, toPrint, 1, 1, 0 );
+
+var toPrint = string(floor(tSeconds));
+if (tSeconds &lt; 10) {toPrint = string_insert("0",toPrint,0);}
 draw_set_valign( fa_center );
 draw_set_halign( fa_left );
-draw_text_transformed( x + 695, y - 134, ":" + string( floor(tSeconds) ), 0.35, 0.35, 0 );
+draw_text_transformed( x + 695, y - 134, ":" + toPrint, 0.35, 0.35, 0 );
     
 </string>
           </argument>
