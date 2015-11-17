@@ -86,6 +86,6 @@ var recipes = instance_create(xPos + xDiff * 0,yPos,recipeBook);
 //recipes.sprite_index = B_Recipe_spr;
 //recipes.nameSprite = B_Recipe_Name_spr;
 
-var letters = instance_create(xPos + xDiff * 1,yPos,hudButton);
-letters.sprite_index = B_Letter_spr;
-letters.nameSprite = B_Letter_Name_spr;
+var letters = instance_create(xPos + xDiff * 1,yPos,restrictionDoc);
+//letters.sprite_index = B_Letter_spr;
+//letters.nameSprite = B_Letter_Name_spr;
