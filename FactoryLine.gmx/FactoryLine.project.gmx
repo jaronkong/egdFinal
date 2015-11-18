@@ -430,6 +430,11 @@
       <object>objects\dispenser</object>
       <objects name="Dispensers">
         <object>objects\dispenser_slime</object>
+        <object>objects\dispenser_body_slime</object>
+        <object>objects\dispenser_body_fur</object>
+        <object>objects\dispenser_body_feathers</object>
+        <object>objects\dispenser_body_scaly</object>
+        <object>objects\dispenser_body_skin</object>
         <object>objects\dispenser_bone</object>
         <object>objects\dispenser_fur</object>
         <object>objects\dispenser_eye</object>

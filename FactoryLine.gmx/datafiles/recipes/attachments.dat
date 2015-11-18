@@ -31,13 +31,13 @@ x = 0
 y = -12
 speed = -5
 [eye-1]
-x = -7
-y = -10
+x = -9
+y = -8
 speed = -5
 [eye-2]
 mirror = 1
-x = 7
-y = -10
+x = 9
+y = -8
 speed = -5
 
 [tentacle]
@@ -48,12 +48,12 @@ s = 0.2
 [tentacle-0]
 x = -18
 y = 14
-speed = 7.5
+speed = 12
 [tentacle-1]
 mirror = 1
 x = 18
 y = 14
-speed = 7.55
+speed = 12.5
 
 [leg]
 max = 2
@@ -73,17 +73,17 @@ speed = 5
 [wing]
 max = 2
 b-sprite = wing_spr
-b-color = 0
+b-color = 1
 s = 0.2
 [wing-0]
 x = -16
 y = 0
-speed = 10
+speed = 15
 [wing-1]
 mirror = 1
 x = 16
 y = 0
-speed = 10
+speed = 15
 
 [mouth_beaked]
 max = 1
