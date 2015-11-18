@@ -44,7 +44,7 @@
 
 nameSprite = B_Recipe_Name_spr;
 baseY = 3;
-targetHeight = 512;
+targetHeight = 825;
 
 currentFrame = 0;
 maxFrame = 10;
