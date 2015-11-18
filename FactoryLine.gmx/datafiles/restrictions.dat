@@ -1,10 +1,14 @@
 [singleCount]
 obj=restrictionElementCount
-text="FROM VP OF MARKETING#I’ll keep this short.#The current product is not selling.#We are therefore shifting production#to the alternative monster product.#Halt production on the current slimes# and switch to the monster product# immediately.##Your quotas have been updated."
+text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
 
 [doubleCount]
 obj=restrictionElementCount
 text="you are hearby ordered to only use#two of each type of dispenser max."
+
+[countChange1]
+obj=restrictionElementCount
+text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
 
 [quotaChange1]
 obj=restrictionElementCount
