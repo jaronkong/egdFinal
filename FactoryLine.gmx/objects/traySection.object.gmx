@@ -32,6 +32,7 @@ sectionOffset = 0;
 ownerTray = noone;
 
 heldItemType = dispenser;
+heldItemOverSprite = noone;
 heldItemImage = object_get_sprite( heldItemType );
 heldItemQuantity = 2; //-1 for unlimited
 tooltip = "";
@@ -153,7 +154,23 @@ if ( instance_exists( ownerTray ) ) {
 
 draw_self();
 if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0) {
-    draw_sprite_ext( heldItemImage, image_index, x, y, heldItemSize, heldItemSize, 0, c_white, 1 );
+   
+    if ( sprite_exists( heldItemOverSprite ) ) {
+        var tOverSpriteWidth = sprite_get_width( heldItemOverSprite );
+        var tOverScale = 32 / tOverSpriteWidth;
+        draw_sprite_ext( heldItemOverSprite, image_index, x, y, tOverScale, tOverScale, 0, c_white, 1 );
+    }
+    else {
+         var tSpriteHeight = sprite_get_height( heldItemImage );
+        var tSpriteWidth = sprite_get_width( heldItemImage );
+        var tSpriteSize = max( tSpriteHeight, tSpriteWidth );
+        var MAX_SIZE = 32;
+        
+        
+        var tSpriteScale = MAX_SIZE / tSpriteSize;
+        draw_sprite_ext( heldItemImage, image_index, x, y, tSpriteScale, tSpriteScale, 0, c_white, 1 );
+        
+    }
 }
 
 </string>

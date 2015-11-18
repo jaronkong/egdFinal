@@ -77,6 +77,7 @@
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
+    <sound>sound\AlienFactory_bgm</sound>
     <sound>sound\trayOpen_sd</sound>
     <sound>sound\trayClose_sd</sound>
     <sound>sound\trayHitUpper_sd</sound>
@@ -367,7 +368,10 @@
     <object>objects\gridObject</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
-      <object>objects\restrictionElementCount</object>
+      <object>objects\restrictionDispenserCount</object>
+      <object>objects\restrictionQuotaChange</object>
+      <object>objects\restrictionTimeChange</object>
+      <object>objects\restrictionBindingsUnique</object>
     </objects>
     <objects name="Effects">
       <objects name="PostEffects">
@@ -430,6 +434,16 @@
       <object>objects\dispenser</object>
       <objects name="Dispensers">
         <object>objects\dispenser_slime</object>
+        <object>objects\dispenser_body_slime</object>
+        <object>objects\dispenser_mouth_toothy</object>
+        <object>objects\dispenser_wing</object>
+        <object>objects\dispenser_leg</object>
+        <object>objects\dispenser_tentacle</object>
+        <object>objects\dispenser_mouth_beaked</object>
+        <object>objects\dispenser_body_fur</object>
+        <object>objects\dispenser_body_feathers</object>
+        <object>objects\dispenser_body_scaly</object>
+        <object>objects\dispenser_body_skin</object>
         <object>objects\dispenser_bone</object>
         <object>objects\dispenser_fur</object>
         <object>objects\dispenser_eye</object>

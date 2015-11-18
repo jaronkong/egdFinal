@@ -25,6 +25,4 @@ with ( aHeldItem ) {
     active = false;
 }
 
-
-
 return tNewItem;

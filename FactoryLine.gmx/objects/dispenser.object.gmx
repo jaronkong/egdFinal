@@ -64,7 +64,7 @@ cellSolid[0] &amp;= ~GridSolid.Bottom;
             <kind>1</kind>
             <string>///Set cooldown
 
-cooldown = 0.4;
+cooldown = 0.5;
 </string>
           </argument>
         </arguments>
@@ -113,6 +113,8 @@ itemID = itemFromTag( "garbage" );
 var tScale = ( 80 / sprite_height );
 image_xscale = tScale;
 image_yscale = tScale;
+
+bindingWindowOffsetY = -20;
 </string>
           </argument>
         </arguments>
@@ -194,7 +196,7 @@ itemCreate( gridToRoomX( cx ), gridToRoomY( cy ), itemID );
             <kind>1</kind>
             <string>///Draw the spawned item
 
-itemDraw( itemID, x + shakeOffsetX, y + shakeOffsetY + 8 );
+itemDraw( itemID, x + shakeOffsetX, y + shakeOffsetY + 10 );
 </string>
           </argument>
         </arguments>

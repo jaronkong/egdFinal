@@ -31,7 +31,7 @@ var tFrame = ( itemProperty( tItem, Item.speed ) * aFrame );
 var tBack = itemProperty( tItem, Item.back );
 if ( sprite_exists( tBack ) ) {
     draw_sprite_ext( tBack, ( tFrame % sprite_get_number( tBack ) ),
-        aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, aColor, 1 );
+        aPosX, aPosY, aScaleX*tScale, aScaleY*tScale, 0, c_white, 1 );
 }
 
 var tSprite = itemProperty( tItem, Item.sprite );
