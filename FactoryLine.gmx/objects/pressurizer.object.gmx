@@ -46,6 +46,9 @@ image_xscale = tScale;
 image_yscale = tScale;
 
 image_speed = 0;
+
+bindingWindowOffsetX = -2;
+bindingWindowOffsetY = 20;
 </string>
           </argument>
         </arguments>

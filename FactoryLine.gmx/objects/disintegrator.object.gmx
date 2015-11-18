@@ -39,13 +39,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set image settings
+            <string>///Set display settings
 
 var tScale = ( 72 / sprite_width );
 image_xscale = tScale;
 image_yscale = tScale;
 
 image_speed = 0;
+
+bindingWindowOffsetY = -24;
 </string>
           </argument>
         </arguments>
