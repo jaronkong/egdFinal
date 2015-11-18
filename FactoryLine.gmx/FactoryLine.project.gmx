@@ -367,7 +367,9 @@
     <object>objects\gridObject</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
-      <object>objects\restrictionElementCount</object>
+      <object>objects\restrictionDispenserCount</object>
+      <object>objects\restrictionQuotaChange</object>
+      <object>objects\restrictionTimeChange</object>
     </objects>
     <objects name="Effects">
       <objects name="PostEffects">
