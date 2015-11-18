@@ -7,8 +7,6 @@ ini_open( "restrictions.dat" );
 var tRestrictionType = asset_get_index( ini_read_string( tRestrictionString, "obj", "") );
 var tRestrictionText = ini_read_string( tRestrictionString, "text", ""); //A string
 
-
-show_debug_message( ini_read_string( tRestrictionString, "obj", "") );
 ini_close();
 
 //Make the restriction
