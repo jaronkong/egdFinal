@@ -39,29 +39,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define accepted item
-
-itemID = itemFromTag( "slime" );
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Nonsolid top
 
 cellSolid[0] &amp;= ~GridSolid.Top;
@@ -132,60 +109,17 @@ var tItem = gridItemAtPoint( x, y );
 if ( instance_exists( tItem ) ) {
     if ( tItem.y &gt;= y ) {
         audio_play_sound( eleReceiver_sd, 1, false );
-        if ( tItem.itemID == itemID ) {
-            shakeElement( id, 4 );
-            var tItemTag = itemProperty( itemID, Item.tag );
-            with ( mainController ) {
-                if ( !ds_map_exists( produced, tItemTag ) ) {
-                    produced[? tItemTag] = 0;
-                }
-                produced[? tItemTag] += 1;
+        shakeElement( id, 4 );
+        var tItemTag = itemProperty( tItem.itemID, Item.tag );
+        with ( mainController ) {
+            if ( !ds_map_exists( produced, tItemTag ) ) {
+                produced[? tItemTag] = 0;
             }
-        } else {
-            shakeElement( id, 8 );
+            produced[? tItemTag] += 1;
         }
         with ( tItem ) instance_destroy( );
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw required item
-
-itemDraw( itemID, x + shakeOffsetX, y + shakeOffsetY + 4 );
 </string>
           </argument>
         </arguments>
