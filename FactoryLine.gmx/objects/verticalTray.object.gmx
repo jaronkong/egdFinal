@@ -217,6 +217,9 @@ for ( var i = 0; i &lt; numSections; ++i ) {
         heldItemType = other.trayContents[ i, 0 ];
         heldItemQuantity = other.trayContents[ i, 1 ];
         tooltip = other.trayContents[ i, 2 ];
+        if ( array_length_2d( other.trayContents, i ) &gt;= 4 ) {
+            heldItemOverSprite = other.trayContents[ i, 3 ];
+        }
         heldItemImage = object_get_sprite( heldItemType );
     }
 }

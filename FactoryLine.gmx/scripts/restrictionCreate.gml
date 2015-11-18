@@ -1,14 +1,14 @@
 ///restrictionCreate( );
 
-var tRestrictionString = "singleCount";
+var tRestrictionString = "bindingsUnique";
 
 ini_open( "restrictions.dat" );
 //Decide which type of restriction
 var tRestrictionType = asset_get_index( ini_read_string( tRestrictionString, "obj", "") );
 var tRestrictionText = ini_read_string( tRestrictionString, "text", ""); //A string
+var tRestrictionFlag = ini_read_string( tRestrictionString, "flag", "");
+var tRestrictionAmount = ini_read_real( tRestrictionString, "amount", 0 );
 
-
-show_debug_message( ini_read_string( tRestrictionString, "obj", "") );
 ini_close();
 
 //Make the restriction
@@ -23,6 +23,9 @@ with ( tNewLetter ) {
 }
 with ( tNewRestriction ) {
     attachedLetter = tNewLetter;
+    flag = tRestrictionFlag;
+    amount = tRestrictionAmount;
+    event_user( 0 );
 }
 
 
