@@ -272,6 +272,7 @@ image_index = ( max( tProp, 0 ) * image_number );
             <string>///Destroy things
 
 if ( ( time &lt;= timeDestroy ) &amp;&amp; ( timeLast &gt; timeDestroy ) ) {
+    shakeElement( id, 4 );
     with ( gridItemAtPoint( x, y ) ) instance_destroy( );
 }
 
@@ -383,7 +384,7 @@ for ( var i = 0; i &lt; shockCount; ++i ) {
             <string>///Play oven sound
 
 var tSound = audio_play_sound( eleOven_sd, 0, false );
-audio_sound_gain( tSound, 0.6, 0 );
+audio_sound_gain( tSound, 0.4, 0 );
 </string>
           </argument>
         </arguments>
