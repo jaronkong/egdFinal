@@ -113,7 +113,7 @@ itemID = -1;
             <kind>1</kind>
             <string>///Pick a random color
 
-image_blend = make_color_hsv( irandom( 255 ), 192, 128 );
+image_blend = make_color_hsv( irandom( 255 ), 128, 192 );
 </string>
           </argument>
         </arguments>
