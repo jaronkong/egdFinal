@@ -9,7 +9,7 @@ if ( instance_exists( aBlock ) ) {
         for ( var i = 0; i < cellCount; ++i ) {
             var cx = ( aX + cellPosX[i] );
             var cy = ( aY + cellPosY[i] );
-            if ( !gridValidCell( cx, cy ) ) continue;
+            if ( !gridValidCell( cx, cy ) ) return false;
             if ( gridBlockAtPoint( gridToRoomX( cx ), gridToRoomY( cy ) ) ) {
                 return false;
             }
