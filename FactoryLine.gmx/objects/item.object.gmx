@@ -210,6 +210,8 @@ if ( x == tGoalX ) {
     vspeed += ( 0.2 * 60 / room_speed );
     vspeed = min( vspeed, ( 6 * 60 / room_speed ) );
 }
+
+if ( !active ) speed = 0;
 </string>
           </argument>
         </arguments>
@@ -248,7 +250,7 @@ if ( x == tGoalX ) {
             <kind>1</kind>
             <string>///Remove self if out of the grid
 
-if ( !gridValidPoint( gridManager.x, ( y - height/2 ) ) ) {
+if ( !gridValidPoint( gridManager.x, ( y - height/2 ) ) &amp;&amp; active ) {
     instance_destroy( );
 }
 </string>

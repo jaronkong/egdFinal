@@ -64,7 +64,7 @@ cellSolid[0] &amp;= ~GridSolid.Bottom;
             <kind>1</kind>
             <string>///Set cooldown
 
-cooldown = 0.4;
+cooldown = 0.5;
 </string>
           </argument>
         </arguments>

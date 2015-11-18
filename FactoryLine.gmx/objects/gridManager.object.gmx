@@ -226,6 +226,7 @@ var tSolid = gridSolid;
 var tGrid = gridItem;
 
 with ( item ) {
+    if ( !active ) continue;
     if ( !gridValidPoint( x, y ) ) continue;
     var tInst, cx, cy;
     
