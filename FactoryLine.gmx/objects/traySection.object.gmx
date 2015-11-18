@@ -153,7 +153,13 @@ if ( instance_exists( ownerTray ) ) {
 
 draw_self();
 if ( heldItemQuantity &gt;= 1 || heldItemQuantity &lt; 0) {
-    draw_sprite_ext( heldItemImage, image_index, x, y, heldItemSize, heldItemSize, 0, c_white, 1 );
+    var tSpriteHeight = sprite_get_height( heldItemImage );
+    var tSpriteWidth = sprite_get_width( heldItemImage );
+    var tSpriteSize = max( tSpriteHeight, tSpriteWidth );
+    var MAX_SIZE = 32;
+    
+    var tSpriteScale = MAX_SIZE / tSpriteSize;
+    draw_sprite_ext( heldItemImage, image_index, x, y, tSpriteScale, tSpriteScale, 0, c_white, 1 );
 }
 
 </string>
