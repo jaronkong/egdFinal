@@ -354,7 +354,7 @@ if ( debugItem &gt;= 0 ) {
     draw_set_alpha( 1 );
     
     itemDraw( debugItem, px, py, (get_timer()/1000000),
-        make_color_hsv( floor(get_timer()/100000)%255, 192, 128 ),
+        make_color_hsv( floor(get_timer()/10000)%255, 128, 192 ),
         tScale, tScale );
 }
 </string>
