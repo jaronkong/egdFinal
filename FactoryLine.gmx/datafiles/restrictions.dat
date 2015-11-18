@@ -4,6 +4,12 @@ text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many di
 amount=0
 flag=""
 
+[bindingsUnique]
+obj=restrictionBindingsUnique
+text="FROM VP OF PR#We are concerned with repetitive stress.#Please vary your key presses more.##All key bindings must be changed."
+amount=0
+flag=""
+
 [timeExtension]
 obj=restrictionTimeChange
 text="FROM VP OF OPERATIONS#Good news!#One client has postponed their delivery.##Extra time added."

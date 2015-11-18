@@ -1,6 +1,6 @@
 ///restrictionCreate( );
 
-var tRestrictionString = "timeExtension";
+var tRestrictionString = "bindingsUnique";
 
 ini_open( "restrictions.dat" );
 //Decide which type of restriction

@@ -370,6 +370,7 @@
       <object>objects\restrictionDispenserCount</object>
       <object>objects\restrictionQuotaChange</object>
       <object>objects\restrictionTimeChange</object>
+      <object>objects\restrictionBindingsUnique</object>
     </objects>
     <objects name="Effects">
       <objects name="PostEffects">
