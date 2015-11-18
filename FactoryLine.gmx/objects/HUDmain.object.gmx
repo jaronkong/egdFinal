@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>x = 0;
 y = room_height;
+
+image_xscale = room_width/sprite_width
+image_yscale = image_xscale;
+
 setTrayPositions();
 </string>
           </argument>
