@@ -1,7 +1,7 @@
 // Set tray positions
 
-var yPos = 559;
-var xPos = 849;
+var yPos = 920;
+var xPos = 1152;
 var xDiff = 85;
 
 var dispenserContents = 0;
@@ -86,8 +86,8 @@ var conveyors = verticalTrayCreate(xPos + xDiff * 4, yPos, conveyorContents, con
 conveyors.button.sprite_index = B_Conveyor_spr;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Set button positions
-yPos = 610;
-xPos = 250;
+yPos = 920;
+xPos = 500;
 xDiff = 150;
 
 var recipes = instance_create(xPos + xDiff * 0,yPos,recipeBook);
