@@ -10,7 +10,7 @@ sprite = slime_spr
 
 [bone]
 name = "Bone"
-sprite = bone_spr
+sprite = hardened_bone_spr
 
 [fur]
 name = "Fur"
