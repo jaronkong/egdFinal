@@ -9,18 +9,22 @@ var dispenserSections = 0;
 dispenserContents[ dispenserSections, 0 ] = dispenser_slime; //Item
 dispenserContents[ dispenserSections, 1 ] = -1;         //Quantity
 dispenserContents[ dispenserSections, 2 ] = "Slime Dispenser";         //Tooltip
+dispenserContents[ dispenserSections, 3 ] = slime_spr;         //OverlaySprite
 dispenserSections++
 dispenserContents[ dispenserSections, 0 ] = dispenser_bone; //Item
 dispenserContents[ dispenserSections, 1 ] = -1;         //Quantity
 dispenserContents[ dispenserSections, 2 ] = "Bone Dispenser";         //Tooltip
+dispenserContents[ dispenserSections, 3 ] = bone_spr;         //OverlaySprite
 dispenserSections++
 dispenserContents[ dispenserSections, 0 ] = dispenser_fur; //Item
 dispenserContents[ dispenserSections, 1 ] = -1;         //Quantity
 dispenserContents[ dispenserSections, 2 ] = "Fur Dispenser";         //Tooltip
+dispenserContents[ dispenserSections, 3 ] = fur_spr;         //OverlaySprite
 dispenserSections++
 dispenserContents[ dispenserSections, 0 ] = dispenser_eye; //Item
 dispenserContents[ dispenserSections, 1 ] = -1;         //Quantity
 dispenserContents[ dispenserSections, 2 ] = "Eye Dispenser";         //Tooltip
+dispenserContents[ dispenserSections, 3 ] = eyematerial_spr;         //OverlaySprite
 dispenserSections++
 var dispensers = verticalTrayCreate( xPos + xDiff * 0, yPos, dispenserContents, dispenserSections);
 dispensers.button.sprite_index = B_Dispenser_spr;
