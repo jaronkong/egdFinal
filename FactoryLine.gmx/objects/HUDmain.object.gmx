@@ -25,13 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 0;
+            <string>/// Initialization
+
+x = 0;
 y = room_height;
 
 image_xscale = room_width/sprite_width
 image_yscale = image_xscale;
 
 setTrayPositions();
+
+background_hspeed[1] = 0.25;
 </string>
           </argument>
         </arguments>
@@ -70,13 +74,13 @@ draw_set_halign( fa_right );
 
 var toPrint = string(tMinutes);
 if (tMinutes &lt; 10) {toPrint = string_insert("0",toPrint,0);}
-draw_text_transformed( x + 692, y - 148, toPrint, 1, 1, 0 );
+draw_text_transformed( x + 320 + 692, y - 148, toPrint, 1, 1, 0 );
 
 var toPrint = string(floor(tSeconds));
 if (tSeconds &lt; 10) {toPrint = string_insert("0",toPrint,0);}
 draw_set_valign( fa_center );
 draw_set_halign( fa_left );
-draw_text_transformed( x + 695, y - 134, ":" + toPrint, 0.35, 0.35, 0 );
+draw_text_transformed( x + 320 + 695, y - 134, ":" + toPrint, 0.35, 0.35, 0 );
     
 </string>
           </argument>
