@@ -110,13 +110,7 @@ if ( instance_exists( tItem ) ) {
     if ( tItem.y &gt;= y ) {
         audio_play_sound( eleReceiver_sd, 1, false );
         shakeElement( id, 4 );
-        var tItemTag = itemProperty( tItem.itemID, Item.tag );
-        with ( mainController ) {
-            if ( !ds_map_exists( produced, tItemTag ) ) {
-                produced[? tItemTag] = 0;
-            }
-            produced[? tItemTag] += 1;
-        }
+        quotaProduce( tItem.itemID );
         with ( tItem ) instance_destroy( );
     }
 }

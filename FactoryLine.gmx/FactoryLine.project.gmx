@@ -329,6 +329,11 @@
       <script>scripts\itemDrawLayers.gml</script>
       <script>scripts\itemColorMerge.gml</script>
     </scripts>
+    <scripts name="QuotaActions">
+      <script>scripts\quotaCreate.gml</script>
+      <script>scripts\quotaDestroy.gml</script>
+      <script>scripts\quotaProduce.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">
