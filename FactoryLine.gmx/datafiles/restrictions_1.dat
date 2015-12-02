@@ -1,0 +1,31 @@
+[letter1]
+obj=restrictionQuotaAdd
+text="Make a body slime"
+amount=0
+flag="body_slime"
+weight=1
+docType=0
+
+[letter2]
+obj=restrictionQuotaRemove
+text="Don't need body slime"
+amount=0
+flag="body_slime"
+weight=1
+docType=0
+
+[letter3]
+obj=restrictionQuotaAdd
+text="Add me a quota"
+amount=0
+flag="body_slime+eye"
+weight=1
+docType=0
+
+[letter4]
+obj=restrictionBindingsUnique
+text="No same bindingsj oaij a;oiea;#jlsdfjaie#uiuive#oisjeisv"
+amount=0
+flag=""
+weight=1
+docType=1
