@@ -51,8 +51,11 @@ globalInit();
             <kind>1</kind>
             <string>///Initialize quota structures
 
-quota = ds_grid_create( 0, 2 );
-produced = ds_map_create( );
+enum Quota {
+    itemID, required, produced, count
+}
+
+quota = ds_grid_create( 0, Quota.count );
 </string>
           </argument>
         </arguments>
@@ -75,9 +78,8 @@ produced = ds_map_create( );
             <kind>1</kind>
             <string>///Generic quotas
 
-ds_grid_resize( quota, 1, 2 );
-quota[# 0, 0] = "slime";
-quota[# 0, 1] = 3;
+quotaCreate( "slime", 3 );
+quotaDestroy( quotaCreate( "body_slime", 3 ) );
 </string>
           </argument>
         </arguments>
@@ -159,7 +161,6 @@ alarm[ 0 ] = tweenDelay;
             <string>///Free quota structures
 
 ds_grid_destroy( quota );
-ds_map_destroy( produced );
 </string>
           </argument>
         </arguments>
@@ -322,12 +323,10 @@ draw_set_halign( fa_right );
 draw_set_valign( fa_middle );
 
 for ( var i = 0; i &lt; ds_grid_width( quota ); ++i ) {
-    var tItem = quota[# 0, 0];
-    tProduced = 0;
-    var tRequired = quota[# i, 1];
-    if ( ds_map_exists( produced, tItem ) ) {
-        tProduced = produced[? tItem];
-    }
+    var tItem = quota[# i, Quota.itemID];
+    if ( tItem &lt; 0 ) continue;
+    var tRequired = quota[# i, Quota.required];
+    var tProduced = quota[# i, Quota.produced];
     var tString = ( string( tProduced ) + " / " + string( tRequired ) );
     draw_text( room_width - 64, 256 + 100 * i, tString );
     itemDraw( tItem, room_width - 48, 256 + 100 * i );

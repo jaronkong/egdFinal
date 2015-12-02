@@ -35,8 +35,8 @@ recoilFactor = 0.4; //Recoil upon hitting bounds.
 currentSlideOffset = 0; //Is negative so things slide up
 
 currentSpeed = 0;
-maxSpeed = 25;
-accel = 1.5;
+maxSpeed = 28;
+accel = 2.5;
 
 //Sounds
 recoilVolSpeedThreshold = 2;

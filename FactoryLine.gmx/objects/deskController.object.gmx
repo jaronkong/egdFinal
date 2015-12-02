@@ -28,8 +28,8 @@
             <string>///Setup
 
 x = 0;
-y = 570;
-width = 500;
+y = 930;
+width = 800;
 height = 100;
 
 </string>
@@ -59,8 +59,8 @@ height = 100;
 draw_set_color( c_yellow );
 draw_set_alpha( 1 );
 draw_rectangle( x, y, x + width, y + height, true );
-*/
 
+*/
 </string>
           </argument>
         </arguments>
