@@ -1,13 +1,11 @@
-///restrictionCreate( restrictionSectionArray, currentLevel );
+///restrictionCreate( sourcefile, sections, weights );
 
-var aSections = argument0;
-var aLevel = argument1;
+var aFile = argument0;
+var aSections = argument1;
+var aWeights = argument2;
+var tRestrictionString = chooseWeight( aSections, aWeights );
 
-var tRestrictionString = "bindingsUnique";
-
-var tRestrictionFileName = "restrictions_" + string( aLevel )  + ".dat";
-
-ini_open( tRestrictionFileName );
+ini_open( aFile );
 //Decide which type of restriction
 var tRestrictionType = asset_get_index( ini_read_string( tRestrictionString, "obj", "") );
 var tRestrictionText = ini_read_string( tRestrictionString, "text", ""); //A string

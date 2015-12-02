@@ -3,7 +3,24 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
+  <datafiles number="6" name="datafiles">
+    <datafile>
+      <name>restrictions_1.dat</name>
+      <exists>-1</exists>
+      <size>1306</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>restrictions_1.dat</filename>
+    </datafile>
     <datafile>
       <name>restrictions.dat</name>
       <exists>-1</exists>
@@ -21,7 +38,7 @@
       </ConfigOptions>
       <filename>restrictions.dat</filename>
     </datafile>
-    <datafiles number="5" name="recipes">
+    <datafiles number="6" name="recipes">
       <datafile>
         <name>items.dat</name>
         <exists>-1</exists>
@@ -307,6 +324,7 @@
     </scripts>
     <scripts name="Restrictions">
       <script>scripts\restrictionCreate.gml</script>
+      <script>scripts\increaseRestrictionLevel.gml</script>
     </scripts>
     <script>scripts\shakeElement.gml</script>
     <scripts name="ItemFunctions">
@@ -335,6 +353,7 @@
       <script>scripts\quotaProduce.gml</script>
     </scripts>
     <script>scripts\chooseWeight.gml</script>
+    <script>scripts\timeOver.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">
@@ -371,7 +390,7 @@
     <object>objects\mainController</object>
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
-    <object>objects\restrictionCon</object>
+    <object>objects\restrictionController</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
       <object>objects\restrictionDispenserCount</object>

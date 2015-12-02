@@ -8,8 +8,8 @@ weight=1
 [letter2]
 obj=restrictionBindingsUnique
 text="FROM VP OF PR#We are concerned with repetitive stress.#Please vary your key presses more.##All key bindings must be changed."
-amount=0
-flag=""
+amount=5
+flag="slime+3eye"
 weight=1
 
 [letter3]

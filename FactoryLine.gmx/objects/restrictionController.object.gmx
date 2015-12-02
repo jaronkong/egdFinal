@@ -30,13 +30,11 @@
 weights = -1;
 sections = -1;
 numLetters = 0;
-restrictionFileName = "restrictions_0.dat";
+restrictionFileName = "restrictions_1.dat";
 
 restrictionTimer = room_speed * 2;
 restrictionBaseRate = room_speed * 20;
 restrictionRandRate = room_speed * 60;
-
-event_user( 0 );
 
 </string>
           </argument>
@@ -96,15 +94,17 @@ if ( restrictionTimer &lt;= 0 ) {
             <string>///Get the sections and weights
 weights = -1;
 sections = -1;
-numLetters = 0;
+numLetters = 1;
 ini_open( restrictionFileName );
-var tSection = "letter" + string( numLetters );
-while (ini_section_exists( tSection ) ) {
-    sections[ numLetters ] = tSection;
-    weights[ numLetters ] = ini_read_real( tSection, "weights", 1 );
-    numLetters += 1;
-    tSection = "letter" + string( numLetters );
-}
+    var tSection = "letter" + string( numLetters );
+
+    while (ini_section_exists( tSection ) ) {
+        sections[ numLetters - 1 ] = tSection;
+        weights[ numLetters - 1 ] = ini_read_real( tSection, "weights", 1 );
+        numLetters += 1;
+        tSection = "letter" + string( numLetters );
+        
+    }
 ini_close();
 </string>
           </argument>
