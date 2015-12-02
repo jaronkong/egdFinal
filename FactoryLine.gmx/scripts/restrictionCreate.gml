@@ -15,18 +15,25 @@ var tDocType = ini_read_real( tRestrictionString, "docType", 0 );
 
 ini_close();
 
-//Make the restriction
-var tNewRestriction = instance_create( 0, 0, tRestrictionType );
+show_debug_message( tDocType );
 
-var tSpawnWidthRange = 500;
-var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
+//Make the restriction
 
 //Make sure not creating impossible situations
+
 if ( tRestrictionType == restrictionBindingsUnique ) {
     if ( instance_exists( restrictionBindingsUnique ) ) {
         return 0;
     }
 }
+
+
+
+var tNewRestriction = instance_create( 0, 0, tRestrictionType );
+
+var tSpawnWidthRange = 500;
+
+var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
 
 
 //Set the letter's text and attach it to the restriction we just made
