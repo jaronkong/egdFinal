@@ -11,6 +11,7 @@ var tRestrictionType = asset_get_index( ini_read_string( tRestrictionString, "ob
 var tRestrictionText = ini_read_string( tRestrictionString, "text", ""); //A string
 var tRestrictionFlag = ini_read_string( tRestrictionString, "flag", "");
 var tRestrictionAmount = ini_read_real( tRestrictionString, "amount", 0 );
+var tDocType = ini_read_real( tRestrictionString, "docType", 0 );
 
 ini_close();
 
@@ -20,9 +21,25 @@ var tNewRestriction = instance_create( 0, 0, tRestrictionType );
 var tSpawnWidthRange = 500;
 var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
 
+//Make sure not creating impossible situations
+if ( tRestrictionType == restrictionBindingsUnique ) {
+    if ( instance_exists( restrictionBindingsUnique ) ) {
+        return 0;
+    }
+}
+
+
 //Set the letter's text and attach it to the restriction we just made
 with ( tNewLetter ) {
     text = tRestrictionText;
+    restrictionCon = tNewRestriction;
+    if ( tDocType == 0 ) {
+        sprite_index = document_spr;
+    }
+    else {
+        sprite_index = documentRed_spr;
+        smallSprite = documentRedSmall_spr;
+    }
 }
 with ( tNewRestriction ) {
     attachedLetter = tNewLetter;

@@ -206,10 +206,12 @@
     </sprites>
     <sprites name="Documents">
       <sprite>sprites\document_spr</sprite>
+      <sprite>sprites\documentRed_spr</sprite>
       <sprite>sprites\recipieBookOpen_spr</sprite>
       <sprite>sprites\documentSmallConfirm_spr</sprite>
       <sprite>sprites\documentSmallDeny_spr</sprite>
       <sprite>sprites\documentSmall_spr</sprite>
+      <sprite>sprites\documentRedSmall_spr</sprite>
       <sprite>sprites\notice_spr</sprite>
     </sprites>
     <sprites name="parts">
@@ -398,6 +400,8 @@
       <object>objects\restrictionPar</object>
       <object>objects\restrictionDispenserCount</object>
       <object>objects\restrictionQuotaChange</object>
+      <object>objects\restrictionQuotaAdd</object>
+      <object>objects\restrictionQuotaRemove</object>
       <object>objects\restrictionTimeChange</object>
       <object>objects\restrictionBindingsUnique</object>
     </objects>

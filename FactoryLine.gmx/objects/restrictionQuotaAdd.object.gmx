@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>document</parentName>
+  <parentName>restrictionPar</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -41,90 +41,7 @@
             <kind>1</kind>
             <string>///Setup
 
-sprite_index = document_spr;
-
-approved = false;
-restrictionCon = noone;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Condition Checking
-
-if ( approved ) {
-    smallSprite = documentSmallConfirm_spr;
-}
-else {
-    smallSprite = documentSmallConfirm_spr;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Notice Flashing
-if ( flashing ) {
-    flashTimer --;
-    
-    if ( flashTimer &lt;= 0 ) {
-        flashTimer = flashRate;
-        noticeOn = !noticeOn;
-    }
-}
-
-if ( instance_exists( restrictionCon ) ) {
-    flashing = !restrictionCon.satisfied;
-}
-
+satisfied = true;
 
 </string>
           </argument>
@@ -162,12 +79,9 @@ if ( instance_exists( restrictionCon ) ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Notice flashing
+            <string>///Add quota
 
-var tFlashOffset = -48;
-if ( flashing &amp;&amp; noticeOn ) {
-    draw_sprite_ext( notice_spr, 0, x - 16, y + tFlashOffset, 1, 1, 0, c_white, 1 );
-}
+quotaCreate( flag, amount );
 
 </string>
           </argument>
