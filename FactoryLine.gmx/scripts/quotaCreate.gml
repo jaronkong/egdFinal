@@ -20,6 +20,8 @@ with ( mainController ) {
     quota[# tIndex, Quota.required] = aRequired;
     quota[# tIndex, Quota.produced] = 0;
     
+    ds_list_add( quotaOrder, tIndex );
+    
     return tIndex;
 }
 
