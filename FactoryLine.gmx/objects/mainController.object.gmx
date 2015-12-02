@@ -76,30 +76,6 @@ quota = ds_grid_create( 0, Quota.count );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Generic quotas
-
-quotaCreate( "slime", 3 );
-quotaDestroy( quotaCreate( "body_slime", 3 ) );
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Create other controllers
 
 instance_create( 0, 0, deskController );
@@ -136,6 +112,30 @@ tweenDelay = room_speed * 0.5;
 alarm[ 0 ] = tweenDelay;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Generic quotas
+
+quotaCreate( "slime", 3 );
+quotaCreate( "body_slime", 3 );
 </string>
           </argument>
         </arguments>
@@ -319,23 +319,77 @@ audio_play_sound( AlienFactory_bgm, 1, true );
 
 draw_set_color( c_white );
 draw_set_alpha( 1 );
+draw_set_font( counter_ft );
 draw_set_halign( fa_right );
 draw_set_valign( fa_middle );
 
+var tIndex = 0;
 for ( var i = 0; i &lt; ds_grid_width( quota ); ++i ) {
     var tItem = quota[# i, Quota.itemID];
     if ( tItem &lt; 0 ) continue;
     var tRequired = quota[# i, Quota.required];
     var tProduced = quota[# i, Quota.produced];
     var tString = ( string( tProduced ) + " / " + string( tRequired ) );
-    draw_text( room_width - 64, 256 + 100 * i, tString );
-    itemDraw( tItem, room_width - 48, 256 + 100 * i );
+    draw_text( room_width - 128, 256 + 100 * tIndex, tString );
+    itemDraw( tItem, room_width - 64, 256 + 100 * tIndex, get_timer()/1000000+i, c_white, 2, 2 );
+    tIndex += 1;
 }
 
 draw_set_color( c_white );
 draw_set_alpha( 1 );
 draw_set_halign( fa_left );
 draw_set_valign( fa_top );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="123">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Remove a random quota
+
+quotaDestroy( quotaGet( ) );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="122">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Add a quota
+
+var tItem = irandom_range( 0, ds_grid_width( itemManager.items )-1 );
+quotaCreate( tItem, irandom_range( 1, 5 ) );
 </string>
           </argument>
         </arguments>

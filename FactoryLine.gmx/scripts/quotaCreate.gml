@@ -6,7 +6,7 @@ var aRequired = argument1;
 with ( mainController ) {
     var tIndex = -1;
     for ( var i = 0; i < ds_grid_width( quota ); ++i ) {
-        if ( quota[# i, Quota.itemID] < 0 ) {
+        if ( !quotaActive( i ) ) {
             tIndex = i;
             break;
         }
