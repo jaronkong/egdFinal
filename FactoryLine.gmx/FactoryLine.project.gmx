@@ -338,6 +338,7 @@
       <script>scripts\quotaCheck.gml</script>
     </scripts>
     <script>scripts\chooseWeight.gml</script>
+    <script>scripts\generate_creature_name.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">
