@@ -109,7 +109,8 @@ with ( instance_create( 0, 0, restrictionController ) ) {
             <kind>1</kind>
             <string>///Time
 
-levelTime = 10 * 60;
+maxLevelTime = 10;
+levelTime = 10;//3 * 60;
 
 globalTween = 0;
 globalTween_rate = 0.1;
@@ -244,8 +245,18 @@ alarm[ 0 ] = tweenDelay;
 levelTime -= delta_time / 1000000;
 
 if ( levelTime &lt;= 0 ) {
-    level += 1;
-    increaseRestrictionLevel( level );
+    if ( !quotaCheck() ) {
+        audio_stop_all();
+        room_goto( Gameover_rm );
+    }
+    else {
+        levelTime = maxLevelTime;
+        with ( restrictionPar ) {
+            instance_destroy();
+        }
+        level += 1;
+        increaseRestrictionLevel( level );
+    }
 }
 
 </string>
