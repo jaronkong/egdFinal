@@ -370,6 +370,7 @@
     <object>objects\mainController</object>
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
+    <object>objects\restrictionCon</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
       <object>objects\restrictionDispenserCount</object>

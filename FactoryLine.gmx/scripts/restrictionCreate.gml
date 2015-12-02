@@ -1,8 +1,13 @@
-///restrictionCreate( );
+///restrictionCreate( restrictionSectionArray, currentLevel );
+
+var aSections = argument0;
+var aLevel = argument1;
 
 var tRestrictionString = "bindingsUnique";
 
-ini_open( "restrictions.dat" );
+var tRestrictionFileName = "restrictions_" + string( aLevel )  + ".dat";
+
+ini_open( tRestrictionFileName );
 //Decide which type of restriction
 var tRestrictionType = asset_get_index( ini_read_string( tRestrictionString, "obj", "") );
 var tRestrictionText = ini_read_string( tRestrictionString, "text", ""); //A string

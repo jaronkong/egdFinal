@@ -105,7 +105,7 @@ quotaDestroy( quotaCreate( "body_slime", 3 ) );
 instance_create( 0, 0, deskController );
 instance_create( 0, 0, selectionController );
 instance_create( 0, 0, inputMaskingController );
-instance_create( 0, 0, fluidController );
+//instance_create( 0, 0, fluidController );
 </string>
           </argument>
         </arguments>

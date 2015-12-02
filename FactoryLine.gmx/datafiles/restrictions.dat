@@ -1,32 +1,38 @@
-[singleCount]
+[letter1]
 obj=restrictionDispenserCount
 text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
 amount=0
 flag=""
+weight=1
 
-[bindingsUnique]
+[letter2]
 obj=restrictionBindingsUnique
 text="FROM VP OF PR#We are concerned with repetitive stress.#Please vary your key presses more.##All key bindings must be changed."
 amount=0
 flag=""
+weight=1
 
-[timeExtension]
+[letter3]
 obj=restrictionTimeChange
 text="FROM VP OF OPERATIONS#Good news!#One client has postponed their delivery.##Extra time added."
 amount=60
 flag=""
+weight=1
 
-[timeReduction]
+[letter4]
 obj=restrictionTimeChange
 text="FROM VP OF OPERATIONS#Bad news!#A competitor has a new product#We need to hurry our next shipment.##Time reduced."
 amount=-60
 flag=""
+weight=1
 
-[countChange1]
+[letter5]
 obj=restrictionDispenserCount
 text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
+weight=1
 
-[quotaChange1]
+[letter6]
 obj=restrictionDispenserCount
 text="FROM VP OF MARKETING#I’ll keep this short.#The current product is not selling.#We are therefore shifting production#to the alternative monster product.#Halt production on the current slimes# and switch to the monster product# immediately.##Your quotas have been updated."
+weight=1
 
