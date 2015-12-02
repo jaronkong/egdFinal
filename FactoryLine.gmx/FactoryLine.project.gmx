@@ -350,7 +350,10 @@
     <scripts name="QuotaActions">
       <script>scripts\quotaCreate.gml</script>
       <script>scripts\quotaDestroy.gml</script>
+      <script>scripts\quotaActive.gml</script>
+      <script>scripts\quotaGet.gml</script>
       <script>scripts\quotaProduce.gml</script>
+      <script>scripts\quotaCheck.gml</script>
     </scripts>
     <script>scripts\chooseWeight.gml</script>
     <script>scripts\timeOver.gml</script>
