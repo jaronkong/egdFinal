@@ -42,7 +42,7 @@
             <string>///Setup
 
 approved = false;
-
+restrictionCon = noone;
 
 </string>
           </argument>
@@ -81,14 +81,14 @@ approved = false;
           <argument>
             <kind>1</kind>
             <string>///Condition Checking
-
+/*
 if ( approved ) {
     smallSprite = documentSmallConfirm_spr;
 }
 else {
     smallSprite = documentSmallConfirm_spr;
 }
-
+*/
 </string>
           </argument>
         </arguments>
@@ -118,6 +118,11 @@ if ( flashing ) {
         noticeOn = !noticeOn;
     }
 }
+
+if ( instance_exists( restrictionCon ) ) {
+    flashing = !restrictionCon.satisfied;
+}
+
 
 </string>
           </argument>

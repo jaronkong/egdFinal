@@ -20,7 +20,7 @@ with ( mainController ) {
             tTotal += 1;
         }
     }
-    if ( tCount < 0 ) return -1;
+    if ( tCount <= 0 ) return -1;
     return chooseWeight( tValues, tProbs, tTotal );
 }
 

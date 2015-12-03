@@ -82,7 +82,12 @@ quotaOrder = ds_list_create( );
 instance_create( 0, 0, deskController );
 instance_create( 0, 0, selectionController );
 instance_create( 0, 0, inputMaskingController );
-instance_create( 0, 0, fluidController );
+//instance_create( 0, 0, fluidController );
+
+with ( instance_create( 0, 0, restrictionController ) ) {
+    event_user( 0 );
+}
+
 </string>
           </argument>
         </arguments>
@@ -105,7 +110,8 @@ instance_create( 0, 0, fluidController );
             <kind>1</kind>
             <string>///Time
 
-levelTime = 10 * 60;
+maxLevelTime = 10;
+levelTime = 10;//3 * 60;
 
 globalTween = 0;
 globalTween_rate = 0.1;
@@ -136,6 +142,30 @@ alarm[ 0 ] = tweenDelay;
             <string>///Generic quotas
 
 quotaCreate( "body_slime", 3 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Level
+
+level = 1;
+
 </string>
           </argument>
         </arguments>
@@ -214,6 +244,21 @@ alarm[ 0 ] = tweenDelay;
             <string>///Tick Time
 
 levelTime -= delta_time / 1000000;
+
+if ( levelTime &lt;= 0 ) {
+    if ( !quotaCheck() ) {
+        audio_stop_all();
+        room_goto( Gameover_rm );
+    }
+    else {
+        levelTime = maxLevelTime;
+        with ( restrictionPar ) {
+            instance_destroy();
+        }
+        level += 1;
+        increaseRestrictionLevel( level );
+    }
+}
 
 </string>
           </argument>
@@ -451,7 +496,7 @@ quotaCreate( tItem, irandom_range( 1, 5 ) );
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="120">
+    <event eventtype="9" enumb="112">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -468,7 +513,7 @@ quotaCreate( tItem, irandom_range( 1, 5 ) );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>restrictionCreate();
+            <string>show_debug_message(generate_creature_name());
 </string>
           </argument>
         </arguments>
