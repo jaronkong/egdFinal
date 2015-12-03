@@ -110,8 +110,8 @@ with ( instance_create( 0, 0, restrictionController ) ) {
             <kind>1</kind>
             <string>///Time
 
-maxLevelTime = 10;
-levelTime = 10;//3 * 60;
+maxLevelTime = 3 * 60;
+levelTime = maxLevelTime;
 
 globalTween = 0;
 globalTween_rate = 0.1;
