@@ -397,6 +397,7 @@
     <object>objects\gridManager</object>
     <object>objects\gridObject</object>
     <object>objects\restrictionController</object>
+    <object>objects\gameoverController</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
       <object>objects\restrictionDispenserCount</object>
@@ -499,6 +500,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
+    <room>rooms\Gameover_rm</room>
   </rooms>
   <constants number="1">
     <constant name="BLOOM_DEPTH">-50</constant>
