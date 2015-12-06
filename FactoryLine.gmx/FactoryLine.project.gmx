@@ -22,7 +22,7 @@
       <filename>restrictions_1.dat</filename>
     </datafile>
     <datafile>
-      <name>restrictions.dat</name>
+      <name>restrictions_0.dat</name>
       <exists>-1</exists>
       <size>244</size>
       <exportAction>2</exportAction>
@@ -36,7 +36,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>restrictions.dat</filename>
+      <filename>restrictions_0.dat</filename>
     </datafile>
     <datafiles number="6" name="recipes">
       <datafile>

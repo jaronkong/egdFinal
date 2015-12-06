@@ -2,7 +2,7 @@
 obj=restrictionQuotaAdd
 text="Make a {ITEM}"
 amount=0
-flag="body_slime+eye"
+flag="body_slime-1eye"
 weight=1
 docType=0
 
@@ -18,7 +18,7 @@ docType=0
 obj=restrictionQuotaAdd
 text="Add me a {ITEM}
 amount=0
-flag="body_slime+eye"
+flag="body_slime-1eye"
 weight=1
 docType=0
 
