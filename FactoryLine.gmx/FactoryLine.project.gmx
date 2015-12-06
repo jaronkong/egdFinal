@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="6" name="datafiles">
+  <datafiles number="7" name="datafiles">
     <datafile>
       <name>restrictions_1.dat</name>
       <exists>-1</exists>
@@ -38,7 +38,7 @@
       </ConfigOptions>
       <filename>restrictions_0.dat</filename>
     </datafile>
-    <datafiles number="6" name="recipes">
+    <datafiles number="7" name="recipes">
       <datafile>
         <name>items.dat</name>
         <exists>-1</exists>
@@ -91,6 +91,23 @@
         <filename>attachments.dat</filename>
       </datafile>
     </datafiles>
+    <datafile>
+      <name>restriction_items.dat</name>
+      <exists>-1</exists>
+      <size>806</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>restriction_items.dat</filename>
+    </datafile>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound">
@@ -400,10 +417,11 @@
     <object>objects\gameoverController</object>
     <objects name="Restrictions">
       <object>objects\restrictionPar</object>
-      <object>objects\restrictionDispenserCount</object>
-      <object>objects\restrictionQuotaChange</object>
+      <object>objects\restrictionQuota</object>
       <object>objects\restrictionQuotaAdd</object>
+      <object>objects\restrictionQuotaChange</object>
       <object>objects\restrictionQuotaRemove</object>
+      <object>objects\restrictionDispenserCount</object>
       <object>objects\restrictionTimeChange</object>
       <object>objects\restrictionBindingsUnique</object>
     </objects>

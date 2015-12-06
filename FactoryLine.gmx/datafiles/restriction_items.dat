@@ -1,0 +1,9 @@
+[random0]
+count = 0
+
+[random1]
+0 = 1|body_slime-2eye-1mouth_toothy-2tentacle
+1 = 1|body_feathers-2wing-2eye-1mouth_beaked
+2 = 3|body_slime-1eye
+3 = 2|body_skin-2eye-2leg
+count = 4
