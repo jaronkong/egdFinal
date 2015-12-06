@@ -1,109 +1,109 @@
 [garbage]
-name = "Garbage"
+name = "garbage"
 sprite = garbage_spr
 color = 1
 
 
 [slime]
-name = "Slime"
+name = "slime"
 sprite = slime_spr
 
 [bone]
-name = "Bone"
+name = "bone"
 sprite = hardened_bone_spr
 
 [fur]
-name = "Fur"
+name = "fur"
 sprite = fur_spr
 
 [eye]
-name = "Eye"
+name = "eye"
 sprite = eyematerial_spr
 
 
 [bone_hardened]
-name = "Hardened Bone"
+name = "hardened bone"
 sprite = hardened_bone_spr
 
 [muscle]
-name = "Muscle"
+name = "muscle"
 sprite = muscle_spr
 
 
 [feathers]
-name = "Feathers"
+name = "feathers"
 sprite = feather_spr
 
 [tooth]
-name = "Teeth"
+name = "teeth"
 sprite = tooth_spr
 
 
 [tentacle]
-name = "Tentacle"
+name = "tentacle"
 sprite = tentacle_spr
 scale = 0.25
 color = 0
 
 [leg]
-name = "Leg"
+name = "leg"
 sprite = leg_spr
 scale = 0.25
 color = 0
 
 [wing]
-name = "Wing"
+name = "wing"
 sprite = wing_spr
 scale = 0.25
 
 
 [jaw]
-name = "Jaw"
+name = "jaw"
 sprite = jaw_spr
 
 [jaw_beaked]
-name = "Beak Jaw"
+name = "beak jaw"
 sprite = beaked_jaw_spr
 
 [mouth_toothy]
-name = "Mouth"
+name = "mouth"
 b-sprite = teeth_spr
 sprite = toothed_mouth_lip_spr
 scale = 0.25
 color = 0
 
 [mouth_beaked]
-name = "Beak"
+name = "beak"
 sprite = beaked_mouth_spr
 scale = 0.25
 
 
 [body_fur]
-name = "Furry Body"
+name = "furry body"
 sprite = fur_body_spr
 scale = 0.2
 color = 1
 
 [body_feathers]
-name = "Feathery Body"
+name = "feathery body"
 sprite = feathered_body_spr
 scale = 0.2
 color = 1
 
 [body_scaly]
-name = "Scaly Body"
+name = "scaly body"
 sprite = scaly_body_spr
 scale = 0.2
 color = 1
 
 [body_skin]
-name = "Skin Body"
+name = "skin body"
 sprite = skin_body_spr
 scale = 0.2
 color = 1
 
 [body_slime]
-name = "Slimy Body"
+name = "slimy body"
 sprite = slime_body_spr
 scale = 0.2
 color = 1
