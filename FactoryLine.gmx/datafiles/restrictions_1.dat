@@ -1,6 +1,6 @@
 [letter1]
 obj=restrictionQuotaAdd
-text="Make a {ITEM}"
+text="Hello new employee,#welcome to Custom Creatures Inc.#since it's your first day,#we're going to give you the easy task of creating# {ITEM}"
 amount=0
 flag="random1"
 weight=1
@@ -8,7 +8,7 @@ docType=0
 
 [letter2]
 obj=restrictionQuotaRemove
-text="Don't need {ITEM}"
+text="Since you have now gotten the hang of things,#we're going to move you on from# {ITEM}"
 amount=0
 flag="random1"
 weight=1
@@ -16,16 +16,120 @@ docType=0
 
 [letter3]
 obj=restrictionQuotaAdd
-text="Add me a whole pile of {ITEM}"
+text="For the holiday season, we#are starting production on# {ITEM}"
 amount=2
-flag="random1"
-weight=1
+flag="random2"
+weight=2
 docType=0
 
 [letter4]
 obj=restrictionBindingsUnique
-text="No same bindingsj oaij a;oiea;#jlsdfjaie#uiuive#oisjeisv"
+text="From: Health and Safety,##As a precaution,#to avoid any possible#symptoms of repetitive motion,#we are instituting#a mandatory key-rebinding,#effective immediately.###Have a nice day"
 amount=0
 flag=""
-weight=1
+weight=2
 docType=1
+
+[letter5]
+obj=restrictionQuotaRemove
+text="To avoid any extra legal#ramifications, we are pulling#all remaining units of# {ITEM} #still in circulation,#as well as halting all production"
+amount=0
+flag="random2"
+weight=2
+docType=0
+
+[letter6]
+obj=restrictionQuotaAdd
+text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
+amount=0
+flag="random2"
+weight=2
+docType=0
+
+[letter7]
+obj=restrictionQuotaRemove
+text="To avoid market saturation,#we are halting production of# {ITEM}"
+amount=0
+flag="random2"
+weight=2
+docType=0
+
+[letter8]
+obj=restrictionQuotaAdd
+text="Due to a large surplus of material,#we are commencing production on# {ITEM}"
+amount=0
+flag="random3"
+weight=3
+docType=0
+
+[letter9]
+obj=restrictionQuotaRemove
+text="Due to a shortage of resources,#we are halting the production of# {ITEM}"
+amount=0
+flag="random3"
+weight=3
+docType=0
+
+[letter10]
+obj=restrictionBindingsUnique
+text="From: Health and Safety,##As a precaution,#to avoid any possible#symptoms of repetitive motion,#we are instituting#a mandatory key-rebinding,#effective immediately.###Have a nice day"
+amount=0
+flag=""
+weight=3
+docType=1
+
+[letter11]
+obj=restrictionQuotaAdd
+text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
+amount=0
+flag="random3"
+weight=3
+docType=0
+
+[letter12]
+obj=restrictionQuotaRemove
+text="To avoid market saturation,#we are halting production of# {ITEM}"
+amount=0
+flag="random3"
+weight=3
+docType=0
+
+[letter13]
+obj=restrictionQuotaAdd
+text="Due to a large surplus of material,#we are commencing production on# {ITEM}"
+amount=0
+flag="random4"
+weight=4
+docType=0
+
+[letter14]
+obj=restrictionQuotaRemove
+text="Due to a shortage of resources,#we are halting the production of# {ITEM}"
+amount=0
+flag="random4"
+weight=4
+docType=0
+
+[letter15]
+obj=restrictionBindingsUnique
+text="From: Health and Safety,##As a precaution,#to avoid any possible#symptoms of repetitive motion,#we are instituting#a mandatory key-rebinding,#effective immediately.###Have a nice day"
+amount=0
+flag=""
+weight=4
+docType=1
+
+[letter16]
+obj=restrictionQuotaAdd
+text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
+amount=0
+flag="random4"
+weight=4
+docType=0
+
+[letter17]
+obj=restrictionQuotaRemove
+text="To avoid market saturation,#we are halting production of# {ITEM}"
+amount=0
+flag="random4"
+weight=4
+docType=0

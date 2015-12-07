@@ -2,8 +2,32 @@
 count = 0
 
 [random1]
+0 = 3|body_slime-1eye
+count = 1
+
+[random2]
 0 = 1|body_slime-2eye-1mouth_toothy-2tentacle
 1 = 1|body_feathers-2wing-2eye-1mouth_beaked
 2 = 3|body_slime-1eye
 3 = 2|body_skin-2eye-2leg
 count = 4
+
+[random3]
+0 = 3|body_slime-2eye-1mouth_toothy-2tentacle
+1 = 3|body_feathers-2wing-2eye-1mouth_beaked
+2 = 5|body_slime-1eye
+3 = 4|body_skin-2eye-2leg
+4 = 2|body_fur-2eye-2leg-1mouth_toothy
+5 = 2|body_feathers-2wing-2leg-2eye-1mouth_beaked
+6 = 3|body_scaly-2tentacle-1eye-1mouth_toothy
+count = 7
+
+[random4]
+0 = 5|body_slime-2eye-1mouth_toothy-2tentacle
+1 = 5|body_feathers-2wing-2eye-1mouth_beaked
+2 = 5|body_slime-1eye
+3 = 5|body_skin-2eye-2leg-1mouth_beaked
+4 = 5|body_fur-2eye-2leg-1mouth_toothy-2wing
+5 = 5|body_feathers-2wing-2leg-2eye-1mouth_beaked
+6 = 5|body_scaly-2tentacle-1eye-1mouth_toothy
+count = 7
