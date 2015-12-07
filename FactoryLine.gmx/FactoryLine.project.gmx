@@ -5,7 +5,7 @@
   </Configs>
   <datafiles number="7" name="datafiles">
     <datafile>
-      <name>restrictions_1.dat</name>
+      <name>restrictions_2.dat</name>
       <exists>-1</exists>
       <size>1306</size>
       <exportAction>2</exportAction>
@@ -19,10 +19,10 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>restrictions_1.dat</filename>
+      <filename>restrictions_2.dat</filename>
     </datafile>
     <datafile>
-      <name>restrictions_0.dat</name>
+      <name>restrictions_1.dat</name>
       <exists>-1</exists>
       <size>244</size>
       <exportAction>2</exportAction>
@@ -36,7 +36,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>restrictions_0.dat</filename>
+      <filename>restrictions_1.dat</filename>
     </datafile>
     <datafiles number="7" name="recipes">
       <datafile>
@@ -230,6 +230,8 @@
       <sprite>sprites\documentSmall_spr</sprite>
       <sprite>sprites\documentRedSmall_spr</sprite>
       <sprite>sprites\notice_spr</sprite>
+      <sprite>sprites\notice2_spr</sprite>
+      <sprite>sprites\notice3_spr</sprite>
     </sprites>
     <sprites name="parts">
       <sprites name="eye">
@@ -255,6 +257,7 @@
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
     <background>background\Bounds_bkgd</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -377,6 +380,7 @@
     <script>scripts\chooseWeight.gml</script>
     <script>scripts\generate_creature_name.gml</script>
     <script>scripts\timeOver.gml</script>
+    <script>scripts\doGameOver.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">

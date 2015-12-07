@@ -44,6 +44,8 @@
 approved = false;
 restrictionCon = noone;
 
+alertLevel = 0;
+
 </string>
           </argument>
         </arguments>
@@ -121,6 +123,14 @@ if ( flashing ) {
 
 if ( instance_exists( restrictionCon ) ) {
     flashing = !restrictionCon.satisfied;
+    
+    alertLevel = 0;
+    if ( restrictionCon.failTime &lt; restrictionCon.failWarningThreshold ) {
+        alertLevel = 1;
+    }
+    if ( restrictionCon.failTime &lt; restrictionCon.failCriticalThreshold ) {
+        alertLevel = 2;
+    }
 }
 
 
@@ -164,7 +174,15 @@ if ( instance_exists( restrictionCon ) ) {
 
 var tFlashOffset = -48;
 if ( flashing &amp;&amp; noticeOn ) {
-    draw_sprite_ext( notice_spr, 0, x - 16, y + tFlashOffset, 1, 1, 0, c_white, 1 );
+    if ( alertLevel == 1 ) {
+        draw_sprite_ext( notice2_spr, 0, x , y + tFlashOffset, 1, 1, 0, c_white, 1 );
+    }
+    else if ( alertLevel &gt; 1 ) {
+        draw_sprite_ext( notice3_spr, 0, x, y + tFlashOffset, 1, 1, 0, c_white, 1 );
+    }
+    else {
+        draw_sprite_ext( notice_spr, 0, x, y + tFlashOffset, 1, 1, 0, c_white, 1 );
+    }
 }
 
 </string>

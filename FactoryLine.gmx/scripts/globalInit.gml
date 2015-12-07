@@ -1,3 +1,6 @@
 ///globalInit();
 
 initGlobalPartMap();
+
+global.gameOverReason = "";
+

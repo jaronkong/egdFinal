@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Global Inits
-
+randomize();
 globalInit();
 
 </string>
@@ -110,7 +110,7 @@ with ( instance_create( 0, 0, restrictionController ) ) {
             <kind>1</kind>
             <string>///Time
 
-maxLevelTime = 3 * 60;
+maxLevelTime = 2 * 60;
 levelTime = maxLevelTime;
 
 globalTween = 0;
@@ -247,8 +247,8 @@ levelTime -= delta_time / 1000000;
 
 if ( levelTime &lt;= 0 ) {
     if ( !quotaCheck() ) {
-        audio_stop_all();
-        room_goto( Gameover_rm );
+        global.gameOverReason = "Quota not met.";
+        doGameOver();
     }
     else {
         levelTime = maxLevelTime;
