@@ -52,10 +52,11 @@ globalInit();
             <string>///Initialize quota structures
 
 enum Quota {
-    itemID, required, produced, count
+    enabled, itemID, required, produced, positionX, positionY, count
 }
 
 quota = ds_grid_create( 0, Quota.count );
+quotaOrder = ds_list_create( );
 </string>
           </argument>
         </arguments>
@@ -109,8 +110,8 @@ with ( instance_create( 0, 0, restrictionController ) ) {
             <kind>1</kind>
             <string>///Time
 
-maxLevelTime = 10;
-levelTime = 10;//3 * 60;
+maxLevelTime = 3 * 60;
+levelTime = maxLevelTime;
 
 globalTween = 0;
 globalTween_rate = 0.1;
@@ -140,7 +141,6 @@ alarm[ 0 ] = tweenDelay;
             <kind>1</kind>
             <string>///Generic quotas
 
-quotaCreate( "slime", 3 );
 quotaCreate( "body_slime", 3 );
 </string>
           </argument>
@@ -190,6 +190,7 @@ level = 1;
             <kind>1</kind>
             <string>///Free quota structures
 
+ds_list_destroy( quotaOrder );
 ds_grid_destroy( quota );
 </string>
           </argument>
@@ -317,6 +318,51 @@ if ( surface_get_width( application_surface ) != view_wview ||
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Update quotas
+
+var tRemove = ds_stack_create( );
+
+for ( var tIndex = 0; tIndex &lt; ds_list_size( quotaOrder ); ++tIndex ) {
+    var i = ds_list_find_value( quotaOrder, tIndex );
+    
+    var tGoalX = 0;
+    var tGoalY = tIndex;
+    if ( !quotaActive( i ) ) {
+        tGoalX += 2;
+    }
+    
+    quota[# i, Quota.positionX] = lerp( quota[# i, Quota.positionX], tGoalX, 0.05 );
+    quota[# i, Quota.positionY] = lerp( quota[# i, Quota.positionY], tGoalY, 0.1 );
+    
+    if ( !quotaActive( i ) &amp;&amp; ( quota[# i, Quota.positionX] &gt; 1 ) ) {
+        ds_stack_push( tRemove, tIndex );
+    }
+}
+
+while ( !ds_stack_empty( tRemove ) ) {
+    ds_list_delete( quotaOrder, ds_stack_pop( tRemove ) );
+}
+ds_stack_destroy( tRemove );
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="2">
       <action>
@@ -369,15 +415,25 @@ draw_set_halign( fa_right );
 draw_set_valign( fa_middle );
 
 var tIndex = 0;
-for ( var i = 0; i &lt; ds_grid_width( quota ); ++i ) {
-    var tItem = quota[# i, Quota.itemID];
-    if ( tItem &lt; 0 ) continue;
-    var tRequired = quota[# i, Quota.required];
-    var tProduced = quota[# i, Quota.produced];
+for ( var i = 0; i &lt; ds_list_size( quotaOrder ); ++i ) {
+    var tIndex = ds_list_find_value( quotaOrder, i );
+    
+    var tItem = quota[# tIndex, Quota.itemID];
+    var tRequired = quota[# tIndex, Quota.required];
+    var tProduced = quota[# tIndex, Quota.produced];
     var tString = ( string( tProduced ) + " / " + string( tRequired ) );
-    draw_text( room_width - 128, 256 + 100 * tIndex, tString );
-    itemDraw( tItem, room_width - 64, 256 + 100 * tIndex, get_timer()/1000000+i, c_white, 2, 2 );
-    tIndex += 1;
+    
+    var px = room_width - 64 + 300 * quota[# tIndex, Quota.positionX];
+    var py = 256 + 100 * quota[# tIndex, Quota.positionY];
+    
+    draw_set_color( c_black );
+    draw_set_alpha( 0.4 );
+    draw_rectangle( px-192, py-40, px+48, py+40, false );
+    
+    draw_set_color( c_white );
+    draw_set_alpha( 1 );
+    draw_text( px - 64, py, tString );
+    itemDraw( tItem, px, py, get_timer()/1000000+tIndex, c_white, 2, 2 );
 }
 
 draw_set_color( c_white );

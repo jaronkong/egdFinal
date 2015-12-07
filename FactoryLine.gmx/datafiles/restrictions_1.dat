@@ -1,24 +1,24 @@
 [letter1]
 obj=restrictionQuotaAdd
-text="Make a body slime"
+text="Make a {ITEM}"
 amount=0
-flag="body_slime"
+flag="random1"
 weight=1
 docType=0
 
 [letter2]
 obj=restrictionQuotaRemove
-text="Don't need body slime"
+text="Don't need {ITEM}"
 amount=0
-flag="body_slime"
+flag="random1"
 weight=1
 docType=0
 
 [letter3]
 obj=restrictionQuotaAdd
-text="Add me a quota"
-amount=0
-flag="body_slime+eye"
+text="Add me a whole pile of {ITEM}"
+amount=2
+flag="random1"
 weight=1
 docType=0
 

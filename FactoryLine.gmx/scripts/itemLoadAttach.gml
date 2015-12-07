@@ -22,6 +22,9 @@ for ( var i = 0; i < aCount; ++i ) {
 }
 tName += " ";
 tName = generate_creature_name();
+
+tName = generate_creature_name( );
+
 if ( itemExists( tTag ) ) {
     return itemFromTag( tTag );
 }
