@@ -137,6 +137,7 @@
       <sound>sound\eleReceiver_sd</sound>
       <sound>sound\eleAttacher_sd</sound>
     </sounds>
+    <sound>sound\titleStart_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>

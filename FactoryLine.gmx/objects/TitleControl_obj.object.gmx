@@ -67,6 +67,9 @@ timer = 5;
             <string>/// Step
 
 if (keyboard_check(vk_space)) {
+    if ( !pressed ) {
+        audio_play_sound( titleStart_sd, 1, false );
+    }
     pressed = true;
 }
 

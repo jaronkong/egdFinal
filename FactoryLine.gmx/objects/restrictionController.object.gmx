@@ -100,7 +100,7 @@ ini_open( restrictionFileName );
 
     while (ini_section_exists( tSection ) ) {
         sections[ numLetters - 1 ] = tSection;
-        weights[ numLetters - 1 ] = ini_read_real( tSection, "weights", 1 );
+        weights[ numLetters - 1 ] = ini_read_real( tSection, "weight", 1 );
         numLetters += 1;
         tSection = "letter" + string( numLetters );
         
