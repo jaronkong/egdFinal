@@ -264,6 +264,7 @@
     <background>background\Bounds_bkgd</background>
     <background>background\background2</background>
     <background>background\Title_bkgd</background>
+    <background>background\Conveyor_bkgd</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -387,6 +388,7 @@
     <script>scripts\generate_creature_name.gml</script>
     <script>scripts\timeOver.gml</script>
     <script>scripts\doGameOver.gml</script>
+    <script>scripts\Draw_Gear.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">

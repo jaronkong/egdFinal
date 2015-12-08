@@ -30,6 +30,8 @@
 wallPos = 0;
 wallSpeed = 30;
 
+background_hspeed[1] = -0.25;
+
 textPos[0] = room_width/2;
 textPos[1] = 570;
 textAlpha = 1;
@@ -69,6 +71,7 @@ if (keyboard_check(vk_space)) {
 }
 
 if (pressed) {
+    textAlpha -= .05;
     wallPos += wallSpeed;
     if (wallPos &gt; room_height) {
         wallPos = room_height;
@@ -121,6 +124,15 @@ if (timer &lt;= 0) {
             <kind>1</kind>
             <string>/// Draw
 
+// Gears
+draw_set_alpha(min(.5,textAlpha));
+Draw_Gear(1200,860,100,8,-current_time/1000,make_color_rgb(25,25,25));
+Draw_Gear(1375,860,100,8,current_time/1000 + pi/6.5,make_color_rgb(20,20,20));
+Draw_Gear(1550,860,100,8,-current_time/1000,make_color_rgb(25,25,25));
+Draw_Gear(1725,860,100,8,current_time/1000 + pi/6.5,make_color_rgb(20,20,20));
+Draw_Gear(1900,860,100,8,-current_time/1000,make_color_rgb(25,25,25));
+draw_set_alpha(1);
+
 if (!pressed) {
         draw_sprite_ext(Begin_spr,0,textPos[0],textPos[1],1,1,0,c_white,cos(2*current_time/1000.0));
     }
@@ -128,6 +140,7 @@ if (!pressed) {
 else {
     draw_sprite(Wall_spr,0,0,wallPos-1080);
 }
+
 </string>
           </argument>
         </arguments>
