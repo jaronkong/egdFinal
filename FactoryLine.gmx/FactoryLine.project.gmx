@@ -138,6 +138,7 @@
       <sound>sound\eleAttacher_sd</sound>
     </sounds>
     <sound>sound\titleStart_sd</sound>
+    <sound>sound\title_theme</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
