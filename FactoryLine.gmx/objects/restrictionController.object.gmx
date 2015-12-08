@@ -30,7 +30,7 @@
 weights = -1;
 sections = -1;
 numLetters = 0;
-restrictionFileName = "restrictions_1.dat";
+restrictionFileName = "restrictions_2.dat";
 
 restrictionTimer = room_speed * 2;
 restrictionBaseRate = room_speed * 22;
