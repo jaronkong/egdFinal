@@ -364,7 +364,7 @@ ds_stack_destroy( tRemove );
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="2">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -383,7 +383,7 @@ ds_stack_destroy( tRemove );
             <kind>1</kind>
             <string>///Music
 
-audio_play_sound( AlienFactory_bgm, 1, true );
+playSong( AlienFactory_bgm );
 </string>
           </argument>
         </arguments>

@@ -391,6 +391,7 @@
     <script>scripts\timeOver.gml</script>
     <script>scripts\doGameOver.gml</script>
     <script>scripts\Draw_Gear.gml</script>
+    <script>scripts\playSong.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="PostEffects">
