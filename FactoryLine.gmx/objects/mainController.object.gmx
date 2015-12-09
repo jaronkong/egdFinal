@@ -233,6 +233,7 @@ if ( levelTime &lt;= 0 ) {
         with ( restrictionPar ) {
             instance_destroy();
         }
+        quotaDestroyAll();
         level += 1;
         increaseRestrictionLevel( level );
     }

@@ -104,7 +104,7 @@ restrictionTimer --;
 var tMainTime = mainController.levelTime;
 var tLevel = mainController.level;
 
-if ( restrictionTimer &lt;= 0 &amp;&amp; tMainTime &gt; 30 &amp;&amp; tLevel &gt; 1) {
+if ( restrictionTimer &lt;= 0 &amp;&amp; tMainTime &gt; 60 &amp;&amp; tLevel &gt; 1) {
     restrictionTimer = restrictionBaseRate + irandom( restrictionRandRate );
     
     restrictionCreate( restrictionFileName, sections, weights );
