@@ -263,7 +263,6 @@
       <sprite>sprites\GameOverText_spr</sprite>
       <sprite>sprites\Boss_spr</sprite>
     </sprites>
-    <sprite>sprites\boss_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
