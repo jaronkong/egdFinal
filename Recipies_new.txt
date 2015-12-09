@@ -9,14 +9,13 @@ recipes:
 bone + slime = skin body
 slime + slime = slime body
 skin body * fur = fur body
-bone * fur = feathers
+{fur} = feathers
 skin body * feathers = feathered body
-{bone}= hardened bone
 skin body * hardened bone = scaly body
 {slime}= muscle
-hardened bone * slime = tooth
+bone * slime = tooth
 bone + tooth = jaw
-bone + hardened bone = beaked jaw
+bone + bone = beaked jaw
 jaw + muscle = toothy mouth
 beaked jaw + muscle = beaked mouth
 slime + muscle = tentacle
