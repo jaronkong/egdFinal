@@ -139,6 +139,8 @@
     </sounds>
     <sound>sound\titleStart_sd</sound>
     <sound>sound\title_theme</sound>
+    <sound>sound\firedSlam_sd</sound>
+    <sound>sound\firedWhoosh_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>

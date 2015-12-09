@@ -49,6 +49,8 @@ done = false;
 
 bossPos[0] = 200;
 bossPos[1] = room_height - sprite_get_height(Boss_spr)/2;
+
+audio_play_sound(firedWhoosh_sd,0,0);
 </string>
           </argument>
         </arguments>
@@ -84,6 +86,9 @@ if (currentPos[0] &gt; endPos[0]) {
 }
 
 else {
+    if (!done) {
+        audio_play_sound(pageTurn_sd,0,0);
+    }
     done = true;
     currentPos = endPos;
     currentPos2 = endPos;
