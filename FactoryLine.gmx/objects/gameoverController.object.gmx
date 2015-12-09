@@ -48,7 +48,7 @@ progress = 0;
 done = false;
 
 bossPos[0] = 200;
-bossPos[1] = room_height + sprite_get_height(Boss_spr)/2;
+bossPos[1] = room_height + sprite_get_height(BossPoint_spr)/2;
 
 audio_play_sound(firedWhoosh_sd,0,0);
 </string>
@@ -128,7 +128,7 @@ if (done) {
     draw_sprite_ext(GameOverText_spr,0,room_width/2,980,1,1,0,c_white,sin(2*current_time/1000.0));
 }
 
-draw_sprite(Boss_spr,0,bossPos[0],bossPos[1]);
+draw_sprite(BossPoint_spr,0,bossPos[0],bossPos[1]);
 
 
 draw_set_alpha( 1 );
