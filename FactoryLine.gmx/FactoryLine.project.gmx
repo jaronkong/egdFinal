@@ -298,7 +298,7 @@
       <sprite>sprites\Wall_spr</sprite>
       <sprite>sprites\FiredLetter_spr</sprite>
       <sprite>sprites\GameOverText_spr</sprite>
-      <sprite>sprites\Boss_spr</sprite>
+      <sprite>sprites\BossPoint_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -422,6 +422,7 @@
     <scripts name="QuotaActions">
       <script>scripts\quotaCreate.gml</script>
       <script>scripts\quotaDestroy.gml</script>
+      <script>scripts\quotaDestroyAll.gml</script>
       <script>scripts\quotaActive.gml</script>
       <script>scripts\quotaGet.gml</script>
       <script>scripts\quotaProduce.gml</script>
