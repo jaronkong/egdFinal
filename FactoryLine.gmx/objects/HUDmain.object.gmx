@@ -64,7 +64,7 @@ draw_self();
 var tCurrentTime = mainController.levelTime;
 var tMinutes = tCurrentTime div 60;
 var tSeconds = tCurrentTime - tMinutes*60;
-draw_text( 32, 100, string( tMinutes ) + " : " + string( ceil(tSeconds) ) );
+//draw_text( 32, 100, string( tMinutes ) + " : " + string( ceil(tSeconds) ) );
 
 ///Clock timer
 draw_set_font( counter_ft );
