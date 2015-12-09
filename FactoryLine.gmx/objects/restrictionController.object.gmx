@@ -40,6 +40,45 @@ restrictionRandRate = room_speed * 10;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var tNewRestriction = instance_create( 0, 0, restrictionQuotaAdd );
+
+var tSpawnWidthRange = 500;
+
+var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
+
+with ( tNewLetter ) {
+    text = "Hello new employee,#welcome to Custom Creatures Inc.#since it's your first day,#we're going to give you#the easy task of creating# {ITEM}";
+    restrictionCon = tNewRestriction;
+
+    sprite_index = document_spr;
+
+}
+with ( tNewRestriction ) {
+    attachedLetter = tNewLetter;
+    flag = "random1";
+    amount = 0;
+    event_user( 0 );
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>

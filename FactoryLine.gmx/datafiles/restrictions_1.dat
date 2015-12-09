@@ -1,14 +1,6 @@
-﻿[letter1]
-obj=restrictionQuotaAdd
-text="Hello new employee,#welcome to Custom Creatures Inc.#since it's your first day,#we're going to give you#the easy task of creating# {ITEM}"
-amount=0
-flag="random1"
-weight=1
-docType=0
-
-[letter2]
+﻿[letter2]
 obj=restrictionQuotaRemove
-text="Since you have now gotten the hang of things,#we're going to move you on from# {ITEM}"
+text="Since you have now#gotten the hang of things,#we're going to move you on from# {ITEM}"
 amount=0
 flag="random1"
 weight=1
