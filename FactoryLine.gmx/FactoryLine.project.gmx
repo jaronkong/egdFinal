@@ -260,6 +260,7 @@
       <sprite>sprites\Begin_spr</sprite>
       <sprite>sprites\Wall_spr</sprite>
     </sprites>
+    <sprite>sprites\boss_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Wall_bkgd</background>
