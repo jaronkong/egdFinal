@@ -1,7 +1,7 @@
-﻿[letter2]
+﻿[letter1]
 obj=restrictionQuotaRemove
-text="Since you have now#gotten the hang of things,#we're going to move you on from# {ITEM}"
+text=""
 amount=0
-flag="random1"
+flag="body_scaly"
 weight=1
 docType=0

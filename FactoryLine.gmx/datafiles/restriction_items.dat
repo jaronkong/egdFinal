@@ -2,7 +2,7 @@
 count = 0
 
 [random1]
-0 = 30|body_slime-1eye
+0 = 1|body_slime-1eye
 count = 1
 
 [random2]
