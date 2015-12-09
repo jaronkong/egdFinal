@@ -82,7 +82,7 @@ quotaOrder = ds_list_create( );
 instance_create( 0, 0, deskController );
 instance_create( 0, 0, selectionController );
 instance_create( 0, 0, inputMaskingController );
-//instance_create( 0, 0, fluidController );
+instance_create( 0, 0, fluidController );
 
 with ( instance_create( 0, 0, restrictionController ) ) {
     event_user( 0 );
