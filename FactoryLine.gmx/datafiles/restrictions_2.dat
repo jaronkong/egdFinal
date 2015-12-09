@@ -3,7 +3,7 @@ obj=restrictionQuotaAdd
 text="For the holiday season, we#are starting production on# {ITEM}"
 amount=2
 flag="random2"
-weight=10
+weight=4
 docType=0
 
 [letter2]
@@ -34,7 +34,7 @@ obj=restrictionQuotaAdd
 text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
 amount=0
 flag="random2"
-weight=10
+weight=4
 docType=0
 
 [letter6]

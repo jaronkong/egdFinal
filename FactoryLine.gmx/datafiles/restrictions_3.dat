@@ -3,7 +3,7 @@ obj=restrictionQuotaAdd
 text="Due to a large surplus of material,#we are commencing production on# {ITEM}"
 amount=0
 flag="random3"
-weight=6
+weight=4
 docType=0
 
 [letter2]
@@ -27,7 +27,7 @@ obj=restrictionQuotaAdd
 text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
 amount=0
 flag="random3"
-weight=6
+weight=4
 docType=0
 
 [letter5]
