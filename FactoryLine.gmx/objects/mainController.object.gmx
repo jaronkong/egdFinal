@@ -410,7 +410,7 @@ for ( var i = 0; i &lt; ds_list_size( quotaOrder ); ++i ) {
     draw_set_color( c_white );
     draw_set_alpha( 1 );
     draw_text( px-64, py-6, tString );
-    draw_text_transformed( px-64, py+24, itemProperty( tItem, Item.name ), 0.2, 0.2, 0 );
+    draw_text_transformed( px-64, py+28, itemProperty( tItem, Item.name ), 0.25, 0.25, 0 );
     itemDraw( tItem, px, py, get_timer()/1000000+tIndex, c_white, 2, 2 );
 }
 
