@@ -79,10 +79,11 @@ satisfied = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Add quota
+            <string>///Remove quota
 
-quotaDestroy( quotaGet( flag ) );
-
+if ( quotaGet( flag ) &gt;= 0 ) {
+    quotaDestroy( quotaGet( flag ) );
+} else instance_destroy( );
 </string>
           </argument>
         </arguments>
