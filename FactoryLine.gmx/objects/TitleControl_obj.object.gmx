@@ -67,7 +67,8 @@ timer = 5;
 if ( !instance_exists( itemManager ) ) {
     instance_create( x, y, itemManager );
 }
-itemTimer = 0;
+itemInterval = (5 * room_speed);
+itemTimer = -8 * itemInterval;
 </string>
           </argument>
         </arguments>
@@ -152,9 +153,14 @@ if (timer &lt;= 0) {
             <string>///Spawn items
 
 itemTimer -= 1;
-if ( itemTimer &lt; 0 ) {
+while ( itemTimer &lt; 0 ) {
     instance_create( room_width + 128, 1000, titleCreature );
-    itemTimer += 5 * room_speed;
+    itemTimer += itemInterval;
+    if ( itemTimer &lt; 0 ) {
+        with ( titleCreature ) {
+            x += ( hspeed * other.itemInterval );
+        }
+    }
 }
 </string>
           </argument>
