@@ -361,9 +361,9 @@ ds_stack_destroy( tRemove );
 
 if not spawnLevelOneRestriction {
     if ( level == 1 ){
-    spawnLevelOneRestriction = true;
         if ( quotaCheck() ) {
-            levelTime = min( levelTime, 30 );
+            spawnLevelOneRestriction = true;
+            levelTime = min( levelTime, 20 );
             
             var tNewRestriction = instance_create( 0, 0, restrictionQuotaRemove );
     
