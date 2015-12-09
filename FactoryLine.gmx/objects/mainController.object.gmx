@@ -139,29 +139,6 @@ alarm[ 0 ] = tweenDelay;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Generic quotas
-
-quotaCreate( "body_slime", 3 );
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Level
 
 level = 1;
@@ -432,7 +409,10 @@ for ( var i = 0; i &lt; ds_list_size( quotaOrder ); ++i ) {
     
     draw_set_color( c_white );
     draw_set_alpha( 1 );
-    draw_text( px - 64, py, tString );
+    draw_set_font( counter_ft );
+    draw_text( px-64, py-6, tString );
+    draw_set_font( letter_ft );
+    draw_text( px-64, py+24, itemProperty( tItem, Item.name ) );
     itemDraw( tItem, px, py, get_timer()/1000000+tIndex, c_white, 2, 2 );
 }
 
