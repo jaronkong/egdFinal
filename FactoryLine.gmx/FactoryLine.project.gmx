@@ -422,6 +422,7 @@
     <scripts name="QuotaActions">
       <script>scripts\quotaCreate.gml</script>
       <script>scripts\quotaDestroy.gml</script>
+      <script>scripts\quotaDestroyAll.gml</script>
       <script>scripts\quotaActive.gml</script>
       <script>scripts\quotaGet.gml</script>
       <script>scripts\quotaProduce.gml</script>
