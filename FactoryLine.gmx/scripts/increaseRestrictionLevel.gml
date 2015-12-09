@@ -1,6 +1,6 @@
 ///increaseRestrictionLevel( newLevel );
 
-var MAX_LEVEL = 2; //The actual number on the last file, NOT the number of files
+var MAX_LEVEL = 4; //The actual number on the last file, NOT the number of files
 
 with ( restrictionController ) {
     if ( argument0 < MAX_LEVEL ) {

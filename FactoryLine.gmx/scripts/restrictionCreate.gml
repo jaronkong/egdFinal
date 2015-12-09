@@ -15,7 +15,7 @@ var tDocType = ini_read_real( tRestrictionString, "docType", 0 );
 
 ini_close();
 
-show_debug_message( tDocType );
+show_debug_message( object_get_name(tRestrictionType) );
 
 //Make the restriction
 
