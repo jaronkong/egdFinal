@@ -37,6 +37,7 @@ textPos[1] = 570;
 textAlpha = 1;
 
 logo = instance_create(room_width/2,475,Logo_obj);
+drop = instance_create(0, wallPos, dropWall);
 
 pressed = false;
 transition = false;
@@ -130,6 +131,8 @@ if (transition) {
 if (timer &lt;= 0) {
     room_goto_next();
 }
+
+drop.y = wallPos-1080;
 </string>
           </argument>
         </arguments>
@@ -250,7 +253,7 @@ if (!pressed) {
     }
 
 else {
-    draw_sprite(Wall_spr,0,0,wallPos-1080);
+    //draw_sprite(Wall_spr,0,0,wallPos-1080);
 }
 
 </string>

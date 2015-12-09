@@ -535,6 +535,7 @@
       <object>objects\TitleControl_obj</object>
       <object>objects\FadeRoom_obj</object>
       <object>objects\titleCreature</object>
+      <object>objects\dropWall</object>
     </objects>
   </objects>
   <rooms name="rooms">
