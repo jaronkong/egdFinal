@@ -255,10 +255,13 @@
       <sprite>sprites\tentacle_spr</sprite>
       <sprite>sprites\leg_spr</sprite>
     </sprites>
-    <sprites name="Title Screen">
+    <sprites name="Title / Game Over">
       <sprite>sprites\FactoryLogo_spr</sprite>
       <sprite>sprites\Begin_spr</sprite>
       <sprite>sprites\Wall_spr</sprite>
+      <sprite>sprites\FiredLetter_spr</sprite>
+      <sprite>sprites\GameOverText_spr</sprite>
+      <sprite>sprites\Boss_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -267,6 +270,7 @@
     <background>background\background2</background>
     <background>background\Title_bkgd</background>
     <background>background\Conveyor_bkgd</background>
+    <background>background\GameOver_bkgd</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

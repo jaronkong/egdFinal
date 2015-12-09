@@ -8,6 +8,94 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialization
+
+startPos[0] = 2500;
+startPos[1] = 1500;
+
+shadowPos[0] = 1750;
+shadowPos[1] = 2000;
+
+endPos[0] = 525;
+endPos[1] = 450;
+
+startRot = -1000;
+endRot = 5;
+currentRot = startRot;
+
+currentPos = startPos;
+currentPos2 = shadowPos;
+moveAmount = .02;
+
+progress = 0;
+done = false;
+
+bossPos[0] = 200;
+bossPos[1] = room_height - sprite_get_height(Boss_spr)/2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Step
+
+progress = 1 - (currentPos[0] - endPos[0]) / (startPos[0] - endPos[0]);
+
+if (currentPos[0] &gt; endPos[0]) {
+    currentPos[0] += (endPos[0] - startPos[0])*moveAmount;
+    currentPos[1] += (endPos[1] - startPos[1])*moveAmount;
+    currentRot += (endRot - startRot)*moveAmount;
+    currentPos2[0] += (endPos[0] - shadowPos[0])*moveAmount;
+    currentPos2[1] += (endPos[1] - shadowPos[1])*moveAmount;
+}
+
+else {
+    done = true;
+    currentPos = endPos;
+    currentPos2 = endPos;
+    currentRot = endRot;
+}
+
+bossPos[1] = lerp(bossPos[1],room_height+100,.04);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -26,6 +114,18 @@
           <argument>
             <kind>1</kind>
             <string>///Draw
+
+draw_sprite_ext(FiredLetter_spr,0,currentPos2[0],currentPos2[1],1,1,currentRot,c_black,0.25);
+
+draw_sprite_ext(FiredLetter_spr,0,currentPos[0],currentPos[1],1,1,currentRot,c_white,1);
+
+if (done) {
+    draw_sprite_ext(GameOverText_spr,0,room_width/2,980,1,1,0,c_white,sin(2*current_time/1000.0));
+}
+
+draw_sprite(Boss_spr,0,bossPos[0],bossPos[1]);
+
+/*
 draw_set_alpha( 1 );
 draw_set_valign( fa_center );
 draw_set_halign( fa_center );
@@ -34,13 +134,12 @@ draw_set_font( main_ft );
 draw_text( room_width/2, room_height/2 - 16, "GAME OVER" );
 draw_set_font( letter_ft );
 draw_text( room_width/2, room_height/2 , string( global.gameOverReason ) );
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="1">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>331</id>
