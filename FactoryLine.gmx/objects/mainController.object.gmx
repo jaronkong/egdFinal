@@ -223,33 +223,6 @@ alarm[ 0 ] = tweenDelay;
 
 levelTime -= delta_time / 1000000;
 
-if ( levelTime &lt;= 15 ) and not spawnLevelOneRestriction {
-    if ( level == 1){
-    spawnLevelOneRestriction = true;
-        if ( quotaCheck() ){
-            
-            var tNewRestriction = instance_create( 0, 0, restrictionQuotaRemove );
-    
-            var tSpawnWidthRange = 500;
-    
-            var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
-    
-            with ( tNewLetter ) {
-                text = "Since you have now#gotten the hang of things,#we're going to move you on from# {ITEM}";
-                restrictionCon = tNewRestriction;
-    
-                sprite_index = document_spr;
-    
-            }
-            with ( tNewRestriction ) {
-                attachedLetter = tNewLetter;
-                flag = "random1";
-                amount = 0;
-                event_user( 0 );
-            }
-        }
-    }
-}
 if ( levelTime &lt;= 0 ) {
     if ( !quotaCheck() ) {
         global.gameOverReason = "Quota not met.";
@@ -364,6 +337,56 @@ while ( !ds_stack_empty( tRemove ) ) {
     ds_list_delete( quotaOrder, ds_stack_pop( tRemove ) );
 }
 ds_stack_destroy( tRemove );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Day one end
+
+if not spawnLevelOneRestriction {
+    if ( level == 1 ){
+    spawnLevelOneRestriction = true;
+        if ( quotaCheck() ) {
+            levelTime = min( levelTime, 30 );
+            
+            var tNewRestriction = instance_create( 0, 0, restrictionQuotaRemove );
+    
+            var tSpawnWidthRange = 500;
+    
+            var tNewLetter = instance_create( random( tSpawnWidthRange ), room_height / 2, restrictionDoc );
+    
+            with ( tNewLetter ) {
+                text = "Since you have now#gotten the hang of things,#we're going to move you on from# {ITEM}";
+                restrictionCon = tNewRestriction;
+    
+                sprite_index = document_spr;
+    
+            }
+            with ( tNewRestriction ) {
+                attachedLetter = tNewLetter;
+                flag = "random1";
+                amount = 0;
+                event_user( 0 );
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
