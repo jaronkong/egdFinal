@@ -11,7 +11,7 @@ obj=restrictionQuotaRemove
 text="Due to a shortage of resources,#we are halting the production of# {ITEM}"
 amount=0
 flag="random3"
-weight=3
+weight=2
 docType=0
 
 [letter3]
@@ -19,7 +19,7 @@ obj=restrictionBindingsUnique
 text="From: Health and Safety,##As a precaution,#to avoid any possible#symptoms of repetitive motion,#we are instituting#a mandatory key-rebinding,#effective immediately.###Have a nice day"
 amount=0
 flag=""
-weight=4
+weight=2
 docType=1
 
 [letter4]
@@ -42,5 +42,5 @@ obj=restrictionQuotaRemove
 text="To avoid market saturation,#we are halting production of# {ITEM}"
 amount=0
 flag="random3"
-weight=3
+weight=2
 docType=0

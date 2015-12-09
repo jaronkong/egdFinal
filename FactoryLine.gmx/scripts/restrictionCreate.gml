@@ -29,6 +29,9 @@ if ( tRestrictionType == restrictionBindingsUnique ) {
 
 
 
+instance_create( 0, 0, bossImage );
+audio_play_sound( restrictionCreate_sd, 1, false );
+
 var tNewRestriction = instance_create( 0, 0, tRestrictionType );
 
 var tSpawnWidthRange = 500;

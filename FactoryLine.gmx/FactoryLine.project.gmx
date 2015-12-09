@@ -160,6 +160,7 @@
       <sound>sound\removeElement_sd</sound>
       <sound>sound\bindCreate_sd</sound>
       <sound>sound\selectionMake_sd</sound>
+      <sound>sound\restrictionCreate_sd</sound>
     </sounds>
     <sounds name="elements">
       <sound>sound\conveyorStart_sd</sound>
@@ -510,6 +511,7 @@
         <object>objects\smokeTrayEmerge</object>
         <object>objects\sparkBurst</object>
       </objects>
+      <object>objects\bossImage</object>
     </objects>
     <objects name="Interface">
       <object>objects\verticalTray</object>

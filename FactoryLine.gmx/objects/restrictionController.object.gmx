@@ -34,7 +34,7 @@ restrictionFileName = "restrictions_1.dat";
 
 restrictionTimer = room_speed * 2;
 restrictionBaseRate = room_speed * 22;
-restrictionRandRate = room_speed * 10;
+restrictionRandRate = room_speed * 20;
 
 </string>
           </argument>
@@ -101,7 +101,10 @@ with ( tNewRestriction ) {
 
 restrictionTimer --;
 
-if ( restrictionTimer &lt;= 0 ) {
+var tMainTime = mainController.levelTime;
+var tLevel = mainController.level;
+
+if ( restrictionTimer &lt;= 0 &amp;&amp; tMainTime &gt; 30 &amp;&amp; tLevel &gt; 1) {
     restrictionTimer = restrictionBaseRate + irandom( restrictionRandRate );
     
     restrictionCreate( restrictionFileName, sections, weights );

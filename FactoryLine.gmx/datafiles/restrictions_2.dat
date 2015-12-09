@@ -3,7 +3,7 @@ obj=restrictionQuotaAdd
 text="For the holiday season, we#are starting production on# {ITEM}"
 amount=2
 flag="random2"
-weight=6
+weight=10
 docType=0
 
 [letter2]
@@ -18,7 +18,7 @@ obj=restrictionBindingsUnique
 text="From: Health and Safety,##As a precaution,#to avoid any possible#symptoms of repetitive motion,#we are instituting#a mandatory key-rebinding,#effective immediately.###Have a nice day"
 amount=0
 flag=""
-weight=4
+weight=1
 docType=1
 
 [letter4]
@@ -26,7 +26,7 @@ obj=restrictionQuotaRemove
 text="To avoid any extra legal#ramifications, we are pulling#all remaining units of# {ITEM} #still in circulation,#as well as halting all production"
 amount=0
 flag="random2"
-weight=3
+weight=2
 docType=0
 
 [letter5]
@@ -34,7 +34,7 @@ obj=restrictionQuotaAdd
 text="Due to the high success#in initial consumer testing,#we will as of now start production on# {ITEM}"
 amount=0
 flag="random2"
-weight=6
+weight=10
 docType=0
 
 [letter6]
@@ -42,5 +42,5 @@ obj=restrictionQuotaRemove
 text="To avoid market saturation,#we are halting production of# {ITEM}"
 amount=0
 flag="random2"
-weight=3
+weight=2
 docType=0
