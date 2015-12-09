@@ -1,38 +1,15 @@
-[letter1]
-obj=restrictionDispenserCount
-text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
+﻿[letter1]
+obj=restrictionQuotaAdd
+text="Hello new employee,#welcome to Custom Creatures Inc.#since it's your first day,#we're going to give you#the easy task of creating# {ITEM}"
 amount=0
-flag=""
+flag="random1"
 weight=1
+docType=0
 
 [letter2]
-obj=restrictionBindingsUnique
-text="FROM VP OF PR#We are concerned with repetitive stress.#Please vary your key presses more.##All key bindings must be changed."
-amount=5
-flag="body_slime-3eye"
+obj=restrictionQuotaRemove
+text="Since you have now gotten the hang of things,#we're going to move you on from# {ITEM}"
+amount=0
+flag="random1"
 weight=1
-
-[letter3]
-obj=restrictionTimeChange
-text="FROM VP OF OPERATIONS#Good news!#One client has postponed their delivery.##Extra time added."
-amount=60
-flag=""
-weight=1
-
-[letter4]
-obj=restrictionTimeChange
-text="FROM VP OF OPERATIONS#Bad news!#A competitor has a new product#We need to hurry our next shipment.##Time reduced."
-amount=-60
-flag=""
-weight=1
-
-[letter5]
-obj=restrictionDispenserCount
-text="FROM VP OF OPERATIONS#Our supply lines are tight.#We cannot afford many dispensers.##Use one of each type of dispenser max."
-weight=1
-
-[letter6]
-obj=restrictionDispenserCount
-text="FROM VP OF MARKETING#I’ll keep this short.#The current product is not selling.#We are therefore shifting production#to the alternative monster product.#Halt production on the current slimes# and switch to the monster product# immediately.##Your quotas have been updated."
-weight=1
-
+docType=0
